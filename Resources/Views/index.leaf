@@ -1,0 +1,67 @@
+#extend("base")
+
+#export("head") {
+<title>Home | SteamPress</title>
+}
+
+#export("body") {
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-3">SteamPress</h1>
+            <p class="lead">An Open Source Blogging Engine in Swift for Vapor</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col mb-3">
+                <h2>Latest Blog Posts</h2>
+                
+                #if(posts) {
+                #loop(posts, "post") {
+                <div class="card mb-3">
+                    <div class="card-block">
+                        <h3 class="card-title">#(post.title)</h3>
+                        #markdown(post.shortSnippet)
+                        <a href="/blog/posts/#(post.id)/" class="card-link">Read More</a>
+                    </div>
+                </div>
+                }
+                }
+                ##else() {
+                    <div class="text-center h5 mt-4 mb-4">There haven't been any posts yet!</div>
+                }
+
+                <div class="d-flex justify-content-center mb-3">
+                    <a href="/blog" class="btn btn-primary">View the Blog</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <h2>More Open Source Projects</h2>
+
+                <div class="card text-center mb-3">
+                    <div class="card-block">
+                        <h3 class="card-title">SteamPress</h3>
+                        <p class="card-text">A blogging engine for Vapor to power a blog on your site. Easy to embed on any Vapor site or run as your main site.</p>
+                        <a href="https://github.com/brokenhandsio/SteamPress/" class="btn btn-primary" target="_blank">View on Github</a>
+                    </div>
+                </div>
+
+                <div class="card text-center mb-3">
+                    <div class="card-block">
+                        <h3 class="card-title">LeafMardown</h3>
+                        <p class="card-text">A tag for Leaf to enable Markdown to be displayed on webpages</p>
+                        <a href="https://github.com/brokenhandsio/LeafMarkdown/" class="btn btn-primary" target="_blank">View on Github</a>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <a href="/about/" class="btn btn-primary">View More Information</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- container -->
+}

@@ -1,0 +1,34 @@
+#extend("base")
+
+#export("head") {
+    <title>#(post.title) | Blog | SteamPress</title>
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+}
+
+#export("body") {
+
+<div class="container mt-4">
+
+    <h1 class="display-4 text-center">#(post.title)</h1>
+
+    <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.id)/">#(author.name)</a> on #(post.createdDate)#if(post.lastEditedDate) {. Last edited on #(post.lastEditedDate).}</h2>
+
+    <div class="post-contents mt-3">
+        #markdown(post.contents)
+    </div>
+
+    <div class="post-labels text-center h4">
+        #loop(post.labels, "label") {
+        <span class="badge badge-default"><a href="/blog/labels/#(label.id)/">#(label.name)</a></span>
+        }
+    </div>
+
+</div>
+}
+
+#export("scripts") {
+    <script src="/static/js/prismHighlighting.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+}

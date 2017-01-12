@@ -1,0 +1,95 @@
+#extend("blog/admin/base")
+
+#export("head") {
+    <title>Admin | Blog Admin | SteamPress</title>
+}
+
+#export("body") {
+
+    <div class="container mt-3">
+
+        <h1 class="text-center">Blog Admin</h1>
+        
+        #if(errors) {
+        #loop(errors, "error") {
+        <div class="alert alert-danger mt-3" role="alert">
+            <strong>Warning: </strong>#(error)
+        </div>
+        }
+        }
+        <p>Welcome to the Blog Admin page</p>
+
+        <div id="blog-admin-users">
+            <h2>Pages</h2>
+
+            <table class="table table-striped table-hover table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Date Created</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Last Edited</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    #if(posts) {
+                        #loop(posts, "post") {
+                        <tr>
+                            <td>#(post.createdTimestamp)</td>
+                            <td><a href="/blog/posts/#(post.id)">#(post.title)</a></td>
+                            <td>#(post.author)</td>
+                            <td>#if(post.lastEditedTimestamp) {#(post.lastEditedTimestamp)} ##else() { N/A }</td>
+                            <td><a class="btn btn-info" href="/blog/admin/posts/#(post.id)/edit/">Edit</a></td>
+                            <td><a class="btn btn-danger" href="/blog/admin/posts/#(post.id)/delete/" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a></td>
+                        </tr>
+                        }
+                    }
+                    ##else() {
+                        <tr>
+                            <td colspan="6">There haven't been any posts yet!</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+            <a class="btn btn-primary" href="/blog/admin/createPost/">Create New Post</a>
+        </div>
+        
+        <div id="blog-admin-users" class="mt-4">
+            <h2>Users</h2>
+            
+            <table class="table table-striped table-hover table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>#()</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    #loop(users, "user") {
+                    <tr>
+                        <td><a href="/blog/authors/#(user.id)/">#(user.id)</a></th>
+                        <td>#(user.name)</td>
+                        <td>#(user.username)</td>
+                        <td><a class="btn btn-info" href="/blog/admin/users/#(user.id)/edit/">Edit</a></td>
+                        <td><a class="btn btn-danger" href="/blog/admin/users/#(user.id)/delete/" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a></td>
+                    </tr>
+                    }
+                    
+                </tbody>
+            </table>
+            
+            <a class="btn btn-primary" href="/blog/admin/createUser/">Create New User</a>
+        
+        </div>
+
+    </div>
+}

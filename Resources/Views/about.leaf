@@ -1,0 +1,18 @@
+#extend("base")
+
+#export("head") {
+<title>About | SteamPress Example</title>
+}
+
+#export("body") {
+
+<div class="container mt-4">
+
+    <h1 class="display-4 text-center mb-3">About</h1>
+
+    <p>This is an example site for <a href="https://github.com/brokenhandsio/SteamPress" target="_blank">SteamPress</a>, the open source Blogging Engine written in Swift and built for Vapor.</p>
+
+    <p>More details coming soon!</p>
+
+</div>
+}

@@ -1,0 +1,35 @@
+#extend("blog/admin/base")
+
+#export("head") {
+<title>Login | Blog Admin | SteamPress</title>
+}
+
+#export("body") {
+
+    <div class="container mt-4">
+
+        <h2 class="mb-3 text-center">Blog Login</h1>
+
+        #if(errors) {
+        #loop(errors, "error") {
+        <div class="alert alert-danger" role="alert">
+            <strong>Warning: </strong>#(error)
+        </div>
+        }
+        }
+
+        <form action="/blog/admin/login/" method="post" class="form-signin">
+            <div class="form-group #if(usernameError) {has-danger}">
+                <label for="inputUsername" class="sr-only">Username</label>
+                <input type="text" class="form-control #if(usernameError) {form-control-danger}" id="inputUsername" name="inputUsername" placeholder="Username" value="#(usernameSupplied)" autofocus required>
+            </div>
+            <div class="form-group #if(passwordError) {has-danger}">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" class="form-control #if(passwordError) {form-control-danger}" id="inputPassword" name="inputPassword" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+        </form>
+        
+    </div>
+}

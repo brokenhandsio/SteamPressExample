@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    #import("head")
+</head>
+
+<body>
+    <div id="content">
+
+    <nav class="navbar navbar-light bg-faded navbar-toggleable-md">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#()navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            ACME
+        </a>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item #if(blogIndexPage) {active}"><a href="/blog/" class="nav-link">Blog</a></li>
+                <li class="nav-item #if(aboutPage) {active}"><a href="/about/" class="nav-link">Open Source Projects</a></li>
+            </ul>
+            #if(user) {
+            #if(blogPostPage) {
+            <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.id)/edit/" class="nav-link">Edit Post</a></div>
+            }
+            <div class="navbar-nav nav-item #if(blogAdminPage) {active}"><a href="/blog/admin/" class="nav-link">Blog Admin</a></div>
+            }
+            <div class="navbar-nav nav-item"><a href="https://github.com/brokenhandsio/SteamPress" class="nav-link">SteamPress</a></div>
+        </div>
+    </nav>
+
+    #import("body")
+
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/blog/">Blog</a></li>
+                <li class="list-inline-item"><a href="/about/">About</a></li>
+            </ul>
+            <p>Copyright &copy; ACME Ltd 2017</p>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
+    #import("scripts")
+</body>
+</html>

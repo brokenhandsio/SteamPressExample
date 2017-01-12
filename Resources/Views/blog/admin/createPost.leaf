@@ -1,0 +1,58 @@
+#extend("blog/admin/base")
+
+#export("head") {
+<title>#if(editing) { Edit } ##else() { Create } Blog Post | Blog Admin | SteamPress</title>
+}
+
+#export("body") {
+
+    <div class="container mt-3">
+
+        #if(editing) {
+        <h1>Edit Your Blog Post</h1>
+        }
+        ##else() {
+        <h1>Create A Blog Post</h1>
+        }
+
+        #if(errors) {
+            #loop(errors, "error") {
+            <div class="alert alert-danger" role="alert">
+                <strong>Warning: </strong>#(error)
+            </div>
+            }
+        }
+
+        <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" method="post" class="mt-3">
+            <div class="form-group #if(titleError) { has-danger }" id="create-post-title-group">
+                <label class="form-control-label" for="inputTitle">Title</label>
+                <input type="text" class="form-control #if(titleError) { form-control-danger }" id="inputTitle" name="inputTitle" placeholder="Blog Post Title" value="#(titleSupplied)" autofocus required>
+            </div>
+
+            <div class="form-group #if(contentsError) { has-danger }" id="create-post-contents-group">
+                <label class="form-control-label" for="inputPostContents">Blog Post</label>
+                <textarea class="form-control #if(contentsError) { form-control-danger }" id="inputPostContents" name="inputPostContents" rows="10" required>#(contentsSupplied)</textarea>
+            </div>
+            
+            <div class="form-group" id="create-post-contents-group">
+                <label class="form-control-label" for="inputLabels">Labels</label>
+                <input type="text" class="form-control" id="inputLabels" name="inputLabels" placeholder="Labels" value="#(labelsSupplied)">
+                <small id="labelHelpBlock" class="form-text text-muted">
+                    Labels can be added to your posts as space-seperated words.
+                </p>
+            </div>
+
+        <div class="form-group">
+            <button type="Submit" class="btn btn-primary">#if(editing) {Save} ##else() {Create}</button>
+            #if(editing) {
+            <a href="/blog/admin/" class="btn btn-secondary" onclick="return confirm('Are you sure you want to cancel? You will lose any unsaved work');">Cancel</a>
+            }
+            <small id="mardownHelper" class="text-muted ml-4">
+                You can style your blog posts with <a href="http://commonmark.org/help/" target="_blank">Markdown</a>
+            </small>
+        </div>
+        
+        </form>
+
+    </div>
+}

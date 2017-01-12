@@ -1,0 +1,86 @@
+#extend("blog/admin/base")
+
+#export("head") {
+    <title>#if(editing) {Edit} ##else() {Create New} User | Blog Admin | SteamPress</title>
+}
+
+#export("body") {
+
+    <div class="container mt-3">
+
+        <h1>#if(editing) {Edit} ##else() {Create A New} User</h1>
+
+        #if(errors) {
+            #loop(errors, "error") {
+            <div class="alert alert-danger" role="alert">
+                <strong>Warning: </strong>#(error)
+            </div>
+            }
+        }
+
+        <form action="#if(editing) {/blog/admin/users/#(userId)/edit/} ##else() {/blog/admin/createUser/}" method="post">
+            <div class="form-group #if(nameError) { has-danger }" id="create-user-name-group">
+                <label class="form-control-label" for="inputName">Name</label>
+                <input type="text" class="form-control #if(nameError) { form-control-danger }" id="inputName" name="inputName" placeholder="Name" value="#(nameSupplied)" autofocus required>
+            </div>
+
+            <div class="form-group #if(usernameError) { has-danger }" id="create-user-username-group">
+                <label class="form-control-label" for="inputUsername">Username</label>
+                <input type="text" class="form-control #if(usernameError) { form-control-danger }" id="inputUsername" name="inputUsername" placeholder="Username" value="#(usernameSupplied)" required>
+            </div>
+            
+            <div class="form-group #if(passwordError) { has-danger }" id="create-user-password-group">
+                <label class="form-control-label" for="inputPassword">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control #if(passwordError) { form-control-danger }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() {required}>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#()passwordModal">?</button>
+                        </span>
+                </div>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                Leave the password blank if you don't want to change the password
+                </small>
+            </div>
+            
+            <div class="form-group #if(confirmPasswordError) { has-danger }" id="create-user-confirm-password-group">
+                <label class="form-control-label" for="inputConfirmPassword">Confirm Password</label>
+                <input type="password" class="form-control #if(confirmPasswordError) { form-control-danger }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else(){required}>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" id="inputResetPasswordOnLogin" value="inputResetPasswordOnLogin" name="inputResetPasswordOnLogin" #if(resetPasswordOnLoginSupplied) {checked}>
+                    User must reset password on #if(editing) {next} ##else() {first} login?
+                </label>
+            </div>
+
+            <div class="form-group mt-3">
+            <button type="Submit" class="btn btn-primary">#if(editing) {Save} ##else() {Create User}</button>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Password information Modal -->
+    <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="passwordModalLabel">Password Requirements</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Your password must be at least 8 characters long and contain three out of the four types:</p>
+                    <ul>
+                        <li>Uppercase character</li>
+                        <li>Lowercase character</li>
+                        <li>Number</li>
+                        <li>Special Character</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}

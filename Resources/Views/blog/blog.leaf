@@ -1,0 +1,68 @@
+#extend("base")
+
+#export("head") {
+    <title>Blog | SteamPress</title>
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+}
+
+#export("body") {
+
+<div class="container mt-4 mb-4">
+
+    <h1 class="display-2 text-center mb-4">The Geek's Blog</h1>
+    
+    <div class="row">
+
+        <div id="blog-posts" class="mb-4 col-sm-10">
+            #if(posts) {
+                #loop(posts, "post") {
+                <div class="blog-post card mb-3">
+                    <div class="card-block">
+                        <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createdDate) by <a href="/blog/authors/#(post.author)/">#(post.authorName)</a></h6>
+                        <div class="post-contents card-text mt-3">
+                            #markdown(post.longSnippet)
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="/blog/posts/#(post.id)" class="card-link">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted post-labels text-center">
+                        <h5>
+                        #loop(post.labels, "label") {
+                        <span class="badge badge-default"><a href="/blog/labels/#(label.id)/">#(label.name)</a></span>
+                        }
+                        </h5>
+                    </div>
+                </div>
+                }
+            }
+            ##else() {
+                <p class="mb-4">There haven't been any blog posts yet!</p>
+            }
+        </div>
+
+        <div class="col-sm-2 blog-sidebar">
+            <div class="blog-side-module">
+                <div class="labels-module">
+                    <h3>Labels</h3>
+                    <ul class="list-unstyled">
+                        #loop(labels, "label") {
+                        <li><a href="/blog/labels/#(label.id)/">#(label.name)</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+</div>
+}
+
+#export("scripts") {
+    <script src="/static/js/prismHighlighting.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+}
