@@ -23,12 +23,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="/">
-            ACME
+            SteamPress
         </a>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item #if(blogIndexPage) {active}"><a href="/blog/" class="nav-link">Blog</a></li>
-                <li class="nav-item #if(aboutPage) {active}"><a href="/about/" class="nav-link">Open Source Projects</a></li>
+                <li class="nav-item #if(aboutPage) {active}"><a href="/about/" class="nav-link">About</a></li>
             </ul>
             #if(user) {
             #if(blogPostPage) {
@@ -50,7 +50,6 @@
                 <li class="list-inline-item"><a href="/blog/">Blog</a></li>
                 <li class="list-inline-item"><a href="/about/">About</a></li>
             </ul>
-            <p>Copyright &copy; ACME Ltd 2017</p>
         </div>
     </footer>
 
