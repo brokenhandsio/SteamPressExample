@@ -13,7 +13,7 @@
 
     <h1 class="display-4 text-center">#(post.title)</h1>
 
-    <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.id)/">#(author.name)</a> on #(post.createdDate)#if(post.lastEditedDate) {. Last edited on #(post.lastEditedDate).}</h2>
+    <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.id)/">#(author.name)</a> on #(post.createddate)#if(post.lastediteddate) {. Last edited on #(post.lastediteddate).}</h2>
 
     <div class="post-contents mt-3">
         #markdown(post.contents)

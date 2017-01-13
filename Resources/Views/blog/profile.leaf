@@ -45,7 +45,7 @@
                     #if(posts) {
                     #loop(posts, "post") {
                     <tr>
-                        <td>#(post.createdTimestamp)</td>
+                        <td>#(post.createddate)</td>
                         <td><a href="/blog/posts/#(post.id)">#(post.title)</a></td>
                     </tr>
                     }

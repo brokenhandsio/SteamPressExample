@@ -22,7 +22,7 @@
                 <div class="card mb-3">
                     <div class="card-block">
                         <h3 class="card-title">#(post.title)</h3>
-                        #markdown(post.shortSnippet)
+                        #markdown(post.shortsnippet)
                         <a href="/blog/posts/#(post.id)/" class="card-link">Read More</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
 
                 <div class="card text-center mb-3">
                     <div class="card-block">
-                        <h3 class="card-title">LeafMardown</h3>
+                        <h3 class="card-title">LeafMarkdown</h3>
                         <p class="card-text">A tag for Leaf to enable Markdown to be displayed on webpages</p>
                         <a href="https://github.com/brokenhandsio/LeafMarkdown/" class="btn btn-primary" target="_blank">View on Github</a>
                     </div>
