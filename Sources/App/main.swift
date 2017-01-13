@@ -3,10 +3,10 @@ import Fluent
 import Sessions
 import SteamPress
 import Foundation
-import VaporPostgreSQL
 
 let drop = Droplet()
-try drop.addProvider(VaporPostgreSQL.Provider.self)
+let database = Database(MemoryDriver())
+drop.database = database
 
 let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
