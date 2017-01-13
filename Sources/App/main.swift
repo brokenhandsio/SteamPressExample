@@ -15,6 +15,8 @@ drop.middleware.append(sessions)
 let steamPress = SteamPress(drop: drop, blogPath: "blog")
 
 drop.get { req in
+    drop.log.error("An Admin user been created for you - the username is admin and the password is password")
+
     var posts = try BlogPost.all()
     posts.sort { $0.created > $1.created }
     let newPosts = posts.prefix(3)
