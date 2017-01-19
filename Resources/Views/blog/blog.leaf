@@ -21,7 +21,7 @@
                 <div class="blog-post card mb-3">
                     <div class="card-block">
                         <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createddate) by <a href="/blog/authors/#(post.author)/">#(post.authorname)</a></h6>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createddate) by <a href="/blog/authors/#(post.bloguser_id)/">#(post.authorname)</a></h6>
                         <div class="post-contents card-text mt-3">
                             #markdown(post.longsnippet)
                         </div>
