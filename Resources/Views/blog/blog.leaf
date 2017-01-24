@@ -17,13 +17,13 @@
 
         <div id="blog-posts" class="mb-4 col-sm-10">
             #if(posts) {
-                #loop(posts, "post") {
+                #loop(posts.data, "post") {
                 <div class="blog-post card mb-3">
                     <div class="card-block">
                         <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
                         <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createddate) by <a href="/blog/authors/#(post.bloguser_id)/">#(post.authorname)</a></h6>
                         <div class="post-contents card-text mt-3">
-                            #markdown(post.longsnippet)
+                            #raw(post.longsnippet)
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="/blog/posts/#(post.id)" class="card-link">Continue Reading</a>
@@ -38,6 +38,7 @@
                     </div>
                 </div>
                 }
+
             }
             ##else() {
                 <p class="mb-4">There haven't been any blog posts yet!</p>
