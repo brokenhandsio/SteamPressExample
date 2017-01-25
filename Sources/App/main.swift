@@ -15,7 +15,7 @@ drop.middleware.append(sessions)
 // Temporary!
 (drop.view as? LeafRenderer)?.stem.cache = nil
 
-let steamPress = try SteamPress(drop: drop, blogPath: "blog")
+let steamPress = SteamPress(drop: drop, blogPath: "blog")
 
 drop.get { req in
     var posts = try BlogPost.all()
