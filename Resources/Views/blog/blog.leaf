@@ -23,7 +23,7 @@
                         <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
                         <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createddate) by <a href="/blog/authors/#(post.bloguser_id)/">#(post.authorname)</a></h6>
                         <div class="post-contents card-text mt-3">
-                            #raw(post.longsnippet)
+                            #markdown(post.longsnippet)
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="/blog/posts/#(post.id)" class="card-link">Continue Reading</a>
