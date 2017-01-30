@@ -20,15 +20,12 @@ drop.middleware.append(sessions)
 let steamPress = SteamPress(drop: drop, blogPath: "blog")
 
 drop.get { req in
-    var posts = try BlogPost.all()
-    posts.sort { $0.created > $1.created }
-    // Todo the query should be able to sort by date and get the latest 3 - will be much more efficient
-    let newPosts = posts.prefix(3)
+    var posts = try BlogPost.query().sort("created", .descending).limit(3).all()
     
     var parameters: [String: Node] = [:]
     
-    if newPosts.count > 0 {
-        parameters["posts"] = try newPosts.makeNode(context: BlogPostShortSnippet())
+    if posts.count > 0 {
+        parameters["posts"] = try posts.makeNode(context: BlogPostShortSnippet())
     }
     
     return try drop.view.make("index", parameters)
