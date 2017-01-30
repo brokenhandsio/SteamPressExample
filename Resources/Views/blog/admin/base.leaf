@@ -47,7 +47,7 @@
                     <li class="list-inline-item"><a href="/blog/">Blog</a></li>
                     <li class="list-inline-item"><a href="/about/">About</a></li>
                 </ul>
-                <p>Copyright &copy; ACME Ltd 2017</p>
+                <p>Released under the <a href="https://github.com/brokenhandsio/SteamPress/blob/master/LICENSE">MIT Licence</a></p>
             </div>
         </footer>
 
