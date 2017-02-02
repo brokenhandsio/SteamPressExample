@@ -38,10 +38,10 @@
                     #if(posts) {
                         #loop(posts, "post") {
                         <tr>
-                            <td>#(post.createddate)</td>
+                            <td>#(post.created_date)</td>
                             <td><a href="/blog/posts/#(post.id)">#(post.title)</a></td>
-                            <td>#(post.authorname)</td>
-                            <td>#if(post.lastediteddate) {#(post.lastediteddate)} ##else() { N/A }</td>
+                            <td>#(post.author_name)</td>
+                            <td>#if(post.last_edited_date) {#(post.last_edited_date)} ##else() { N/A }</td>
                             <td><a class="btn btn-info" href="/blog/admin/posts/#(post.id)/edit/">Edit</a></td>
                             <td><a class="btn btn-danger" href="/blog/admin/posts/#(post.id)/delete/" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a></td>
                         </tr>

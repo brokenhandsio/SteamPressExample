@@ -22,7 +22,7 @@
                 <div class="card mb-3">
                     <div class="card-block">
                         <h3 class="card-title">#(post.title)</h3>
-                        #markdown(post.shortsnippet)
+                        #markdown(post.short_snippet)
                         <a href="/blog/posts/#(post.id)/" class="card-link">Read More</a>
                     </div>
                 </div>
