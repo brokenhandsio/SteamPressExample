@@ -16,7 +16,7 @@ This will crete a site at http://localhost:8080. The blog can be found at http:/
 
 ## WARNING
 
-This site uses the in-memory database so you can get up and running quickly without having to configure a DB on your machine - obviously if you plan to use this site for your blog you should change to something more permanent so you don't lose all your posts when you restart the app!
+The `master` branch for this site uses the in-memory database so you can get up and running quickly without having to configure a DB on your machine - obviously if you plan to use this site for your blog you should change to something more permanent so you don't lose all your posts when you restart the app!
 
 # Roadmap
 
