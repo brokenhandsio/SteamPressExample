@@ -6,9 +6,9 @@ import Foundation
 import VaporPostgreSQL
 
 let drop = Droplet()
-//let database = Database(MemoryDriver())
-//drop.database = database
-try drop.addProvider(VaporPostgreSQL.Provider.self)
+let database = Database(MemoryDriver())
+drop.database = database
+//try drop.addProvider(VaporPostgreSQL.Provider.self)
 
 let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
@@ -25,7 +25,7 @@ drop.get { req in
     var parameters: [String: Node] = [:]
     
     if posts.count > 0 {
-        parameters["posts"] = try posts.makeNode(context: BlogPostShortSnippet())
+        parameters["posts"] = try posts.makeNode(context: BlogPostContext.shortSnippet)
     }
     
     return try drop.view.make("index", parameters)
