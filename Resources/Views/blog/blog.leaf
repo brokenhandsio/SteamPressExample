@@ -11,11 +11,12 @@
 
 <div class="container mt-4 mb-4">
 
-    <h1 class="display-2 text-center mb-4">The SteamPress Blog</h1>
-    
+    <h1 class="display-2 hidden-sm-down text-center mb-4">The SteamPress Blog</h1>
+    <h1 class="display-4 hidden-md-up text-center mb-4">The SteamPress Blog</h1>
+
     <div class="row">
 
-        <div id="blog-posts" class="mb-4 col-sm-10">
+        <div id="blog-posts" class="mb-4 col-md-10">
             #if(posts) {
                 #loop(posts.data, "post") {
                 <div class="blog-post card mb-3">
@@ -47,7 +48,7 @@
             }
         </div>
 
-        <div class="col-sm-2 blog-sidebar">
+        <div class="col-md-2 blog-sidebar">
             <div class="blog-side-module">
                 <div class="labels-module">
                     <h3>Labels</h3>
