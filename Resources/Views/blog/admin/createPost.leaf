@@ -4,6 +4,10 @@
 <title>#if(editing) { Edit } ##else() { Create } Blog Post | Blog Admin | SteamPress</title>
 }
 
+#export("scripts") {
+  <script src="/static/js/admin/createPost.js"></script>
+}
+
 #export("body") {
 
     <div class="container mt-3">
@@ -29,6 +33,14 @@
                 <input type="text" class="form-control #if(titleError) { form-control-danger }" id="inputTitle" name="inputTitle" placeholder="Blog Post Title" value="#(titleSupplied)" autofocus required>
             </div>
 
+            <div class="form-group" id="create-post-slugurl-group">
+                <label class="form-control-label" for="inputSlugUrl">Path</path>
+                <div class="input-group">
+                    <span class="input-group-addon" id="slug-url-path">http://localhost/blog/posts/2017/</span>
+                    <input type="text" class="form-control" id="inputSlugUrl" name="inputSlugUrl" aria-describedby="slug-url-path" value="#(slugUrlSupplied)" readonly tabindex="-1">
+                </div>
+            </div>
+
             <div class="form-group #if(contentsError) { has-danger }" id="create-post-contents-group">
                 <label class="form-control-label" for="inputPostContents">Blog Post</label>
                 <textarea class="form-control #if(contentsError) { form-control-danger }" id="inputPostContents" name="inputPostContents" rows="10" required>#(contentsSupplied)</textarea>
@@ -51,7 +63,7 @@
                 You can style your blog posts with <a href="http://commonmark.org/help/" target="_blank">Markdown</a>
             </small>
         </div>
-        
+
         </form>
 
     </div>
