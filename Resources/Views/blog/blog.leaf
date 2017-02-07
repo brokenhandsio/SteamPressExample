@@ -22,7 +22,7 @@
                 <div class="blog-post card mb-3">
                     <div class="card-block">
                         <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created_date) by <a href="/blog/authors/#(post.bloguser_id)/">#(post.author_name)</a></h6>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created_date) by <a href="/blog/authors/#(post.author_username)/">#(post.author_name)</a></h6>
                         <div class="post-contents card-text mt-3">
                             #markdown(post.long_snippet)
                         </div>
@@ -30,10 +30,10 @@
                             <a href="/blog/posts/#(post.slug_url)/" class="card-link">Continue Reading</a>
                         </div>
                     </div>
-                    <div class="card-footer text-muted post-labels text-center">
+                    <div class="card-footer text-muted post-tags text-center">
                         <h5>
-                        #loop(post.labels, "label") {
-                        <span class="badge badge-default"><a href="/blog/labels/#(label.id)/">#(label.name)</a></span>
+                        #loop(post.tags, "tag") {
+                        <span class="badge badge-default"><a href="/blog/tags/#(tags.name)/">#(tag.name)</a></span>
                         }
                         </h5>
                     </div>
@@ -50,11 +50,11 @@
 
         <div class="col-md-2 blog-sidebar">
             <div class="blog-side-module">
-                <div class="labels-module">
-                    <h3>Labels</h3>
+                <div class="tags-module">
+                    <h3>Tags</h3>
                     <ul class="list-unstyled">
-                        #loop(labels, "label") {
-                        <li><a href="/blog/labels/#(label.id)/">#(label.name)</a></li>
+                        #loop(tags, "tag") {
+                        <li><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></li>
                         }
                     </ul>
                 </div>

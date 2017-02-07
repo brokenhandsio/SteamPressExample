@@ -78,10 +78,10 @@ footer {
     text-transform: lowercase;
 }
 
-.post-labels a {
+.post-tags a {
     color: white;
 }
 
-.post-labels a:hover {
+.post-tags a:hover {
     text-decoration: none;
 }

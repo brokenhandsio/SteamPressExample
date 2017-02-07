@@ -47,10 +47,10 @@
             </div>
 
             <div class="form-group" id="create-post-contents-group">
-                <label class="form-control-label" for="inputLabels">Labels</label>
-                <input type="text" class="form-control" id="inputLabels" name="inputLabels" placeholder="Labels" value="#(labelsSupplied)">
-                <small id="labelHelpBlock" class="form-text text-muted">
-                    Labels can be added to your posts as space-seperated words.
+                <label class="form-control-label" for="inputTags">Tags</label>
+                <input type="text" class="form-control" id="inputTags" name="inputTags" placeholder="Tags" value="#(tagsSupplied)">
+                <small id="tagHelpBlock" class="form-text text-muted">
+                    Tags can be added to your posts as space-seperated words.
                 </p>
             </div>
 

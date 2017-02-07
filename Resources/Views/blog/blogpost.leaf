@@ -19,9 +19,9 @@
         #markdown(post.contents)
     </div>
 
-    <div class="post-labels text-center h4">
-        #loop(post.labels, "label") {
-        <span class="badge badge-default"><a href="/blog/labels/#(label.id)/">#(label.name)</a></span>
+    <div class="post-tags text-center h4">
+        #loop(post.tags, "tag") {
+        <span class="badge badge-default"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
         }
     </div>
 
