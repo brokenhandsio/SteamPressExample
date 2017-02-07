@@ -17,14 +17,14 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <h2>Latest Blog Posts</h2>
-                
+
                 #if(posts) {
                 #loop(posts, "post") {
                 <div class="card mb-3">
                     <div class="card-block">
                         <h3 class="card-title">#(post.title)</h3>
                         #markdown(post.short_snippet)
-                        <a href="/blog/posts/#(post.id)/" class="card-link">Read More</a>
+                        <a href="/blog/posts/#(post.slug_url)/" class="card-link">Read More</a>
                     </div>
                 </div>
                 }

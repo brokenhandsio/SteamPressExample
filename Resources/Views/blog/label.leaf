@@ -22,12 +22,12 @@
                 </tr>
             </thead>
             <tbody>
-                
+
                 #if(posts) {
                 #loop(posts, "post") {
                 <tr>
                     <td>#(post.created_date)</td>
-                    <td><a href="/blog/posts/#(post.id)">#(post.title)</a></td>
+                    <td><a href="/blog/posts/#(post.slug_url)/">#(post.title)</a></td>
                 </tr>
                 }
                 }

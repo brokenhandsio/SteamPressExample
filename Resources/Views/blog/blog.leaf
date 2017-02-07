@@ -27,7 +27,7 @@
                             #markdown(post.long_snippet)
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="/blog/posts/#(post.id)" class="card-link">Continue Reading</a>
+                            <a href="/blog/posts/#(post.slug_url)/" class="card-link">Continue Reading</a>
                         </div>
                     </div>
                     <div class="card-footer text-muted post-labels text-center">
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-    
+
     </div>
 
 </div>

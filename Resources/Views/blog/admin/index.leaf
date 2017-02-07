@@ -9,7 +9,7 @@
     <div class="container mt-3">
 
         <h1 class="text-center">Blog Admin</h1>
-        
+
         #if(errors) {
         #loop(errors, "error") {
         <div class="alert alert-danger mt-3" role="alert">
@@ -34,12 +34,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     #if(posts) {
                         #loop(posts, "post") {
                         <tr>
                             <td>#(post.created_date)</td>
-                            <td><a href="/blog/posts/#(post.id)">#(post.title)</a></td>
+                            <td><a href="/blog/posts/#(post.slug_url)/">#(post.title)</a></td>
                             <td>#(post.author_name)</td>
                             <td>#if(post.last_edited_date) {#(post.last_edited_date)} ##else() { N/A }</td>
                             <td><a class="btn btn-info" href="/blog/admin/posts/#(post.id)/edit/">Edit</a></td>
@@ -58,10 +58,10 @@
 
             <a class="btn btn-primary" href="/blog/admin/createPost/">Create New Post</a>
         </div>
-        
+
         <div id="blog-admin-users" class="mt-4">
             <h2>Users</h2>
-            
+
             <table class="table table-striped table-hover table-bordered table-responsive">
                 <thead>
                     <tr>
@@ -73,7 +73,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     #loop(users, "user") {
                     <tr>
                         <td><a href="/blog/authors/#(user.id)/">#(user.id)</a></th>
@@ -83,12 +83,12 @@
                         <td><a class="btn btn-danger" href="/blog/admin/users/#(user.id)/delete/" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a></td>
                     </tr>
                     }
-                    
+
                 </tbody>
             </table>
-            
+
             <a class="btn btn-primary" href="/blog/admin/createUser/">Create New User</a>
-        
+
         </div>
 
     </div>
