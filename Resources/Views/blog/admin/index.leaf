@@ -76,7 +76,7 @@
 
                     #loop(users, "user") {
                     <tr>
-                        <td><a href="/blog/authors/#(user.id)/">#(user.id)</a></th>
+                        <td><a href="/blog/authors/#(user.username)/">#(user.id)</a></th>
                         <td>#(user.name)</td>
                         <td>#(user.username)</td>
                         <td><a class="btn btn-info" href="/blog/admin/users/#(user.id)/edit/">Edit</a></td>
