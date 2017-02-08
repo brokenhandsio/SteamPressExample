@@ -24,7 +24,7 @@ For the time being, I will keep the releases under a 0 version - so expect break
 
 * Blog comments - initial plan is to use Disqus which is just a Javascript plugin so will require no engine changes that I am anticipating
 * Javascript validation of form fields before form submission, as well as realtime password validation.
-* Improving the way labels are applied to blog posts (some javascript to make it easier to add existing labels and not see it as a string)
+* Improving the way tags are applied to blog posts (some javascript to make it easier to add existing tags and not see it as a string)
 * Social media share buttons in the post temaplate
 * Twitter card support for adding tweets
 * AMP support for posts (in conjuction with new endpoints for all pages for AMP)
