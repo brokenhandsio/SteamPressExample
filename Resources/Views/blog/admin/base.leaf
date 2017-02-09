@@ -1,62 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Required meta tags always come first -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+        #embed("headContent")
         #import("head")
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-        <!-- Our CSS -->
-        <link rel="stylesheet" href="/static/css/style.css">
     </head>
 
     <body>
         <div id="content">
 
-        <nav class="navbar navbar-light bg-faded navbar-toggleable-md">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#()navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="/blog/">
-            Blog
-            </a>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item #if(blogAdminPage) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
-                    <li class="nav-item #if(createBlogPostPage) {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item float-lg-right #if(blogMyProfilePage) {active}"><a href="/blog/admin/profile/" class="nav-link">My Profile</a></li>
-                    <li class="nav-item float-lg-right"><a href="/blog/admin/logout/" class="nav-link">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
+            <nav class="navbar navbar-light bg-faded navbar-toggleable-md">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#()navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="/blog/">
+                Blog
+                </a>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item #if(blogAdminPage) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
+                        <li class="nav-item #if(createBlogPostPage) {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item float-lg-right #if(blogMyProfilePage) {active}"><a href="/blog/admin/profile/" class="nav-link">My Profile</a></li>
+                        <li class="nav-item float-lg-right"><a href="/blog/admin/logout/" class="nav-link">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
 
-        #import("body")
+            #import("body")
 
-        </div>
+        </div> <!-- content -->
 
-        <footer>
-            <div class="container text-center">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="/blog/">Blog</a></li>
-                    <li class="list-inline-item"><a href="/about/">About</a></li>
-                </ul>
-                <p>Released under the <a href="https://github.com/brokenhandsio/SteamPress/blob/master/LICENSE">MIT Licence</a></p>
-            </div>
-        </footer>
-
-        <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        #embed("footerAndScripts")
 
         #import("scripts")
-        
+
     </body>
 </html>
