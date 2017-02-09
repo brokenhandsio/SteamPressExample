@@ -12,6 +12,9 @@ let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
 drop.middleware.append(sessions)
 
+// Temporary!
+(drop.view as? LeafRenderer)?.stem.cache = nil
+
 let steamPress = SteamPress(drop: drop, blogPath: "blog")
 
 drop.get { req in
@@ -32,3 +35,4 @@ drop.get("about") { req in
 
 
 drop.run()
+
