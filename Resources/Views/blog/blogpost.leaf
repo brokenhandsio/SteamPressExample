@@ -25,10 +25,15 @@
         }
     </div>
 
+    <div id="blog-post-data" data-post-identifier="#(post.id)"></div>
+    <div id="disqus_thread" class="text-center col-md-10 offset-md-1"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 }
 
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/static/js/disqus.js"></script>
 }

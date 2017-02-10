@@ -29,12 +29,15 @@
                             <a href="/blog/posts/#(post.slug_url)/" class="card-link">Continue Reading</a>
                         </div>
                     </div>
-                    <div class="card-footer text-muted post-tags text-center">
-                        <h5>
-                        #loop(post.tags, "tag") {
-                        <span class="badge badge-default"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
-                        }
-                        </h5>
+                    <div class="card-footer text-muted text-center">
+                        <div class="post-tags">
+                            <h5>
+                            #loop(post.tags, "tag") {
+                            <span class="badge badge-default"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
+                            }
+                            </h5>
+                        </div>
+                        <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
                     </div>
                 </div>
                 }
@@ -68,4 +71,5 @@
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script id="dsq-count-scr" src="//steampress.disqus.com/count.js" async></script>
 }
