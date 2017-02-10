@@ -109,3 +109,7 @@ h1.lead-title-blog {
 .post-tags a:hover {
     text-decoration: none;
 }
+
+#blog-post-edit-title-warning {
+    display: none;
+}

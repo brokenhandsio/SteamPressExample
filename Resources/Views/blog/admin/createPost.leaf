@@ -26,15 +26,19 @@
             </div>
             }
         }
-        
+
         #if(editing) {
-        <div data-editing-page="true"></div>
+        <div id="edit-post-data" data-editing-page="true" data-original-slug-url="#(slugUrlSupplied)" data-original-title="#(titleSupplied)"></div>
         }
 
         <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" method="post" class="mt-3">
             #if(editing) {
-            <div class="alert alert-warning" role="alert">
-                <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO.
+            <div class="alert alert-warning alert-dismissible fade show" role="alert" id="blog-post-edit-title-warning">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO and may break links to your site.
+                <a href="#()" class="alert-link" onclick="keepPostOriginalSlugUrl()">Keep original link?</a>
             </div>
             }
             <div class="form-group #if(titleError) { has-danger }" id="create-post-title-group">
@@ -43,7 +47,7 @@
             </div>
 
             <div class="form-group" id="create-post-slugurl-group">
-                <label class="form-control-label" for="inputSlugUrl">Path</path>
+                <label class="form-control-label" for="inputSlugUrl">Path</label>
                 <div class="input-group">
                     <span class="input-group-addon" id="slug-url-path">#(postPathPrefix)</span>
                     <input type="text" class="form-control" id="inputSlugUrl" name="inputSlugUrl" aria-describedby="slug-url-path" value="#(slugUrlSupplied)" readonly tabindex="-1">
@@ -55,12 +59,12 @@
                 <textarea class="form-control #if(contentsError) { form-control-danger }" id="inputPostContents" name="inputPostContents" rows="10" required>#(contentsSupplied)</textarea>
             </div>
 
-            <div class="form-group" id="create-post-contents-group">
+            <div class="form-group" id="create-post-tags-group">
                 <label class="form-control-label" for="inputTags">Tags</label>
                 <input type="text" class="form-control" id="inputTags" name="inputTags" placeholder="Tags" value="#(tagsSupplied)">
                 <small id="tagHelpBlock" class="form-text text-muted">
                     Tags can be added to your posts as space-seperated words.
-                </p>
+                </small>
             </div>
 
         <div class="form-group">

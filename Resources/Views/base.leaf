@@ -28,7 +28,7 @@
                 }
                 <div class="navbar-nav nav-item #if(blogAdminPage) {active}"><a href="/blog/admin/" class="nav-link">Blog Admin</a></div>
                 }
-                <div class="navbar-nav nav-item"><a href="https://github.com/brokenhandsio/SteamPress" class="nav-link">SteamPress</a></div>
+                <div class="navbar-nav nav-item"><a href="https://github.com/brokenhandsio/SteamPress" target="_blank" class="nav-link">SteamPress</a></div>
             </div>
         </nav>
 
