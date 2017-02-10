@@ -37,7 +37,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO.
+                <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO and may break links to your site.
                 <a href="#()" class="alert-link" onclick="keepPostOriginalSlugUrl()">Keep original link?</a>
             </div>
             }
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group" id="create-post-slugurl-group">
-                <label class="form-control-label" for="inputSlugUrl">Path</path>
+                <label class="form-control-label" for="inputSlugUrl">Path</path></label>
                 <div class="input-group">
                     <span class="input-group-addon" id="slug-url-path">#(postPathPrefix)</span>
                     <input type="text" class="form-control" id="inputSlugUrl" name="inputSlugUrl" aria-describedby="slug-url-path" value="#(slugUrlSupplied)" readonly tabindex="-1">
