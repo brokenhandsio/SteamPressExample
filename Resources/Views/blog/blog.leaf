@@ -32,7 +32,7 @@
                     <div class="card-footer text-muted post-tags text-center">
                         <h5>
                         #loop(post.tags, "tag") {
-                        <span class="badge badge-default"><a href="/blog/tags/#(tags.name)/">#(tag.name)</a></span>
+                        <span class="badge badge-default"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
                         }
                         </h5>
                     </div>
