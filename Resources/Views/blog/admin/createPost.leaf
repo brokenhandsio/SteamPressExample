@@ -28,7 +28,7 @@
         }
         
         #if(editing) {
-        <div id="edit-post-data" data-editing-page="true" data-slug-url-original="#(slugUrlSupplied)"></div>
+        <div id="edit-post-data" data-editing-page="true" data-original-slug-url="#(slugUrlSupplied)" data-original-title="#(titleSupplied)"></div>
         }
 
         <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" method="post" class="mt-3">

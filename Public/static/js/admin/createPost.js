@@ -1,11 +1,30 @@
+var editing = false
+var originalSlugUrl = ""
+var originalTitle = ""
+
 $('#inputTitle').on('input',function(e){
-    var slugUrl = slugify($('#inputTitle').val())
-    $('#inputSlugUrl').val(slugUrl)
+  var title = $('#inputTitle').val()
+  var slugUrl = slugify(title)
+  $('#inputSlugUrl').val(slugUrl)
+  if (editing) {
+    if (title != originalTitle) {
+      console.log("Slugs different")
+      $('#blog-post-edit-title-warning').fadeIn()
+    }
+    else {
+      $('#blog-post-edit-title-warning').fadeOut()
+    }
+  }
 });
 
 $(function() {
-  var originalSlugUrl = $("#edit-post-data").data("slugUrlOriginal")
-  console.log("Original slug was " + originalSlugUrl)
+  if ($("#edit-post-data").length) {
+    editing = true
+    originalSlugUrl = $("#edit-post-data").data("originalSlugUrl")
+    originalTitle = $("#edit-post-data").data("originalTitle")
+    console.log("Original slug was " + originalSlugUrl)
+    console.log("Original title was " + originalTitle)
+  }
 });
 
 function slugify(text)
