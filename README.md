@@ -22,7 +22,6 @@ The `master` branch for this site uses the in-memory database so you can get up 
 
 For the time being, I will keep the releases under a 0 version - so expect breaking changes for a while as the codebase evolves. If there is demand to stabilise the site (i.e. lots of people are using it for an actual blog rather than just reference for their own blogs) then I'll bump up the priority of this accordingly. For the moment though, I am expecting some significant breaking changes in the [main engine](https://github.com/brokenhandsio/SteamPress) so expect those to happen before any stabilisation occurs. Other features that are on the roadmap specific to this site are:
 
-* Blog comments - initial plan is to use Disqus which is just a Javascript plugin so will require no engine changes that I am anticipating
 * Javascript validation of form fields before form submission, as well as realtime password validation.
 * Improving the way tags are applied to blog posts (some javascript to make it easier to add existing tags and not see it as a string)
 * Social media share buttons in the post temaplate
