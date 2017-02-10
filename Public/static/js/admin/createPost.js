@@ -3,6 +3,11 @@ $('#inputTitle').on('input',function(e){
     $('#inputSlugUrl').val(slugUrl)
 });
 
+$(function() {
+  var originalSlugUrl = $("#edit-post-data").data("slugUrlOriginal")
+  console.log("Original slug was " + originalSlugUrl)
+});
+
 function slugify(text)
 {
   return text.toString().toLowerCase()

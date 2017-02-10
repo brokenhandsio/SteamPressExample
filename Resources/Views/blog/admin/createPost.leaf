@@ -28,12 +28,12 @@
         }
         
         #if(editing) {
-        <div data-editing-page="true"></div>
+        <div id="edit-post-data" data-editing-page="true" data-slug-url-original="#(slugUrlSupplied)"></div>
         }
 
         <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" method="post" class="mt-3">
             #if(editing) {
-            <div class="alert alert-warning" role="alert">
+            <div class="alert alert-warning" role="alert" id="blog-post-edit-title-warning">
                 <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO.
             </div>
             }
