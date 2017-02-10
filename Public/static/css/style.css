@@ -14,6 +14,30 @@ footer {
     background-color: #f7f7f7;
 }
 
+h1.lead-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    h1.lead-title {
+        font-size: 4.5rem;
+    }
+}
+
+h1.lead-title-blog {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    h1.lead-title-blog {
+        font-size: 5.5rem;
+    }
+}
+
 .post-contents img {
     margin-left: auto;
     margin-right: auto;

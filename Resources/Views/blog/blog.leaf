@@ -11,8 +11,7 @@
 
 <div class="container mt-4 mb-4">
 
-    <h1 class="display-2 hidden-sm-down text-center mb-4">The SteamPress Blog</h1>
-    <h1 class="display-4 hidden-md-up text-center mb-4">The SteamPress Blog</h1>
+    <h1 class="lead-title-blog text-center mb-4">The SteamPress Blog</h1>
 
     <div class="row">
 
