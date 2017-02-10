@@ -28,4 +28,3 @@ For the time being, I will keep the releases under a 0 version - so expect break
 * Social media share buttons in the post temaplate
 * Twitter card support for adding tweets
 * AMP support for posts (in conjuction with new endpoints for all pages for AMP)
-* Remove HTML duplication in the templates
