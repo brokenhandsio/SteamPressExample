@@ -34,6 +34,5 @@
 
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <script src="/static/js/disqus.js"></script>
 }

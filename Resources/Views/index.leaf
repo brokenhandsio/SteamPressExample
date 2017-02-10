@@ -2,6 +2,9 @@
 
 #export("head") {
 <title>Home | SteamPress</title>
+
+<!-- Syntax Highlighting -->
+<link rel="stylesheet" href="/static/css/prismHighlighting.css">
 }
 
 #export("body") {
@@ -72,4 +75,8 @@
         </div>
 
     </div> <!-- container -->
+}
+
+#export("scripts") {
+    <script src="/static/js/prismHighlighting.js"></script>
 }

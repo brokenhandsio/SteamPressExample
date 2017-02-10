@@ -70,6 +70,5 @@
 
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <script id="dsq-count-scr" src="//steampress.disqus.com/count.js" async></script>
 }
