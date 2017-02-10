@@ -26,7 +26,7 @@
             </div>
             }
         }
-        
+
         #if(editing) {
         <div id="edit-post-data" data-editing-page="true" data-original-slug-url="#(slugUrlSupplied)" data-original-title="#(titleSupplied)"></div>
         }
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group" id="create-post-slugurl-group">
-                <label class="form-control-label" for="inputSlugUrl">Path</path></label>
+                <label class="form-control-label" for="inputSlugUrl">Path</label>
                 <div class="input-group">
                     <span class="input-group-addon" id="slug-url-path">#(postPathPrefix)</span>
                     <input type="text" class="form-control" id="inputSlugUrl" name="inputSlugUrl" aria-describedby="slug-url-path" value="#(slugUrlSupplied)" readonly tabindex="-1">
@@ -59,12 +59,12 @@
                 <textarea class="form-control #if(contentsError) { form-control-danger }" id="inputPostContents" name="inputPostContents" rows="10" required>#(contentsSupplied)</textarea>
             </div>
 
-            <div class="form-group" id="create-post-contents-group">
+            <div class="form-group" id="create-post-tags-group">
                 <label class="form-control-label" for="inputTags">Tags</label>
                 <input type="text" class="form-control" id="inputTags" name="inputTags" placeholder="Tags" value="#(tagsSupplied)">
                 <small id="tagHelpBlock" class="form-text text-muted">
                     Tags can be added to your posts as space-seperated words.
-                </p>
+                </small>
             </div>
 
         <div class="form-group">

@@ -28,11 +28,11 @@
                 <label class="form-control-label" for="inputUsername">Username</label>
                 <input type="text" class="form-control #if(usernameError) { form-control-danger }" id="inputUsername" name="inputUsername" placeholder="Username" value="#(usernameSupplied)" required>
             </div>
-            
+
             <div class="form-group #if(passwordError) { has-danger }" id="create-user-password-group">
                 <label class="form-control-label" for="inputPassword">Password</label>
                 <div class="input-group">
-                    <input type="password" class="form-control #if(passwordError) { form-control-danger }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() {required}>
+                    <input type="password" class="form-control #if(passwordError) { form-control-danger }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() required>
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#()passwordModal" tabindex="-1">?</button>
                         </span>
@@ -41,10 +41,10 @@
                 Leave the password blank if you don't want to change the password
                 </small>
             </div>
-            
+
             <div class="form-group #if(confirmPasswordError) { has-danger }" id="create-user-confirm-password-group">
                 <label class="form-control-label" for="inputConfirmPassword">Confirm Password</label>
-                <input type="password" class="form-control #if(confirmPasswordError) { form-control-danger }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else(){required}>
+                <input type="password" class="form-control #if(confirmPasswordError) { form-control-danger }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else()required>
             </div>
 
             <div class="form-check">
