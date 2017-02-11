@@ -13,10 +13,14 @@
         #if(errors) {
         #loop(errors, "error") {
         <div class="alert alert-danger" role="alert">
-            <strong>Warning: </strong>#(error)
+            <strong>Error: </strong>#(error)
         </div>
         }
         }
+
+        <div class="alert alert-warning" role="alert">
+            <strong>Warning: </strong>You must be logged in to view this page 
+        </div>
 
         <form action="/blog/admin/login/" method="post" class="form-signin">
             <div class="form-group #if(usernameError) {has-danger}">
