@@ -63,7 +63,7 @@
                 <label class="form-control-label" for="inputTags">Tags</label>
                 <input type="text" class="form-control" id="inputTags" name="inputTags" placeholder="Tags" value="#(tagsSupplied)">
                 <small id="tagHelpBlock" class="form-text text-muted">
-                    Tags can be added to your posts as space-seperated words.
+                    Tags can be added to your posts as space-separated words.
                 </small>
             </div>
 

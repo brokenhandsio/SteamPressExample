@@ -3,7 +3,6 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-    this.page.identifier = $("#blog-post-data").data("postIdentifier");
     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = $("#blog-post-data").data("postIdentifier");
 };
