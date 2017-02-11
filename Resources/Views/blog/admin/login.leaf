@@ -18,9 +18,11 @@
         }
         }
 
+        #if(loginWarning) {
         <div class="alert alert-warning" role="alert">
-            <strong>Warning: </strong>You must be logged in to view this page 
+            <strong>Warning: </strong>You must be logged in to view this page
         </div>
+        }
 
         <form action="/blog/admin/login/" method="post" class="form-signin">
             <div class="form-group #if(usernameError) {has-danger}">
