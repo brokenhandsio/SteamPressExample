@@ -33,6 +33,9 @@
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" class="form-control #if(passwordError) {form-control-danger}" id="inputPassword" name="inputPassword" placeholder="Password" required>
             </div>
+            <div class="form-group checkbox text-center">
+                <label><input type="checkbox" value="remember-me" name="remember-me"> Remember Me</label>
+            </div>
 
             <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
         </form>
