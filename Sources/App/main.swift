@@ -12,7 +12,9 @@ let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
 drop.middleware.append(sessions)
 
-let steamPress = SteamPress(drop: drop, blogPath: "blog")
+//let steamPress = SteamPress(drop: drop, blogPath: "blog")
+let steampress = SteamPress.Provider(postsPerPage: 5, blogPath: "blog")
+drop.addProvider(steampress)
 
 drop.get { req in
     var posts = try BlogPost.query().sort("created", .descending).limit(3).all()
