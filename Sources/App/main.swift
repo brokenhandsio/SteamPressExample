@@ -3,6 +3,7 @@ import Fluent
 import Sessions
 import SteamPress
 import Foundation
+import VaporSecurityHeaders
 
 let drop = Droplet()
 let database = Database(MemoryDriver())
@@ -11,6 +12,8 @@ drop.database = database
 let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
 drop.middleware.append(sessions)
+let securityHeaders = SecurityHeaders.api()
+drop.middleware.append(securityHeaders)
 
 //let steamPress = SteamPress(drop: drop, blogPath: "blog")
 //let steampress = SteamPress.Provider(postsPerPage: 5, blogPath: "blog")
