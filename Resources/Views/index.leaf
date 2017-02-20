@@ -45,16 +45,16 @@
 
                 <div class="card text-center mb-3">
                     <div class="card-block">
-                        <h3 class="card-title">SteamPress</h3>
-                        <p class="card-text">A blogging engine for Vapor to power a blog on your site. Easy to embed on any Vapor site or run as your main site.</p>
-                        <a href="https://github.com/brokenhandsio/SteamPress/" class="btn btn-primary" target="_blank">View on Github</a>
+                        <h3 class="card-title">Vapor Security Headers</h3>
+                        <p class="card-text">Easily add common security headers to your Vapor application to help secure you and your users.</p>
+                        <a href="https://github.com/brokenhandsio/VaporSecurityHeaders/" class="btn btn-primary" target="_blank">View on Github</a>
                     </div>
                 </div>
 
                 <div class="card text-center mb-3">
                     <div class="card-block">
                         <h3 class="card-title">LeafMarkdown</h3>
-                        <p class="card-text">A tag for Leaf to enable Markdown to be displayed on webpages</p>
+                        <p class="card-text">A tag for Leaf to enable Markdown to be displayed on webpages.</p>
                         <a href="https://github.com/brokenhandsio/LeafMarkdown/" class="btn btn-primary" target="_blank">View on Github</a>
                     </div>
                 </div>
