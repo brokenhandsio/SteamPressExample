@@ -37,7 +37,9 @@
                             }
                             </h5>
                         </div>
-                        <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                        #if(disqusName) {
+                            <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                        }
                     </div>
                 </div>
                 }
@@ -70,5 +72,7 @@
 
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
-    <script id="dsq-count-scr" src="//steampress.disqus.com/count.js" async></script>
+    #if(disqusName) {
+        <script id="dsq-count-scr" src="//#(disqusName).disqus.com/count.js" async></script>
+    }
 }

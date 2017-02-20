@@ -12,11 +12,9 @@ drop.database = database
 let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
 drop.middleware.append(sessions)
-let securityHeaders = SecurityHeaders.api()
+let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: "default-src 'none'; script-src 'self' https://ajax.googleapis.com/ https://cdnjs.cloudflare.com/ https://maxcdn.bootstrapcdn.com/ http://steampress.disqus.com/ https://a.disquscdn.com/; style-src 'self' https://maxcdn.bootstrapcdn.com/ https://a.disquscdn.com/; img-src 'self' https://referrer.disqus.com/ https://a.disquscdn.com/; connect-src 'self' https://links.services.disqus.com/; child-src https://disqus.com/; form-action 'self';"))
 drop.middleware.append(securityHeaders)
 
-//let steamPress = SteamPress(drop: drop, blogPath: "blog")
-//let steampress = SteamPress.Provider(postsPerPage: 5, blogPath: "blog")
 try drop.addProvider(SteamPress.Provider.self)
 
 drop.get { req in

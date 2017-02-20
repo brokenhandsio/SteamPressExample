@@ -3,13 +3,13 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-    //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = $("#blog-post-data").data("postIdentifier");
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
-    s.src = '//steampress.disqus.com/embed.js';
+    var disqusName = $("#blog-post-data").data("discussName");
+    s.src = '//' + disqusName + '.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
 })();
