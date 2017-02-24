@@ -9,7 +9,7 @@ var disqus_config = function () {
 (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
     var disqusName = $("#blog-post-data").data("discussName");
-    s.src = '//' + disqusName + '.disqus.com/embed.js';
+    s.src = 'https://' + disqusName + '.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
 })();

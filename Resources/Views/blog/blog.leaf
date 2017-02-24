@@ -73,6 +73,6 @@
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
     #if(disqusName) {
-        <script id="dsq-count-scr" src="//#(disqusName).disqus.com/count.js" async></script>
+        <script id="dsq-count-scr" src="https://#(disqusName).disqus.com/count.js" async></script>
     }
 }
