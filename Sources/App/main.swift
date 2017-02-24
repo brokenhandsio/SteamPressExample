@@ -12,7 +12,7 @@ drop.database = database
 let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
 drop.middleware.append(sessions)
-let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: "default-src 'none'; script-src 'self' https://ajax.googleapis.com/ https://cdnjs.cloudflare.com/ https://maxcdn.bootstrapcdn.com/ http://steampress.disqus.com/ https://a.disquscdn.com/; style-src 'self' https://maxcdn.bootstrapcdn.com/ https://a.disquscdn.com/; img-src 'self' https://referrer.disqus.com/ https://a.disquscdn.com/; connect-src 'self' https://links.services.disqus.com/; child-src https://disqus.com/; form-action 'self';"))
+let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: "default-src 'none'; script-src 'self' https://ajax.googleapis.com/ https://cdnjs.cloudflare.com/ https://maxcdn.bootstrapcdn.com/ http://steampress.disqus.com/ https://a.disquscdn.com/; style-src 'self' https://maxcdn.bootstrapcdn.com/ https://a.disquscdn.com/; img-src 'self' data: https://referrer.disqus.com/ https://a.disquscdn.com/; connect-src 'self' https://links.services.disqus.com/; child-src https://disqus.com/; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'self'; require-sri-for script style;"))
 drop.middleware.append(securityHeaders)
 
 try drop.addProvider(SteamPress.Provider.self)
