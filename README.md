@@ -18,6 +18,8 @@ This will crete a site at http://localhost:8080. The blog can be found at http:/
 
 The `master` branch for this site uses the in-memory database so you can get up and running quickly without having to configure a DB on your machine - obviously if you plan to use this site for your blog you should change to something more permanent so you don't lose all your posts when you restart the app!
 
+The `herokuVersion` branch contains a PostgreSQL provider but if you are using this, be warned that I rebase this branch on top of master and force push whenever I do a deployment so Git may get confused if you have this branch checkout out.
+
 # Roadmap
 
 For the time being, I will keep the releases under a 0 version - so expect breaking changes for a while as the codebase evolves. If there is demand to stabilise the site (i.e. lots of people are using it for an actual blog rather than just reference for their own blogs) then I'll bump up the priority of this accordingly. For the moment though, I am expecting some significant breaking changes in the [main engine](https://github.com/brokenhandsio/SteamPress) so expect those to happen before any stabilisation occurs. Other features that are on the roadmap specific to this site are:
