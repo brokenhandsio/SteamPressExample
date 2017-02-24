@@ -19,6 +19,14 @@ $('#inputTitle').on('input',function(e){
   }
 });
 
+$('#cancel-edit-button').click(function(){
+    return confirm('Are you sure you want to cancel? You will lose any unsaved work');
+});
+
+$('#keep-original-slug-url-link').click(function(){
+    keepPostOriginalSlugUrl();
+});
+
 $(function() {
   if ($("#edit-post-data").length) {
     editingPost = true;

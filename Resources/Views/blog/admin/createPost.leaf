@@ -38,7 +38,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO and may break links to your site.
-                <a href="#()" class="alert-link" onclick="keepPostOriginalSlugUrl()">Keep original link?</a>
+                <a href="#()" class="alert-link" id="keep-original-slug-url-link">Keep original link?</a>
             </div>
             }
             <div class="form-group #if(titleError) { has-danger }" id="create-post-title-group">
@@ -70,7 +70,7 @@
         <div class="form-group">
             <button type="Submit" class="btn btn-primary">#if(editing) {Save} ##else() {Create}</button>
             #if(editing) {
-            <a href="/blog/admin/" class="btn btn-secondary" onclick="return confirm('Are you sure you want to cancel? You will lose any unsaved work');">Cancel</a>
+            <a href="/blog/admin/" class="btn btn-secondary" id="cancel-edit-button">Cancel</a>
             }
             <small id="mardownHelper" class="text-muted ml-4">
                 You can style your blog posts with <a href="http://commonmark.org/help/" target="_blank">Markdown</a>
