@@ -24,8 +24,6 @@ $(function() {
     editingPost = true;
     originalSlugUrl = $("#edit-post-data").data("originalSlugUrl");
     originalTitle = $("#edit-post-data").data("originalTitle");
-    console.log("Original slug was " + originalSlugUrl);
-    console.log("Original title was " + originalTitle);
   }
 });
 
@@ -40,7 +38,6 @@ function slugify(text)
 }
 
 function keepPostOriginalSlugUrl() {
-  console.log("Will keep the original slug " + originalSlugUrl);
   allowEditingOfSlugUrl = false;
   $('#inputSlugUrl').val(originalSlugUrl);
   $('#blog-post-edit-title-warning').alert('close')
