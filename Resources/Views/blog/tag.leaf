@@ -24,7 +24,7 @@
 
         <div id="blog-posts" class="mb-4">
             #if(posts) {
-                #loop(posts, "post") {
+                #loop(posts.data, "post") {
                 <div class="blog-post card mb-3">
                     <div class="card-block">
                         <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
@@ -50,6 +50,8 @@
                     </div>
                 </div>
                 }
+
+                #paginator(posts)
             }
             ##else() {
                 <p class="mb-4">There haven't been any blog posts yet!</p>
