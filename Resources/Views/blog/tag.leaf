@@ -1,14 +1,24 @@
 #extend("base")
 
 #export("head") {
-<title>Posts Under #(tag.name) | Blog | SteamPress</title>
+<title>Posts Tagged With #(tag.name) | Blog | SteamPress</title>
+
+<!-- Syntax Highlighting -->
+<link rel="stylesheet" href="/static/css/prismHighlighting.css">
+}
+
+#export("scripts") {
+    <script src="/static/js/prismHighlighting.js"></script>
+    #if(disqusName) {
+        <script id="dsq-count-scr" src="https://#(disqusName).disqus.com/count.js" async></script>
+    }
 }
 
 #export("body") {
 
 <div class="container mt-3">
 
-    <h1 class="text-center">Posts Under #(tag.name)</h1>
+    <h1 class="text-center">Posts Tagged With <span class="badge badge-default">#(tag.name)</span></h1>
 
     <div id="tag-posts" class="mt-3">
 
