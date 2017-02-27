@@ -113,3 +113,7 @@ h1.lead-title-blog {
 #blog-post-edit-title-warning {
     display: none;
 }
+
+#tag-title-badge {
+  margin-left: .25em;
+}
