@@ -19,6 +19,17 @@ $('#inputTitle').on('input',function(e){
   }
 });
 
+var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+
+$(function() {
+  $("#inputTags").select2({
+    tags: true,
+    tokenSeparators: [',', ' '],
+    //data: data,
+    placeholder: "Select Tags for the Blog Post",
+  });
+});
+
 $('#cancel-edit-button').click(function(){
     return confirm('Are you sure you want to cancel? You will lose any unsaved work');
 });
