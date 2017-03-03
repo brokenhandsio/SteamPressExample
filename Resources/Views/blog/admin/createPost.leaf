@@ -65,11 +65,10 @@
             <div class="form-group" id="create-post-tags-group">
                 <label class="form-control-label" for="inputTags">Tags</label>
                 <select class="form-control" id="inputTags" name="inputTags" placeholder="Tags" multiple="multiple">
-                  <!-- <option selected="selected">orange</option>
-                  <option>white</option>
-                  <option selected="selected">purple</option> -->
+                  #loop(tagsSupplied, "tag") {
+                    <option value="#(tag)" selected="selected">#(tag)</option>
+                  }
                 </select>
-                <!-- <input type="text" class="form-control" id="inputTags" name="inputTags" placeholder="Tags" value="#(tagsSupplied)"> -->
                 <small id="tagHelpBlock" class="form-text text-muted">
                     Tags can be added to your posts as comma-separated entries.
                 </small>
