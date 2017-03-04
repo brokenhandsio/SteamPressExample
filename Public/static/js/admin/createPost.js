@@ -25,6 +25,23 @@ $(function() {
   $("#inputTags").select2({
     tags: true,
     tokenSeparators: [','],
+    ajax: {
+        url: "/blog/api/tags/",
+        processResults: function (data) {
+            var dataToReturn = [];
+
+            for (var i=0; i < data.length; i++) {
+                var tagToTransform = data[i];
+                var newTag = {id: tagToTransform["name"], text: tagToTransform["name"]};
+                dataToReturn.push(newTag);
+            }
+            return {
+                results: dataToReturn
+            }
+        },
+        delay: 250,
+        cache: true
+    },
     data: data,
     placeholder: "Select Tags for the Blog Post",
   });
