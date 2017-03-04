@@ -2,10 +2,13 @@
 
 #export("head") {
 <title>#if(editing) { Edit } ##else() { Create } Blog Post | Blog Admin | SteamPress</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" integrity="sha256-xJOZHfpxLR/uhh1BwYFS5fhmOAdIRQaiOul5F/b7v3s= sha384-HIipfSYbpCkh5/1V87AWAeR5SUrNiewznrUrtNz1ux4uneLhsAKzv/0FnMbj3m6g sha512-2L0dEjIN/DAmTV5puHriEIuQU/IL3CoPm/4eyZp3bM8dnaXri6lK8u6DC5L96b+YSs9f3Le81dDRZUSYeX4QcQ==" crossorigin="anonymous">
 }
 
 #export("scripts") {
   <script src="/static/js/admin/createPost.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js" integrity="sha256-+mWd/G69S4qtgPowSELIeVAv7+FuL871WXaolgXnrwQ= sha384-222hzbb8Z8ZKe6pzP18nTSltQM3PdcAwxWKzGOKOIF+Y3bROr5n9zdQ8yTRHgQkQ sha512-bj8HE1pKwchoYNizhD57Vl6B9ExS25Hw21WxoQEzGapNNjLZ0+kgRMEn9KSCD+igbE9+/dJO7x6ZhLrdaQ5P3g==" crossorigin="anonymous"></script>
 }
 
 #export("body") {
@@ -61,9 +64,13 @@
 
             <div class="form-group" id="create-post-tags-group">
                 <label class="form-control-label" for="inputTags">Tags</label>
-                <input type="text" class="form-control" id="inputTags" name="inputTags" placeholder="Tags" value="#(tagsSupplied)">
+                <select class="form-control" id="inputTags" name="inputTags" placeholder="Tags" multiple="multiple">
+                  #loop(tagsSupplied, "tag") {
+                    <option value="#(tag)" selected="selected">#(tag)</option>
+                  }
+                </select>
                 <small id="tagHelpBlock" class="form-text text-muted">
-                    Tags can be added to your posts as space-separated words.
+                    Tags can be added to your posts as comma-separated entries.
                 </small>
             </div>
 

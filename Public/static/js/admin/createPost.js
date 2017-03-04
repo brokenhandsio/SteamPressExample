@@ -19,6 +19,25 @@ $('#inputTitle').on('input',function(e){
   }
 });
 
+$.ajax({
+  url: "/blog/api/tags/",
+  type: 'GET',
+  contentType: 'application/json; charset=utf-8'
+}).then(function (response) {
+    var dataToReturn = [];
+    for (var i=0; i < response.length; i++) {
+        var tagToTransform = response[i];
+        var newTag = {id: tagToTransform["name"], text: tagToTransform["name"]};
+        dataToReturn.push(newTag);
+    }
+    $("#inputTags").select2({
+    placeholder: "Select Tags for the Blog Post",
+    tags: true,
+    tokenSeparators: [','],
+    data: dataToReturn
+  });
+});
+
 $('#cancel-edit-button').click(function(){
     return confirm('Are you sure you want to cancel? You will lose any unsaved work');
 });
