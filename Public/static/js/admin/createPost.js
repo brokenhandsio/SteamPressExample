@@ -19,31 +19,22 @@ $('#inputTitle').on('input',function(e){
   }
 });
 
-var data = [{ id: 'enhancement', text: 'enhancement' }, { id: 'bug', text: 'bug' }, { id: 'duplicate', text: 'duplicate' }, { id: 'invalid', text: 'invalid' }];
-
-$(function() {
-  $("#inputTags").select2({
+$.ajax({
+  url: "/blog/api/tags/",
+  type: 'GET',
+  contentType: 'application/json; charset=utf-8'
+}).then(function (response) {
+    var dataToReturn = [];
+    for (var i=0; i < response.length; i++) {
+        var tagToTransform = response[i];
+        var newTag = {id: tagToTransform["name"], text: tagToTransform["name"]};
+        dataToReturn.push(newTag);
+    }
+    $("#inputTags").select2({
+    placeholder: "Select Tags for the Blog Post",
     tags: true,
     tokenSeparators: [','],
-    ajax: {
-        url: "/blog/api/tags/",
-        processResults: function (data) {
-            var dataToReturn = [];
-
-            for (var i=0; i < data.length; i++) {
-                var tagToTransform = data[i];
-                var newTag = {id: tagToTransform["name"], text: tagToTransform["name"]};
-                dataToReturn.push(newTag);
-            }
-            return {
-                results: dataToReturn
-            }
-        },
-        delay: 250,
-        cache: true
-    },
-    data: data,
-    placeholder: "Select Tags for the Blog Post",
+    data: dataToReturn
   });
 });
 
