@@ -5,6 +5,8 @@
 
     <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+
+    <meta name="twitter:widgets:csp" content="on">
 }
 
 #export("body") {
@@ -25,6 +27,10 @@
         }
     </div>
 
+    <div class="social-media-buttons">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false" data-text="#(post.title) - SteamPress Blog">Tweet</a>
+    </div>
+
     #if(disqusName) {
         <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqusName)"></div>
         <div id="disqus_thread" class="text-center col-md-10 offset-md-1"></div>
@@ -36,6 +42,7 @@
 
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
+    <script src="https://platform.twitter.com/widgets.js"></script>
     #if(disqusName) {
         <script src="/static/js/disqus.js"></script>
     }
