@@ -12,7 +12,20 @@ drop.database = database
 let memory = MemorySessions()
 let sessions = SessionsMiddleware(sessions: memory)
 drop.middleware.append(sessions)
-let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: "default-src 'none'; script-src 'self' 'unsafe-eval' https://ajax.googleapis.com/ https://cdnjs.cloudflare.com/ https://maxcdn.bootstrapcdn.com/ https://steampress.disqus.com/ https://a.disquscdn.com/; style-src 'self' https://maxcdn.bootstrapcdn.com/ https://a.disquscdn.com/ https://cdnjs.cloudflare.com/ajax/libs/select2/; img-src 'self' data: https://referrer.disqus.com/ https://a.disquscdn.com/; connect-src 'self' https://links.services.disqus.com/; child-src https://disqus.com/; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content; base-uri 'self'; require-sri-for script style;"))
+
+let disqusName = drop.config["disqus", "disqusName"]?.string ?? "*"
+var cspConfig = "default-src 'none'; script-src 'self' https://ajax.googleapis.com/ https://cdnjs.cloudflare.com/ https://maxcdn.bootstrapcdn.com/ https://\(disqusName).disqus.com/ https://a.disquscdn.com/; style-src 'self' https://maxcdn.bootstrapcdn.com/ https://a.disquscdn.com/ https://cdnjs.cloudflare.com/ajax/libs/select2/; img-src 'self' data: https://referrer.disqus.com/ https://a.disquscdn.com/; connect-src 'self' https://links.services.disqus.com/; child-src https://disqus.com/; form-action 'self'; base-uri 'self'; require-sri-for script style;"
+
+if let reportUri = drop.config["csp", "report-uri"]?.string {
+    cspConfig += " report-uri \(reportUri);"
+}
+
+if drop.environment == .production || drop.environment == .test {
+    cspConfig += " upgrade-insecure-requests; block-all-mixed-content;"
+}
+
+
+let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: cspConfig))
 drop.middleware.append(securityHeaders)
 
 try drop.addProvider(SteamPress.Provider.self)
