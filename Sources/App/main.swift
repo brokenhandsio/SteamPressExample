@@ -14,7 +14,7 @@ let sessions = SessionsMiddleware(sessions: memory)
 drop.middleware.append(sessions)
 
 let disqusName = drop.config["disqus", "disqusName"]?.string ?? "*"
-var cspConfig = "default-src 'none'; script-src 'self' https://platform.twitter.com https://ajax.googleapis.com/ https://cdnjs.cloudflare.com/ https://maxcdn.bootstrapcdn.com/ https://\(disqusName).disqus.com/ https://a.disquscdn.com/; style-src 'self' https://maxcdn.bootstrapcdn.com/ https://a.disquscdn.com/ https://cdnjs.cloudflare.com/ajax/libs/select2/; img-src 'self' data: https://referrer.disqus.com/ https://a.disquscdn.com/; connect-src 'self' https://links.services.disqus.com/; child-src https://disqus.com/; form-action 'self'; base-uri 'self'; require-sri-for script style;"
+var cspConfig = "default-src 'none'; script-src 'self' https://platform.twitter.com https://ajax.googleapis.com/ https://cdnjs.cloudflare.com/ https://maxcdn.bootstrapcdn.com/ https://\(disqusName).disqus.com/ https://a.disquscdn.com/; style-src 'self' https://maxcdn.bootstrapcdn.com/ https://a.disquscdn.com/ https://cdnjs.cloudflare.com/ajax/libs/select2/; img-src 'self' data: https://referrer.disqus.com/ https://a.disquscdn.com/; connect-src 'self' https://links.services.disqus.com/; child-src https://disqus.com/ https://platform.twitter.com; form-action 'self'; base-uri 'self'; require-sri-for script style;"
 
 if let reportUri = drop.config["csp", "report-uri"]?.string {
     cspConfig += " report-uri \(reportUri);"
@@ -26,8 +26,8 @@ if drop.environment == .production || drop.environment == .test {
 
 let referrerPolicy = ReferrerPolicyConfiguration(.strictOriginWhenCrossOrigin)
 
-//let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: cspConfig), referrerPolicyConfiguration: referrerPolicy)
-//drop.middleware.append(securityHeaders)
+let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: cspConfig), referrerPolicyConfiguration: referrerPolicy)
+drop.middleware.append(securityHeaders)
 
 try drop.addProvider(SteamPress.Provider.self)
 
