@@ -24,8 +24,9 @@ if drop.environment == .production || drop.environment == .test {
     cspConfig += " upgrade-insecure-requests; block-all-mixed-content;"
 }
 
+let referrerPolicy = ReferrerPolicyConfiguration(.strictOriginWhenCrossOrigin)
 
-let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: cspConfig))
+let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: cspConfig), referrerPolicyConfiguration: referrerPolicy)
 drop.middleware.append(securityHeaders)
 
 try drop.addProvider(SteamPress.Provider.self)
