@@ -30,7 +30,7 @@
     <div class="social-media-buttons">
         <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false" data-text="#(post.title) - SteamPress Blog">Tweet</a>
         <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Share</a></div>
-        <script type="IN/Share"></script>
+        <!-- <script type="IN/Share"></script> -->
     </div>
 
     #if(disqusName) {
@@ -46,7 +46,7 @@
     <script src="/static/js/prismHighlighting.js"></script>
     <div id="fb-root"></div>
     <script src="/static/js/facebook.js"></script>
-    <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+    <!-- <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script> -->
     <script src="https://platform.twitter.com/widgets.js"></script>
     #if(disqusName) {
         <script src="/static/js/disqus.js"></script>
