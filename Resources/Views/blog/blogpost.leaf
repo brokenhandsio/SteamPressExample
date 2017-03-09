@@ -27,9 +27,9 @@
         }
     </div>
 
-    <div class="social-media-buttons">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-show-count="false" data-text="#(post.title) - SteamPress Blog">Tweet</a>
-        <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Share</a></div>
+    <div class="social-media-buttons d-flex d-flex-row justify-content-center">
+        <a href="https://twitter.com/share" class="twitter-share-button pl-2 pr-2" data-size="large" data-show-count="false" data-text="#(post.title) - SteamPress Blog">Tweet</a>
+        <div class="fb-share-button pl-2 pr-2" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Share</a></div>
         <!-- <script type="IN/Share"></script> -->
     </div>
 
