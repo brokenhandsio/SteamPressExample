@@ -16,6 +16,14 @@
     <meta property="article:author" content="#(site_uri)/blog/authors/#(author.username)/">
     #loop(post.tags, "tag") {
     <meta property="article:tag" content="#(tag.name)">
+
+    <meta name="twitter:card" content="summary_large_image">
+    #if(site_twitter_handle) {
+    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    }
+    #if(author.twitter_handle) {
+    <meta name="twitter:creator" content="@#(author.twitter_handle)">
+    }
     }
 }
 
@@ -56,8 +64,9 @@
     <script src="/static/js/prismHighlighting.js"></script>
     <div id="fb-root"></div>
     <script src="/static/js/facebook.js"></script>
+    <script src="/static/js/loadTweets.js"></script>
     <!-- <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script> -->
-    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
     #if(disqusName) {
         <script src="/static/js/disqus.js"></script>
     }
