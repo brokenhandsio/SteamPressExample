@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
 
     <meta name="twitter:widgets:csp" content="on">
-    <meta property="og:url" content="#(post_uri)"/>
-    <meta property="og:title" content="#(post.title)"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:description" content="#(post.short_snippet)"/>
+    <meta property="og:url" content="#(post_uri)">
+    <meta property="og:title" content="#(post.title)">
+    <meta property="og:description" content="#(post_description)">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="#(post.created_date_iso8601)">
+    #if(post.last_edited_date_iso8601) { <meta property="article:modified_time" content="#(post.last_edited_date_iso8601)"> }
+    <meta property="article:author" content="#(site_uri)/blog/authors/#(author.username)/">
+    #loop(post.tags, "tag") {
+    <meta property="article:tag" content="#(tag.name)">
+    }
 }
 
 #export("body") {
@@ -33,8 +39,7 @@
 
     <div class="social-media-buttons d-flex d-flex-row justify-content-center mt-3">
         <a href="https://twitter.com/share" class="twitter-share-button pl-2 pr-2" data-size="large" data-show-count="false" data-text="#(post.title) - SteamPress Blog">Tweet</a>
-        <!-- <div class="fb-share-button pl-2 pr-2" data-href="http://localhost:8080/blog/posts/test/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2Fblog%2Fposts%2Ftest%2F&amp;src=sdkpreparse">Share</a></div> -->
-        <div class="fb-share-button pl-2 pr-2" data-href="http://localhost:8080/blog/posts/test/index.html" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2Fblog%2Fposts%2Ftest%2F&amp;src=sdkpreparse">Share</a></div>
+        <div class="fb-share-button pl-2 pr-2" data-href="#(post_uri)" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=#(post_uri_encoded)&amp;src=sdkpreparse">Share</a></div>
         <!-- <script type="IN/Share"></script> -->
     </div>
 
