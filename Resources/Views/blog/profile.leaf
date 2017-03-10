@@ -2,6 +2,8 @@
 
 #export("head") {
 <title>#if(myProfile) {My Profile} ##else() {#(author.name)'s Profile} | Blog | SteamPress</title>
+
+    <meta name="description" content="#(author.name)'s Author Page on the Steam Press Blog. All of the posts by #(author.name)">
 }
 
 #export("body") {

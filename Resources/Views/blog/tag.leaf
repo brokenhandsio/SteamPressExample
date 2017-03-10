@@ -3,6 +3,8 @@
 #export("head") {
 <title>Posts Tagged With #(tag.name) | Blog | SteamPress</title>
 
+<meta name="description" content="All of the SteamPress Blog Posts tagged with #(tag.name). These are the blog posts written under the tags and topics of #(tag.name)">
+
 <!-- Syntax Highlighting -->
 <link rel="stylesheet" href="/static/css/prismHighlighting.css">
 }

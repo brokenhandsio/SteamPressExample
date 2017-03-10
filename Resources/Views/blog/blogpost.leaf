@@ -6,6 +6,8 @@
     <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
 
+    <meta name="description" content="#(post_description)">
+
     <meta name="twitter:widgets:csp" content="on">
     <meta property="og:url" content="#(post_uri)">
     <meta property="og:title" content="#(post.title)">

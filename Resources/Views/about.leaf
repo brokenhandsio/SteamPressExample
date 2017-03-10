@@ -1,7 +1,9 @@
 #extend("base")
 
 #export("head") {
-<title>About | SteamPress Example</title>
+    <title>About | SteamPress Example</title>
+
+    <meta name="description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
 }
 
 #export("body") {
