@@ -4,6 +4,11 @@
     <title>About | SteamPress Example</title>
 
     <meta name="description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
+
+    <meta property="og:title" content="About SteamPress">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#(uri)">
+    <meta property="og:description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
 }
 
 #export("body") {

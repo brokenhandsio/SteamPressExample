@@ -34,7 +34,9 @@ try drop.addProvider(SteamPress.Provider.self)
 drop.get { req in
     var posts = try BlogPost.query().sort("created", .descending).limit(3).all()
     
-    var parameters: [String: Node] = [:]
+    var parameters: [String: Node] = [
+        "uri": req.uri.description.makeNode()
+    ]
     
     if posts.count > 0 {
         parameters["posts"] = try posts.makeNode(context: BlogPostContext.shortSnippet)
@@ -44,7 +46,7 @@ drop.get { req in
 }
 
 drop.get("about") { req in
-    return try drop.view.make("about", ["aboutPage": true])
+    return try drop.view.make("about", ["aboutPage": true, "uri": req.uri.description])
 }
 
 

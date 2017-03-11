@@ -5,6 +5,11 @@
 
 <meta name="description" content="All of the SteamPress Blog Posts tagged with #(tag.name). These are the blog posts written under the tags and topics of #(tag.name)">
 
+<meta property="og:title" content="Posts Tagged With #(tag.name)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="#(uri)">
+<meta property="og:description" content="All of the SteamPress Blog Posts tagged with #(tag.name). These are the blog posts written under the tags and topics of #(tag.name)">
+
 <!-- Syntax Highlighting -->
 <link rel="stylesheet" href="/static/css/prismHighlighting.css">
 }
