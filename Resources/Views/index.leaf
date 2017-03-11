@@ -12,6 +12,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
+
+    <meta name="twitter:card" content="summary">
+
+    #if(site_twitter_handle) {
+    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    }
 }
 
 #export("body") {

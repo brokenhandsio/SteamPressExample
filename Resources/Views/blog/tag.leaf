@@ -10,6 +10,12 @@
 <meta property="og:url" content="#(uri)">
 <meta property="og:description" content="All of the SteamPress Blog Posts tagged with #(tag.name). These are the blog posts written under the tags and topics of #(tag.name)">
 
+<meta name="twitter:card" content="summary">
+
+#if(site_twitter_handle) {
+<meta name="twitter:site" content="@#(site_twitter_handle)">
+}
+
 <!-- Syntax Highlighting -->
 <link rel="stylesheet" href="/static/css/prismHighlighting.css">
 }
