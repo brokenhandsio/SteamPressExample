@@ -43,7 +43,7 @@ drop.get { req in
     }
     
     if let twitterHandle = drop.config["twitter", "siteHandle"]?.string {
-        parameters["site_twitter_handle"] = twitterHandle
+        parameters["site_twitter_handle"] = twitterHandle.makeNode()
     }
     
     return try drop.view.make("index", parameters)
@@ -57,7 +57,7 @@ drop.get("about") { req in
     ]
     
     if let twitterHandle = drop.config["twitter", "siteHandle"]?.string {
-        parameters["site_twitter_handle"] = twitterHandle
+        parameters["site_twitter_handle"] = twitterHandle.makeNode()
     }
     
     return try drop.view.make("about", parameters)
