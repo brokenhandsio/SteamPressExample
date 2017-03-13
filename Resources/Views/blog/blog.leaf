@@ -47,7 +47,7 @@
                         <div class="post-tags">
                             <h5>
                             #loop(post.tags, "tag") {
-                            <span class="badge badge-default"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
+                            <span class="badge badge-default"><a href="/blog/tags/#(tag.name-url-encoded)/">#(tag.name)</a></span>
                             }
                             </h5>
                         </div>
@@ -72,7 +72,7 @@
                     <h3>Tags</h3>
                     <ul class="list-unstyled">
                         #loop(tags, "tag") {
-                        <li><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></li>
+                        <li><a href="/blog/tags/#(tag.name-url-encoded)/">#(tag.name)</a></li>
                         }
                     </ul>
                 </div>
