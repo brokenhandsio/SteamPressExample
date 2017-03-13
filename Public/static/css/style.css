@@ -117,3 +117,12 @@ h1.lead-title-blog {
 #tag-title-badge {
   margin-left: .25em;
 }
+
+.social-media-buttons {
+    width: 100%;
+    display: flex;
+}
+
+.social-media-buttons div {
+    flex-basis: 100%
+}
