@@ -53,7 +53,7 @@
                         <div class="post-tags">
                             <h5>
                             #loop(post.tags, "tag") {
-                            <span class="badge badge-default"><a href="/blog/tags/#(tag.name-url-encoded)/">#(tag.name)</a></span>
+                            <span class="badge badge-default"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
                             }
                             </h5>
                         </div>
