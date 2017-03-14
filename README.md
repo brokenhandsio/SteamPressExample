@@ -25,6 +25,4 @@ The `herokuVersion` branch contains a PostgreSQL provider but if you are using t
 For the time being, I will keep the releases under a 0 version - so expect breaking changes for a while as the codebase evolves. If there is demand to stabilise the site (i.e. lots of people are using it for an actual blog rather than just reference for their own blogs) then I'll bump up the priority of this accordingly. For the moment though, I am expecting some significant breaking changes in the [main engine](https://github.com/brokenhandsio/SteamPress) so expect those to happen before any stabilisation occurs. Other features that are on the roadmap specific to this site are:
 
 * Javascript validation of form fields before form submission, as well as realtime password validation.
-* Social media share buttons in the post temaplate
-* Twitter card support for adding tweets
 * AMP support for posts (in conjuction with new endpoints for all pages for AMP)

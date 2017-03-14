@@ -1,10 +1,23 @@
 #extend("base")
 
 #export("head") {
-<title>Home | SteamPress</title>
+    <title>Home | SteamPress</title>
 
-<!-- Syntax Highlighting -->
-<link rel="stylesheet" href="/static/css/prismHighlighting.css">
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+
+    <meta name="description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
+
+    <meta property="og:title" content="SteamPress">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#(uri)">
+    <meta property="og:description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
+
+    <meta name="twitter:card" content="summary">
+
+    #if(site_twitter_handle) {
+    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    }
 }
 
 #export("body") {

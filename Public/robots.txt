@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /blog/admin/
+Disallow: /blog/search/

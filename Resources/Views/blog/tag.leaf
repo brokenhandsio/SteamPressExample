@@ -3,6 +3,19 @@
 #export("head") {
 <title>Posts Tagged With #(tag.name) | Blog | SteamPress</title>
 
+<meta name="description" content="All of the SteamPress Blog Posts tagged with #(tag.name). These are the blog posts written under the tags and topics of #(tag.name)">
+
+<meta property="og:title" content="Posts Tagged With #(tag.name)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="#(uri)">
+<meta property="og:description" content="All of the SteamPress Blog Posts tagged with #(tag.name). These are the blog posts written under the tags and topics of #(tag.name)">
+
+<meta name="twitter:card" content="summary">
+
+#if(site_twitter_handle) {
+<meta name="twitter:site" content="@#(site_twitter_handle)">
+}
+
 <!-- Syntax Highlighting -->
 <link rel="stylesheet" href="/static/css/prismHighlighting.css">
 }
@@ -40,7 +53,7 @@
                         <div class="post-tags">
                             <h5>
                             #loop(post.tags, "tag") {
-                            <span class="badge badge-default"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
+                            <span class="badge badge-default"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
                             }
                             </h5>
                         </div>

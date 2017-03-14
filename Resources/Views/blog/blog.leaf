@@ -5,6 +5,20 @@
 
     <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+
+    <meta name="description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
+
+    <meta property="og:title" content="The SteamPress Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#(uri)">
+    <meta property="og:description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
+
+    <meta name="twitter:card" content="summary">
+
+    #if(site_twitter_handle) {
+    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    }
+
 }
 
 #export("body") {
@@ -33,7 +47,7 @@
                         <div class="post-tags">
                             <h5>
                             #loop(post.tags, "tag") {
-                            <span class="badge badge-default"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
+                            <span class="badge badge-default"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
                             }
                             </h5>
                         </div>
@@ -58,7 +72,7 @@
                     <h3>Tags</h3>
                     <ul class="list-unstyled">
                         #loop(tags, "tag") {
-                        <li><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></li>
+                        <li><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></li>
                         }
                     </ul>
                 </div>
