@@ -32,7 +32,7 @@
                     <div class="card-block">
                         <h2 class="card-title">#(tag.name)</h2>
                         <div class="card-text mt-3">
-                            <a href="/blog/tag/#(tag.url_encoded_name)/" class="card-link">View #(tag.name)</a>
+                            <a href="/blog/tags/#(tag.url_encoded_name)/" class="card-link">View #(tag.name)</a>
                         </div>
                     </div>
                     <div class="card-footer">
