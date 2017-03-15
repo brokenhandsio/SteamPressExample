@@ -75,6 +75,18 @@
                         <li><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></li>
                         }
                     </ul>
+                    <a href="/blog/tags/">All Tags</a>
+                </div>
+            </div>
+            <div class="blog-side-module mt-3">
+                <div class="authors-module">
+                    <h3>Authors</h3>
+                    <ul class="list-unstyled">
+                        #loop(authors, "author") {
+                        <li><a href="/blog/authors/#(author.username)/">#(author.name)</a></li>
+                        }
+                    </ul>
+                    <a href="/blog/authors/">All Authors</a>
                 </div>
             </div>
         </div>
