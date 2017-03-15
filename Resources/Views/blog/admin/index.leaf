@@ -23,7 +23,7 @@
         }
         <p>Welcome to the Blog Admin page</p>
 
-        <div id="blog-admin-pages">
+        <div id="blog-admin-posts">
             <h2>Pages</h2>
 
             <table class="table table-striped table-hover table-bordered table-responsive">
