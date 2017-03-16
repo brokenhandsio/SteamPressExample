@@ -28,7 +28,7 @@
         </div>
         }
 
-        <form action="/blog/admin/login/" method="post" class="form-signin">
+        <form action="/blog/admin/login/" method="post" id="login-form" class="form-signin">
             <div class="form-group #if(usernameError) {has-danger}" id="login-username-group">
                 <label for="inputUsername" class="sr-only">Username</label>
                 <input type="text" class="form-control #if(usernameError) {form-control-danger}" id="inputUsername" name="inputUsername" placeholder="Username" value="#(usernameSupplied)" autofocus required>
