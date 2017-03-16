@@ -1,0 +1,24 @@
+#extend("base")
+
+#export("head") {
+    <title>Error | SteamPress</title>
+}
+
+#export("body") {
+    <div class="container">
+
+        <h1 class="lead-title mt-3 text-center">Server Error</h1>
+
+        <p>There was an internal server error</p>
+
+        <p>Use the menu above to navigate or you may find some of the links below useful:</p>
+
+        <ul>
+            <li><a href="/">Go home</a></li>
+            <li><a href="/blog/">The Blog</a></li>
+            <li><a href="/blog/authors/">The Blog Authors</a></li>
+            <li><a href="/blog/tags/">The Blog Tags</a></li>
+        </ul>
+
+    </div> <!-- container -->
+}

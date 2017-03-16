@@ -1,0 +1,24 @@
+#extend("base")
+
+#export("head") {
+    <title>Oops....Wrong Turn! | SteamPress</title>
+}
+
+#export("body") {
+    <div class="container">
+
+        <h1 class="lead-title mt-3 text-center">Oops....Wrong Turn!</h1>
+
+        <p>Looks like you've taken a wrong turn...we couldn't find the page you were looking for!</p>
+
+        <p>Use the menu above to navigate or you may find some of the links below useful:</p>
+
+        <ul>
+            <li><a href="/">Go home</a></li>
+            <li><a href="/blog/">The Blog</a></li>
+            <li><a href="/blog/authors/">The Blog Authors</a></li>
+            <li><a href="/blog/tags/">The Blog Tags</a></li>
+        </ul>
+
+    </div> <!-- container -->
+}

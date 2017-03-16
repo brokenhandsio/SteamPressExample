@@ -29,6 +29,9 @@ let referrerPolicy = ReferrerPolicyConfiguration(.strictOriginWhenCrossOrigin)
 let securityHeaders = SecurityHeaders(contentSecurityPolicyConfiguration: ContentSecurityPolicyConfiguration(value: cspConfig), referrerPolicyConfiguration: referrerPolicy)
 drop.middleware.append(securityHeaders)
 
+let abort = BlogAbortMiddleware(drop: drop)
+drop.middleware.insert(abort, at: 0)
+
 try drop.addProvider(SteamPress.Provider.self)
 
 drop.get { req in
