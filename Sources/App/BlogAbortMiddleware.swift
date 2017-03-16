@@ -44,6 +44,8 @@ public class BlogAbortMiddleware: Middleware {
     }
     
     private func errorResponse(_ request: Request, _ error: AbortError) throws -> Response {
+        self.log?.error("Uncaught Error: \(type(of: error)).\(error)")
+        
         var params: [String: NodeRepresentable] = [
             "url": request.uri.description.makeNode(),
             "code": try error.code.makeNode(),
@@ -51,7 +53,6 @@ public class BlogAbortMiddleware: Middleware {
         ]
         
         if environment == .production {
-            self.log?.error("Uncaught Error: \(type(of: error)).\(error)")
             params["message"] = error.code < 500 ? error.message : "Something went wrong"
         }
         else {

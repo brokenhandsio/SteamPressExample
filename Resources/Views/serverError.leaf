@@ -7,11 +7,11 @@
 #export("body") {
     <div class="container">
 
-        <h1 class="lead-title mt-3 text-center">Server Error</h1>
+        <h1 class="lead-title mt-3 text-center">#(message)</h1>
 
-        <p>There was an internal server error</p>
+        <p>The server returned error code #(code) with the message #(meesage).</p>
 
-        <p>Use the menu above to navigate or you may find some of the links below useful:</p>
+        <p>Please try again later or use the menu above to navigate or you may find some of the links below useful:</p>
 
         <ul>
             <li><a href="/">Go home</a></li>
