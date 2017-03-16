@@ -36,7 +36,7 @@
         <div id="edit-post-data" data-editing-page="true" data-original-slug-url="#(slugUrlSupplied)" data-original-title="#(titleSupplied)"></div>
         }
 
-        <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" method="post" class="mt-3">
+        <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" id="create-post-form" method="post" class="mt-3">
             #if(editing) {
             <div class="alert alert-warning alert-dismissible fade show" role="alert" id="blog-post-edit-title-warning">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
