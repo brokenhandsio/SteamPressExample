@@ -3,6 +3,15 @@ var allowEditingOfSlugUrl = true;
 var originalSlugUrl = "";
 var originalTitle = "";
 
+$(function() {
+    var simplemde = new SimpleMDE({
+        element: $("#inputPostContents")[0],
+        spellChecker: false,
+        forceSync: true,
+        placeholder: "Enter your post content here"
+    });
+});
+
 $('#inputTitle').on('input',function(e){
   if (allowEditingOfSlugUrl) {
     var title = $('#inputTitle').val();
