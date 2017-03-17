@@ -1,0 +1,52 @@
+#extend("base")
+
+#export("head") {
+    <title>All Tags | Blog | SteamPress</title>
+
+    <meta name="description" content="All of the SteamPress Blog Tags. These are the tags that posts have been written under on the blog.">
+
+    <meta property="og:title" content="SteamPress Blog Tags">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#(uri)">
+    <meta property="og:description" content="All of the SteamPress Blog Tags. These are the tags that posts have been written under on the blog.">
+
+    <meta name="twitter:card" content="summary">
+
+    #if(site_twitter_handle) {
+    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    }
+}
+
+#export("body") {
+
+<div class="container mt-3">
+
+    <h1 class="text-center">All SteamPress Blog's Tags</h1>
+
+    <div id="tags" class="mt-3 mb-4 card-deck">
+
+        #if(tags) {
+            #loop(tags, "tag") {
+            <div class="col-md-4">
+                <div class="blog-tag card text-center mb-3">
+                    <div class="card-block">
+                        <h2 class="card-title">#(tag.name)</h2>
+                        <div class="card-text mt-3">
+                            <a href="/blog/tags/#(tag.url_encoded_name)/" class="card-link">View #(tag.name)</a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">#equal(tag.post_count, "1") {#(tag.post_count) post} ##else() {#(tag.post_count) posts}</small>
+                    </div>
+                </div>
+            </div>
+            }
+
+        }
+        ##else() {
+            <p class="mb-4">There haven't been any tags yet!</p>
+        }
+    </div>
+
+</div>
+}

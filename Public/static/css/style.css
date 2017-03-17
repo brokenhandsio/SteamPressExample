@@ -102,6 +102,14 @@ h1.lead-title-blog {
     text-transform: lowercase;
 }
 
+.post-title-link {
+    color: rgb(41, 43, 44);
+}
+
+.post-title-link:hover {
+    color: rgb(41, 43, 44);
+}
+
 .post-tags a {
     color: white;
 }
@@ -125,4 +133,16 @@ h1.lead-title-blog {
 
 .social-media-buttons div {
     flex-basis: 100%
+}
+
+.index-post-link {
+    color: rgb(41, 43, 44);
+}
+
+.index-post-link:hover {
+    color: rgb(41, 43, 44);
+}
+
+.index-column h2 {
+    text-align: center;
 }

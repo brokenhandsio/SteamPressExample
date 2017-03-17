@@ -1,7 +1,33 @@
+$("#create-post-form").on('submit', function() {
+    var title = $("#inputTitle").val();
+    var contents = $("#inputPostContents").val();
+
+    if (!title) {
+        alert("Please enter a title");
+        return false;
+    }
+
+    if (!contents) {
+        alert("Please enter some contents");
+        return false;
+    }
+    return true;
+});
+
+
 var editingPost = false;
 var allowEditingOfSlugUrl = true;
 var originalSlugUrl = "";
 var originalTitle = "";
+
+$(function() {
+    var simplemde = new SimpleMDE({
+        element: $("#inputPostContents")[0],
+        spellChecker: false,
+        forceSync: true,
+        placeholder: "Enter your post content here"
+    });
+});
 
 $('#inputTitle').on('input',function(e){
   if (allowEditingOfSlugUrl) {

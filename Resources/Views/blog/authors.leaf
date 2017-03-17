@@ -1,0 +1,54 @@
+#extend("base")
+
+#export("head") {
+    <title>All Authors | Blog | SteamPress</title>
+
+    <meta name="description" content="All of the Authors from the SteamPress Blog. These are the authors that have written posts for the blog.">
+
+    <meta property="og:title" content="SteamPress Blog Authors">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#(uri)">
+    <meta property="og:description" content="All of the Authors from the SteamPress Blog. These are the authors that have written posts for the blog.">
+
+    <meta name="twitter:card" content="summary">
+
+    #if(site_twitter_handle) {
+    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    }
+}
+
+#export("body") {
+
+<div class="container mt-3">
+
+    <h1 class="text-center">All SteamPress Blog's Authors</h1>
+
+    <div id="authors" class="mt-3 mb-4 card-deck">
+
+        #if(authors) {
+            #loop(authors, "author") {
+            <div class="col-md-4">
+                <div class="blog-author card text-center mb-3">
+                    <div class="card-block">
+                        <h2 class="card-title">#(author.name)</h2>
+                        <h6 class="card-subtitle mb-2 text-muted">@#(author.username)</h6>
+                        <div class="card-text mt-3">
+                            <p class="card-text">The profile for #(author.name)</p>
+                            <a href="/blog/authors/#(author.username)/" class="card-link">View #(author.name)'s Profile</a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">#equal(author.post_count, "1") {#(author.post_count) post} ##else() {#(author.post_count) posts}</small>
+                    </div>
+                </div>
+            </div>
+            }
+
+        }
+        ##else() {
+            <p class="mb-4">There haven't been any authors yet!</p>
+        }
+    </div>
+
+</div>
+}

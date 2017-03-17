@@ -34,7 +34,7 @@
                 #loop(posts.data, "post") {
                 <div class="blog-post card mb-3">
                     <div class="card-block">
-                        <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
+                        <a href="/blog/posts/#(post.slug_url)/" class="post-title-link"><h1 class="post-title card-title text-center display-4">#(post.title)</h1></a>
                         <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created_date) by <a href="/blog/authors/#(post.author_username)/">#(post.author_name)</a></h6>
                         <div class="post-contents card-text mt-3">
                             #markdown(post.long_snippet)
@@ -75,6 +75,18 @@
                         <li><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></li>
                         }
                     </ul>
+                    <a href="/blog/tags/">All Tags</a>
+                </div>
+            </div>
+            <div class="blog-side-module mt-3">
+                <div class="authors-module">
+                    <h3>Authors</h3>
+                    <ul class="list-unstyled">
+                        #loop(authors, "author") {
+                        <li><a href="/blog/authors/#(author.username)/">#(author.name)</a></li>
+                        }
+                    </ul>
+                    <a href="/blog/authors/">All Authors</a>
                 </div>
             </div>
         </div>

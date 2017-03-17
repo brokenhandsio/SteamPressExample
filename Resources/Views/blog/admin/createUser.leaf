@@ -4,6 +4,10 @@
     <title>#if(editing) {Edit} ##else() {Create New} User | Blog Admin | SteamPress</title>
 }
 
+#export("scripts") {
+  <script src="/static/js/admin/createUser.js"></script>
+}
+
 #export("body") {
 
     <div class="container mt-3">
@@ -18,7 +22,7 @@
             }
         }
 
-        <form action="#if(editing) {/blog/admin/users/#(userId)/edit/} ##else() {/blog/admin/createUser/}" method="post">
+        <form action="#if(editing) {/blog/admin/users/#(userId)/edit/} ##else() {/blog/admin/createUser/}" id="create-user-form" method="post">
             <div class="form-group #if(nameError) { has-danger }" id="create-user-name-group">
                 <label class="form-control-label" for="inputName">Name</label>
                 <input type="text" class="form-control #if(nameError) { form-control-danger }" id="inputName" name="inputName" placeholder="Name" value="#(nameSupplied)" autofocus required>
