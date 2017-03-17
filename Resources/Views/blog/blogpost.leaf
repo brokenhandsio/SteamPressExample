@@ -14,6 +14,7 @@
     <meta property="og:description" content="#(post_description)">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="#(post.created_date_iso8601)">
+    <meta property="og:site_name" content="SteamPress">
     #if(post.last_edited_date_iso8601) { <meta property="article:modified_time" content="#(post.last_edited_date_iso8601)"> }
     <meta property="article:author" content="#(site_uri)/blog/authors/#(author.username)/">
     #loop(post.tags, "tag") {

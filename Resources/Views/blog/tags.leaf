@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="All of the SteamPress Blog Tags. These are the tags that posts have been written under on the blog.">
-
+    <meta property="og:site_name" content="SteamPress">
     <meta name="twitter:card" content="summary">
 
     #if(site_twitter_handle) {

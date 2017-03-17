@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="#(author.name)'s Author Page on the Steam Press Blog. All of the posts by #(author.name)">
-
+    <meta property="og:site_name" content="SteamPress">
     <meta name="twitter:card" content="summary">
 
     #if(site_twitter_handle) {

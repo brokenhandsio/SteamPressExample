@@ -14,6 +14,7 @@
     <meta property="og:description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
 
     <meta name="twitter:card" content="summary">
+    <meta property="og:site_name" content="SteamPress">
 
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
