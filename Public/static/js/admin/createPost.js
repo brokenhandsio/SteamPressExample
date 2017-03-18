@@ -26,7 +26,12 @@ $(function() {
         spellChecker: false,
         forceSync: true,
         placeholder: "Enter your post content here",
-        indentWithTabs: false
+        autosave: {
+            enabled: true,
+            uniqueId: "SteamPress-Create-Post",
+            delay: 1000,
+        },
+        promptURLs: true,
     });
 });
 

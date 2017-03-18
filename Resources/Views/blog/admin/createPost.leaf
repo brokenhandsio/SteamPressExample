@@ -77,11 +77,12 @@
             </div>
 
         <div class="form-group">
-            <button type="Submit" class="btn btn-primary" name="publish" value="publish">#if(editing) {Save} ##else() {Create}</button>
+            <button type="Submit" class="btn btn-info" name="save-draft" value="save-draft">Save Draft</button>
+            <button type="Submit" class="btn btn-primary" name="publish" value="publish">#if(editing) {Update} ##else() {Publish}</button>
             #if(editing) {
             <a href="/blog/admin/" class="btn btn-secondary" id="cancel-edit-button">Cancel</a>
             }
-            <input type="submit" class="btn btn-info" name="save" value="Save">
+
             <small id="mardownHelper" class="text-muted ml-4">
                 You can style your blog posts with <a href="http://commonmark.org/help/" target="_blank">Markdown</a>
             </small>
