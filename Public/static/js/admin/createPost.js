@@ -25,7 +25,8 @@ $(function() {
         element: $("#inputPostContents")[0],
         spellChecker: false,
         forceSync: true,
-        placeholder: "Enter your post content here"
+        placeholder: "Enter your post content here",
+        indentWithTabs: false
     });
 });
 
