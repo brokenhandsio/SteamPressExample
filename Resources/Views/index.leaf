@@ -38,7 +38,7 @@
                 #loop(posts, "post") {
                 <div class="card mb-3">
                     <div class="card-block">
-                        <a href="/blog/posts#(post.slug_url)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
+                        <a href="/blog/posts/#(post.slug_url)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
                         #markdown(post.short_snippet)
                         <a href="/blog/posts/#(post.slug_url)/" class="card-link">Read More</a>
                     </div>
