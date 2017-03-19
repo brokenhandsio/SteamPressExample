@@ -44,6 +44,13 @@
 
     <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.username)/">#(author.name)</a> on #(post.created_date)#if(post.last_edited_date) {. Last edited on #(post.last_edited_date).}</h4>
 
+    #if(post.published) {
+        <h4>PUBLISHED</h4>
+    }
+    ##else() {
+        <h4>DRAFT</h4>
+    }
+
     <div class="post-contents mt-3">
         #markdown(post.contents)
     </div>
