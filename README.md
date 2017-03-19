@@ -1,8 +1,23 @@
 # SteamPress Example
 
-This is an example site for using [SteamPress](https://github.com/brokenhandsio/SteamPress) with your Vapor website. You can also just use it as your blog! This example site uses Bootstrap 4 for styling so should be fairly easy to make it look how you want. It also uses Markdown to render the blog posts, and has Syntax hightlighting for code (obviously!). This site can be viewed at https://steampress-example.herokuapp.com/.
+This is an example site for using [SteamPress](https://github.com/brokenhandsio/SteamPress) with your Vapor website. You can also just use it as your blog! This example site uses Bootstrap 4 for styling so should be fairly easy to make it look how you want. It also uses Markdown to render the blog posts, and has Syntax highlighting for code (obviously!). This site can be viewed at https://steampress-example.herokuapp.com/.
 
 This site also provides a good example for all the Leaf files you will need, and the parameters they are given, as well as what you need to send to SteamPress to be create users and posts etc.
+
+# Features
+
+* Code syntax highlighting
+* WYSIWYG Markdown editor
+* Tagging selection
+* Content Security Policy and other security headers
+* Embeddable tweets
+* Facebook/Twitter share buttons
+* Blog post editor auto saving
+* Open Graph/Twitter Card support
+* Blog Post comments, powered by Disqus
+* Custom 404 error page
+
+# Usage
 
 To try out:
 
@@ -12,7 +27,7 @@ vapor build
 vapor run serve
 ```
 
-This will crete a site at http://localhost:8080. The blog can be found at http://localhost:8080/blog/ and you can login at http://localhost:8080/blog/admin/. The first time you visit the login a user will be created and the details printed to the console.
+This will create a site at http://localhost:8080. The blog can be found at http://localhost:8080/blog/ and you can login at http://localhost:8080/blog/admin/. The first time you visit the login a user will be created and the details printed to the console.
 
 ## WARNING
 
@@ -24,4 +39,4 @@ The `herokuVersion` branch contains a PostgreSQL provider but if you are using t
 
 For the time being, I will keep the releases under a 0 version - so expect breaking changes for a while as the codebase evolves. If there is demand to stabilise the site (i.e. lots of people are using it for an actual blog rather than just reference for their own blogs) then I'll bump up the priority of this accordingly. For the moment though, I am expecting some significant breaking changes in the [main engine](https://github.com/brokenhandsio/SteamPress) so expect those to happen before any stabilisation occurs. Other features that are on the roadmap specific to this site are:
 
-* AMP support for posts (in conjuction with new endpoints for all pages for AMP)
+* AMP support for posts (in conjunction with new endpoints for all pages for AMP)
