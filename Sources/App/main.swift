@@ -35,7 +35,7 @@ drop.middleware.insert(abort, at: 0)
 try drop.addProvider(SteamPress.Provider.self)
 
 drop.get { req in
-    var posts = try BlogPost.query().sort("created", .descending).limit(3).all()
+    var posts = try BlogPost.query().filter("published", true).sort("created", .descending).limit(3).all()
     
     var parameters = [
         "uri": req.uri.description.makeNode()
