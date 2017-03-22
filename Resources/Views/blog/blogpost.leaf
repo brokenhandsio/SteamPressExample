@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    #if(published) {
+    #if(post.published) {
     #if(disqusName) {
         <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqusName)"></div>
         <div id="disqus_thread" class="text-center col-md-10 offset-md-1"></div>
