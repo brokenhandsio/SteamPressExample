@@ -98,7 +98,9 @@
 }
 
 #export("scripts") {
-    <script src="/static/js/prismHighlighting.js"></script>
+    <script src="/static/js/prismHighlighting.js"></script>    
+    <script src="/static/js/loadTweets.js"></script>
+    <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
     #if(disqusName) {
         <script id="dsq-count-scr" src="https://#(disqusName).disqus.com/count.js" async></script>
     }
