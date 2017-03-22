@@ -68,13 +68,14 @@
         <div id="facebook-share-wrapper">
             <div class="fb-share-button pl-2 pr-2" data-href="#(post_uri)" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=#(post_uri_encoded)&amp;src=sdkpreparse">Share</a></div>
         </div>
-        <!-- <script type="IN/Share"></script> -->
     </div>
 
+    #if(published) {
     #if(disqusName) {
         <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqusName)"></div>
         <div id="disqus_thread" class="text-center col-md-10 offset-md-1"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    }
     }
 
 </div>
@@ -85,7 +86,6 @@
     <div id="fb-root"></div>
     <script src="/static/js/facebook.js"></script>
     <script src="/static/js/loadTweets.js"></script>
-    <!-- <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script> -->
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
     #if(disqusName) {
         <script src="/static/js/disqus.js"></script>
