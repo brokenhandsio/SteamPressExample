@@ -40,16 +40,14 @@
 
 <div class="container mt-4">
 
+    #if(post.published) {}
+    ##else() {
+        <div class="h3 text-center"><span class="badge badge-info">DRAFT POST</span></div>
+    }
+
     <h1 class="display-4 text-center">#(post.title)</h1>
 
     <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.username)/">#(author.name)</a> on #(post.created_date)#if(post.last_edited_date) {. Last edited on #(post.last_edited_date).}</h4>
-
-    #if(post.published) {
-        <h4>PUBLISHED</h4>
-    }
-    ##else() {
-        <h4>DRAFT</h4>
-    }
 
     <div class="post-contents mt-3">
         #markdown(post.contents)

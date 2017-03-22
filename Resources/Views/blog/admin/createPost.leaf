@@ -46,6 +46,12 @@
                 <a href="#()" class="alert-link" id="keep-original-slug-url-link">Keep original link?</a>
             </div>
             }
+            #if(editing) {
+            <div class="form group" id="create-post-status-group">
+                <label class="form-control-label">Status</label>
+                <div class="h4">#if(post.published) {<span class="badge badge-success">Published</span>} ##else() {<span class="badge badge-info">Draft</span>}</div>
+            </div>
+            }
             <div class="form-group #if(titleError) { has-danger }" id="create-post-title-group">
                 <label class="form-control-label" for="inputTitle">Title</label>
                 <input type="text" class="form-control #if(titleError) { form-control-danger }" id="inputTitle" name="inputTitle" placeholder="Blog Post Title" value="#(titleSupplied)" autofocus required>
