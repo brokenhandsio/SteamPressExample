@@ -16,6 +16,7 @@ $("#create-post-form").on('submit', function() {
 
 
 var editingPost = false;
+var published = false;
 var allowEditingOfSlugUrl = true;
 var originalSlugUrl = "";
 var originalTitle = "";
@@ -40,7 +41,7 @@ $('#inputTitle').on('input',function(e){
     var title = $('#inputTitle').val();
     var slugUrl = slugify(title);
     $('#inputSlugUrl').val(slugUrl);
-    if (editingPost) {
+    if (editingPost && published) {
       if (title != originalTitle) {
         $('#blog-post-edit-title-warning').fadeIn();
       }
@@ -83,6 +84,7 @@ $(function() {
     editingPost = true;
     originalSlugUrl = $("#edit-post-data").data("originalSlugUrl");
     originalTitle = $("#edit-post-data").data("originalTitle");
+    published = $("#edit-post-data").data("publishedPost");
   }
 });
 
