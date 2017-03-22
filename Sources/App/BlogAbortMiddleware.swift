@@ -9,14 +9,15 @@ import Vapor
  AbortMiddleware for the Droplet's `middleware` array.
  */
 public class BlogAbortMiddleware: Middleware {
-    let environment: Environment
-    var log: LogProtocol?
-    let drop: Droplet
     
-    public init(drop: Droplet) {
-        self.drop = drop
-        self.environment = drop.environment
-        self.log = drop.log
+    let viewRenderer: ViewRenderer
+    let environment: Environment
+    let log: LogProtocol?
+    
+    public init(viewRenderer: ViewRenderer, environment: Environment, log: LogProtocol?) {
+        self.viewRenderer = viewRenderer
+        self.environment = environment
+        self.log = log
     }
 
     public func respond(to request: Request, chainingTo chain: Responder) throws -> Response {
@@ -61,7 +62,7 @@ public class BlogAbortMiddleware: Middleware {
         }
         
         if request.accept.prefers("html") {
-            let body = try drop.view.make(error.code == 404 ? "404" : "serverError", try params.makeNode()).data
+            let body = try viewRenderer.make(error.code == 404 ? "404" : "serverError", try params.makeNode()).data
             return Response(status: Status(officialCode: error.code) ?? .internalServerError, headers: [
                 "Content-Type": "text/html; charset=utf-8"
                 ], body: .data(body))
