@@ -34,6 +34,9 @@ $(function() {
         },
         promptURLs: true,
     });
+    // SimpleMDE has been initialised so we need to turn off validation for the
+    // underlying text area
+    $('#inputPostContents').removeAttr('required');
 });
 
 $('#inputTitle').on('input',function(e){
