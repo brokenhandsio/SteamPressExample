@@ -24,12 +24,11 @@
         <p>Welcome to the Blog Admin page</p>
 
         <div id="blog-admin-posts">
-            <h2>Pages</h2>
-
+            <h2>Published Posts</h2>
             <table class="table table-striped table-hover table-bordered table-responsive">
                 <thead>
                     <tr>
-                        <th>Date Created</th>
+                        <th>Date Published</th>
                         <th>Title</th>
                         <th>Author</th>
                         <th>Last Edited</th>
@@ -39,8 +38,8 @@
                 </thead>
                 <tbody>
 
-                    #if(posts) {
-                        #loop(posts, "post") {
+                    #if(published_posts) {
+                        #loop(published_posts, "post") {
                         <tr>
                             <td>#(post.created_date)</td>
                             <td><a href="/blog/posts/#(post.slug_url)/">#(post.title)</a></td>
@@ -53,12 +52,40 @@
                     }
                     ##else() {
                         <tr>
-                            <td colspan="6">There haven't been any posts yet!</td>
+                            <td colspan="6">There haven't been any posts published yet!</td>
                         </tr>
                     }
 
                 </tbody>
             </table>
+
+            #if(draft_posts) {
+            <h2>Drafts</h2>
+            <table class="table table-striped table-hover table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Last Updated</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    #loop(draft_posts, "post") {
+                    <tr>
+                        <td>#(post.created_date)</td>
+                        <td><a href="/blog/posts/#(post.slug_url)/">#(post.title)</a></td>
+                        <td>#(post.author_name)</td>
+                        <td><a class="btn btn-info" href="/blog/admin/posts/#(post.id)/edit/">Edit</a></td>
+                        <td><a class="btn btn-danger delete-post-button" href="/blog/admin/posts/#(post.id)/delete/">Delete</a></td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+            }
 
             <a class="btn btn-primary" href="/blog/admin/createPost/">Create New Post</a>
         </div>

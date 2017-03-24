@@ -33,7 +33,7 @@
         }
 
         #if(editing) {
-        <div id="edit-post-data" data-editing-page="true" data-original-slug-url="#(slugUrlSupplied)" data-original-title="#(titleSupplied)"></div>
+        <div id="edit-post-data" data-editing-page="true" data-published-post="#(post.published)" data-original-slug-url="#(slugUrlSupplied)" data-original-title="#(titleSupplied)"></div>
         }
 
         <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" id="create-post-form" method="post" class="mt-3">
@@ -44,6 +44,12 @@
                 </button>
                 <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO and may break links to your site.
                 <a href="#()" class="alert-link" id="keep-original-slug-url-link">Keep original link?</a>
+            </div>
+            }
+            #if(editing) {
+            <div class="form group" id="create-post-status-group">
+                <label class="form-control-label">Status</label>
+                <div class="h4">#if(post.published) {<span class="badge badge-success">Published</span>} ##else() {<span class="badge badge-info">Draft</span>}</div>
             </div>
             }
             <div class="form-group #if(titleError) { has-danger }" id="create-post-title-group">
@@ -77,10 +83,14 @@
             </div>
 
         <div class="form-group">
-            <button type="Submit" class="btn btn-primary">#if(editing) {Save} ##else() {Create}</button>
+            #if(draft) {
+            <button type="Submit" class="btn btn-info" name="save-draft" value="save-draft">Save Draft</button>
+            }
+            <button type="Submit" class="btn btn-primary" name="publish" value="publish">#if(editing) {#if(draft) {Publish} ##else() {Update}} ##else() {Publish}</button>
             #if(editing) {
             <a href="/blog/admin/" class="btn btn-secondary" id="cancel-edit-button">Cancel</a>
             }
+
             <small id="mardownHelper" class="text-muted ml-4">
                 You can style your blog posts with <a href="http://commonmark.org/help/" target="_blank">Markdown</a>
             </small>

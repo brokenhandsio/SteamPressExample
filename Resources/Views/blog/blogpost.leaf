@@ -40,6 +40,11 @@
 
 <div class="container mt-4">
 
+    #if(post.published) {}
+    ##else() {
+        <div class="h3 text-center"><span class="badge badge-info">DRAFT POST</span></div>
+    }
+
     <h1 class="display-4 text-center">#(post.title)</h1>
 
     <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.username)/">#(author.name)</a> on #(post.created_date)#if(post.last_edited_date) {. Last edited on #(post.last_edited_date).}</h4>
@@ -61,13 +66,14 @@
         <div id="facebook-share-wrapper">
             <div class="fb-share-button pl-2 pr-2" data-href="#(post_uri)" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=#(post_uri_encoded)&amp;src=sdkpreparse">Share</a></div>
         </div>
-        <!-- <script type="IN/Share"></script> -->
     </div>
 
+    #if(post.published) {
     #if(disqusName) {
         <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqusName)"></div>
         <div id="disqus_thread" class="text-center col-md-10 offset-md-1"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    }
     }
 
 </div>
@@ -78,7 +84,6 @@
     <div id="fb-root"></div>
     <script src="/static/js/facebook.js"></script>
     <script src="/static/js/loadTweets.js"></script>
-    <!-- <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script> -->
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
     #if(disqusName) {
         <script src="/static/js/disqus.js"></script>

@@ -16,6 +16,7 @@ $("#create-post-form").on('submit', function() {
 
 
 var editingPost = false;
+var published = false;
 var allowEditingOfSlugUrl = true;
 var originalSlugUrl = "";
 var originalTitle = "";
@@ -25,8 +26,17 @@ $(function() {
         element: $("#inputPostContents")[0],
         spellChecker: false,
         forceSync: true,
-        placeholder: "Enter your post content here"
+        placeholder: "Write your blog post here",
+        autosave: {
+            enabled: true,
+            uniqueId: "SteamPress-Create-Post",
+            delay: 1000,
+        },
+        promptURLs: true,
     });
+    // SimpleMDE has been initialised so we need to turn off validation for the
+    // underlying text area
+    $('#inputPostContents').removeAttr('required');
 });
 
 $('#inputTitle').on('input',function(e){
@@ -34,7 +44,7 @@ $('#inputTitle').on('input',function(e){
     var title = $('#inputTitle').val();
     var slugUrl = slugify(title);
     $('#inputSlugUrl').val(slugUrl);
-    if (editingPost) {
+    if (editingPost && published) {
       if (title != originalTitle) {
         $('#blog-post-edit-title-warning').fadeIn();
       }
@@ -77,6 +87,7 @@ $(function() {
     editingPost = true;
     originalSlugUrl = $("#edit-post-data").data("originalSlugUrl");
     originalTitle = $("#edit-post-data").data("originalTitle");
+    published = $("#edit-post-data").data("publishedPost");
   }
 });
 
