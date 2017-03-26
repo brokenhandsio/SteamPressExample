@@ -23,10 +23,10 @@
                     <li class="nav-item #if(aboutPage) {active}"><a href="/about/" class="nav-link">About</a></li>
                 </ul>
                 #if(user) {
-                #if(blogPostPage) {
+                #if(blog_post_page) {
                 <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.id)/edit/" class="nav-link">Edit Post</a></div>
                 }
-                <div class="navbar-nav nav-item #if(blogAdminPage) {active}"><a href="/blog/admin/" class="nav-link">Blog Admin</a></div>
+                <div class="navbar-nav nav-item #if(blog_admin_page) {active}"><a href="/blog/admin/" class="nav-link">Blog Admin</a></div>
                 }
                 <div class="navbar-nav nav-item"><a href="https://github.com/brokenhandsio/SteamPress" target="_blank" class="nav-link">SteamPress @ Github</a></div>
             </div>

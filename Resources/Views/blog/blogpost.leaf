@@ -69,8 +69,8 @@
     </div>
 
     #if(post.published) {
-    #if(disqusName) {
-        <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqusName)"></div>
+    #if(disqus_name) {
+        <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqus_name)"></div>
         <div id="disqus_thread" class="text-center col-md-10 offset-md-1"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     }
@@ -85,7 +85,7 @@
     <script src="/static/js/facebook.js"></script>
     <script src="/static/js/loadTweets.js"></script>
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
-    #if(disqusName) {
+    #if(disqus_name) {
         <script src="/static/js/disqus.js"></script>
     }
 }

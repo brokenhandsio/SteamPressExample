@@ -52,7 +52,7 @@
                             }
                             </h5>
                         </div>
-                        #if(disqusName) {
+                        #if(disqus_name) {
                             <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
                         }
                     </div>
@@ -98,10 +98,10 @@
 }
 
 #export("scripts") {
-    <script src="/static/js/prismHighlighting.js"></script>    
+    <script src="/static/js/prismHighlighting.js"></script>
     <script src="/static/js/loadTweets.js"></script>
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
-    #if(disqusName) {
-        <script id="dsq-count-scr" src="https://#(disqusName).disqus.com/count.js" async></script>
+    #if(disqus_name) {
+        <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
     }
 }
