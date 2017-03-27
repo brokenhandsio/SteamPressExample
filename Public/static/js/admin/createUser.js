@@ -4,6 +4,10 @@ $(function() {
   editing = $("#edit-user-data").data("editingPage");
 });
 
+$('#cancel-edit-button').click(function(){
+    return confirm('Are you sure you want to cancel? You will lose any unsaved work');
+});
+
 $("#create-user-form").on('submit', function() {
     var name = $("#inputName").val();
     var username = $("#inputUsername").val();

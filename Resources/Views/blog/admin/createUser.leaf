@@ -87,8 +87,11 @@
 
             <div class="form-group mt-3">
                 <button type="Submit" class="btn btn-primary">#if(editing) {Save} ##else() {Create User}</button>
+                #if(editing) {
+                <a href="/blog/admin/" class="btn btn-secondary" id="cancel-edit-button">Cancel</a>
+                }
                 <small class="text-muted ml-4">
-                    * = Required Field
+                    * Required Field
                 </small>
             </div>
         </form>
