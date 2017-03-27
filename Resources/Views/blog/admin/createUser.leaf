@@ -40,7 +40,7 @@
             <div class="form-group #if(password_error) { has-danger }" id="create-user-password-group">
                 <label class="form-control-label" for="inputPassword">Password #if(editing) {} ##else() { *}</label>
                 <div class="input-group">
-                    <input type="password" class="form-control #if(password_error) { form-control-danger }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() required>
+                    <input type="password" class="form-control #if(password_error) { form-control-danger }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() {required}>
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#()passwordModal" tabindex="-1">?</button>
                         </span>
@@ -52,7 +52,7 @@
 
             <div class="form-group #if(confirm_password_error) { has-danger }" id="create-user-confirm-password-group">
                 <label class="form-control-label" for="inputConfirmPassword">Confirm Password #if(editing) {} ##else() { *}</label>
-                <input type="password" class="form-control #if(confirm_password_error) { form-control-danger }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else()required>
+                <input type="password" class="form-control #if(confirm_password_error) { form-control-danger }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else() {required}>
             </div>
 
             <div class="form-check">

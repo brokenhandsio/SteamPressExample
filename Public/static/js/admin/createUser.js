@@ -72,6 +72,9 @@ $("#inputUsername").blur(function() {
 
 $("#inputPassword").blur(function() {
     var password = $("#inputPassword").val();
+    if (editing && !password) {
+        return;
+    }
     if (isValidPassword(password)) {
         $("#create-user-password-group").removeClass("has-danger");
         $("#create-user-password-group").addClass("has-success");
@@ -89,6 +92,9 @@ $("#inputPassword").blur(function() {
 $("#inputConfirmPassword").blur(function() {
     var password = $("#inputPassword").val();
     var confirm = $("#inputConfirmPassword").val();
+    if (editing && !password && !confirm) {
+        return;
+    }
     if (password == confirm) {
         $("#create-user-confirm-password-group").removeClass("has-danger");
         $("#create-user-confirm-password-group").addClass("has-success");
@@ -130,12 +136,12 @@ function isValidUsername(username) {
 }
 
 function isValidPassword(password) {
-    if (!password) {
-        return false;
+    if (editing && !password) {
+        return true;
     }
 
-    if (password.length == 0 && editing) {
-        return true;
+    if (!password) {
+        return false;
     }
 
     if (password.length < 8) {
