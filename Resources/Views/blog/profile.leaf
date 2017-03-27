@@ -15,6 +15,10 @@
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
+
+    #if(author.twitter_handle) {
+        <!-- Put twitter handle in here -->
+    }
 }
 
 #export("body") {
@@ -28,12 +32,20 @@
                 <tr>
                     <th>Name</th>
                     <th>Username</th>
+                    <th>Profile Picture</th>
+                    <th>Twitter Handle</th>
+                    <th>Tagline</th>
+                    <th>Biography</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>#(author.name)</td>
                     <td>#(author.username)</td>
+                    <td>#(author.profile_picture)</td>
+                    <td>#(author.twitter_handle)</td>
+                    <td>#(author.tagline)</td>
+                    <td>#(author.biography)</td>
                 </tr>
             </tbody>
         </table>

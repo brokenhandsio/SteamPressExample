@@ -1,3 +1,9 @@
+var editing = false;
+
+$(function() {
+  editing = $("#edit-user-data").data("editingPage");
+});
+
 $("#create-user-form").on('submit', function() {
     var name = $("#inputName").val();
     var username = $("#inputUsername").val();
@@ -14,14 +20,16 @@ $("#create-user-form").on('submit', function() {
         return false;
     }
 
-    if (!isValidPassword(password)) {
-        alert("Please enter a valid password");
-        return false;
-    }
+    if (!editing) {
+        if (!isValidPassword(password)) {
+            alert("Please enter a valid password");
+            return false;
+        }
 
-    if (password != confirm) {
-        alert("Please ensure your passwords match")
-        return false;
+        if (password != confirm) {
+            alert("Please ensure your passwords match")
+            return false;
+        }
     }
     return true;
 });
@@ -120,6 +128,10 @@ function isValidUsername(username) {
 function isValidPassword(password) {
     if (!password) {
         return false;
+    }
+
+    if (password.length == 0 && editing) {
+        return true;
     }
 
     if (password.length < 8) {
