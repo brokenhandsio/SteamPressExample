@@ -26,7 +26,7 @@
     <meta property="og:image" content="#(post_image)">
     }
     ##else() {
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     }
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">

@@ -10,14 +10,32 @@
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="#(author.name)'s Author Page on the Steam Press Blog. All of the posts by #(author.name)">
     <meta property="og:site_name" content="SteamPress">
+
+    #if(author.profile_picture) {
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="#(author.profile_picture)">
+    <meta property="twitter:image:alt" content="Profile Picture of #(author.name)">
+    }
+    ##else() {
     <meta name="twitter:card" content="summary">
+    }
 
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
 
     #if(author.twitter_handle) {
-        <!-- Put twitter handle in here -->
+    <meta name="twitter:creator" content="@#(author.twitter_handle)">
+    }
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+}
+
+#export("scripts") {
+    <script src="/static/js/prismHighlighting.js"></script>
+    #if(disqus_name) {
+        <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
     }
 }
 
