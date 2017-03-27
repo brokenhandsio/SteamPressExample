@@ -36,36 +36,35 @@ try drop.addProvider(SteamPress.Provider.self)
 
 drop.get { req in
     var posts = try BlogPost.query().filter("published", true).sort("created", .descending).limit(3).all()
-    
+
     var parameters = [
         "uri": req.uri.description.makeNode()
     ]
-    
+
     if posts.count > 0 {
         parameters["posts"] = try posts.makeNode(context: BlogPostContext.shortSnippet)
     }
-    
+
     if let twitterHandle = drop.config["twitter", "siteHandle"]?.string {
         parameters["site_twitter_handle"] = twitterHandle.makeNode()
     }
-    
+
     return try drop.view.make("index", parameters)
 }
 
 drop.get("about") { req in
-    
+
     var parameters = [
-        "aboutPage": true.makeNode(),
+        "about_page": true.makeNode(),
         "uri": req.uri.description.makeNode()
     ]
-    
+
     if let twitterHandle = drop.config["twitter", "siteHandle"]?.string {
         parameters["site_twitter_handle"] = twitterHandle.makeNode()
     }
-    
+
     return try drop.view.make("about", parameters)
 }
 
 
 drop.run()
-
