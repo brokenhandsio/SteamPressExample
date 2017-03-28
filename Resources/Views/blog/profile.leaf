@@ -74,31 +74,41 @@
             <h2>#if(my_profile) {My} ##else() {#(author.name)'s} Posts</h2>
             <h2 class="h5 text-center"><small class="text-muted">#equal(author.post_count, "1") {#(author.post_count) post} ##else() {#(author.post_count) posts}</small></h2>
 
-            <table class="table table-striped table-hover table-bordered table-responsive mt-3">
-                <thead class="thead-default">
-                    <tr>
-                        <th>Date</th>
-                        <th>Title</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div id="blog-posts" class="mb-4">
+                #if(posts) {
+                    #loop(posts.data, "post") {
+                    <div class="blog-post card mb-3">
+                        <div class="card-block">
+                            <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
+                            <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created_date) by <a href="/blog/authors/#(post.author_username)/">#(post.author_name)</a></h6>
+                            <div class="post-contents card-text mt-3">
+                                #markdown(post.long_snippet)
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="/blog/posts/#(post.slug_url)/" class="card-link">Continue Reading</a>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted text-center">
+                            <div class="post-tags">
+                                <h5>
+                                #loop(post.tags, "tag") {
+                                <span class="badge badge-default"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
+                                }
+                                </h5>
+                            </div>
+                            #if(disqus_name) {
+                                <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                            }
+                        </div>
+                    </div>
+                    }
 
-                    #if(posts) {
-                    #loop(posts, "post") {
-                    <tr>
-                        <td>#(post.created_date)</td>
-                        <td><a href="/blog/posts/#(post.slug_url)/">#(post.title)</a></td>
-                    </tr>
-                    }
-                    }
-                    ##else() {
-                    <tr>
-                        <td colspan="2">#if(my_profile) {You} ##else() {They} haven't created any posts yet!</td>
-                    </tr>
-                    }
-
-                </tbody>
-            </table>
+                    #paginator(posts)
+                }
+                ##else() {
+                    <p class="mb-4">There haven't been any blog posts yet!</p>
+                }
+            </div>
         </div>
 
     </div>
