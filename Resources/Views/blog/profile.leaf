@@ -68,7 +68,7 @@
                 }
 
                 #if(user) {
-                    <a class="btn btn-primary" href="/blog/admin/users/#(author.id)/edit/">Edit Profile</a>
+                    <a class="btn btn-primary mt-3" href="/blog/admin/users/#(author.id)/edit/">Edit Profile</a>
                 }
 
             </div>
