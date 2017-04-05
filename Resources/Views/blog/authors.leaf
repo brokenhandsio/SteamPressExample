@@ -32,9 +32,11 @@
                 <div class="blog-author card text-center mb-3">
                     <div class="card-block">
                         <h2 class="card-title">#(author.name)</h2>
-                        <h6 class="card-subtitle mb-2 text-muted">@#(author.username)</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">#(author.username)</h6>
                         <div class="card-text mt-3">
-                            <p class="card-text">The profile for #(author.name)</p>
+                            #if(author.tagline) {
+                            <p class="card-text">#(author.tagline)</p>
+                            }
                             <a href="/blog/authors/#(author.username)/" class="card-link">View #(author.name)'s Profile</a>
                         </div>
                     </div>

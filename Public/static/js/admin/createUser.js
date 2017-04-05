@@ -1,3 +1,13 @@
+var editing = false;
+
+$(function() {
+  editing = $("#edit-user-data").data("editingPage");
+});
+
+$('#cancel-edit-button').click(function(){
+    return confirm('Are you sure you want to cancel? You will lose any unsaved work');
+});
+
 $("#create-user-form").on('submit', function() {
     var name = $("#inputName").val();
     var username = $("#inputUsername").val();
@@ -14,14 +24,16 @@ $("#create-user-form").on('submit', function() {
         return false;
     }
 
-    if (!isValidPassword(password)) {
-        alert("Please enter a valid password");
-        return false;
-    }
+    if (!editing) {
+        if (!isValidPassword(password)) {
+            alert("Please enter a valid password");
+            return false;
+        }
 
-    if (password != confirm) {
-        alert("Please ensure your passwords match")
-        return false;
+        if (password != confirm) {
+            alert("Please ensure your passwords match")
+            return false;
+        }
     }
     return true;
 });
@@ -60,6 +72,9 @@ $("#inputUsername").blur(function() {
 
 $("#inputPassword").blur(function() {
     var password = $("#inputPassword").val();
+    if (editing && !password) {
+        return;
+    }
     if (isValidPassword(password)) {
         $("#create-user-password-group").removeClass("has-danger");
         $("#create-user-password-group").addClass("has-success");
@@ -77,6 +92,9 @@ $("#inputPassword").blur(function() {
 $("#inputConfirmPassword").blur(function() {
     var password = $("#inputPassword").val();
     var confirm = $("#inputConfirmPassword").val();
+    if (editing && !password && !confirm) {
+        return;
+    }
     if (password == confirm) {
         $("#create-user-confirm-password-group").removeClass("has-danger");
         $("#create-user-confirm-password-group").addClass("has-success");
@@ -118,6 +136,10 @@ function isValidUsername(username) {
 }
 
 function isValidPassword(password) {
+    if (editing && !password) {
+        return true;
+    }
+
     if (!password) {
         return false;
     }

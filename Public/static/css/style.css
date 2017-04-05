@@ -146,3 +146,7 @@ h1.lead-title-blog {
 .index-column h2 {
     text-align: center;
 }
+
+#profile-picture {
+    max-width: 100%
+}

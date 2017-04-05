@@ -22,20 +22,20 @@
         }
         }
 
-        #if(loginWarning) {
+        #if(login_warning) {
         <div class="alert alert-warning" role="alert">
             <strong>Warning: </strong>You must be logged in to view this page
         </div>
         }
 
         <form action="/blog/admin/login/" method="post" id="login-form" class="form-signin">
-            <div class="form-group #if(usernameError) {has-danger}" id="login-username-group">
+            <div class="form-group #if(username_error) {has-danger}" id="login-username-group">
                 <label for="inputUsername" class="sr-only">Username</label>
-                <input type="text" class="form-control #if(usernameError) {form-control-danger}" id="inputUsername" name="inputUsername" placeholder="Username" value="#(usernameSupplied)" autofocus required>
+                <input type="text" class="form-control #if(username_error) {form-control-danger}" id="inputUsername" name="inputUsername" placeholder="Username" value="#(username_supplied)" autofocus required>
             </div>
-            <div class="form-group #if(passwordError) {has-danger}" id="login-password-group">
+            <div class="form-group #if(password_error) {has-danger}" id="login-password-group">
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" class="form-control #if(passwordError) {form-control-danger}" id="inputPassword" name="inputPassword" placeholder="Password" required>
+                <input type="password" class="form-control #if(password_error) {form-control-danger}" id="inputPassword" name="inputPassword" placeholder="Password" required>
             </div>
             <div class="form-group checkbox text-center">
                 <label><input type="checkbox" value="remember-me" name="remember-me"> Remember Me</label>

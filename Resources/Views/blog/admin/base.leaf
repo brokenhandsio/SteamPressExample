@@ -18,11 +18,11 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item #if(blogAdminPage) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
-                        <li class="nav-item #if(createBlogPostPage) {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
+                        <li class="nav-item #if(blog_admin_page) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
+                        <li class="nav-item #if(create_blog_post_page) {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
                     </ul>
                     <ul class="navbar-nav">
-                        <li class="nav-item float-lg-right #if(blogMyProfilePage) {active}"><a href="/blog/admin/profile/" class="nav-link">My Profile</a></li>
+                        <li class="nav-item float-lg-right #if(blog_my_profile_page) {active}"><a href="/blog/admin/profile/" class="nav-link">My Profile</a></li>
                         <li class="nav-item float-lg-right"><a href="/blog/admin/logout/" class="nav-link">Logout</a></li>
                     </ul>
                 </div>
