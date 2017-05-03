@@ -4,6 +4,7 @@ import Sessions
 import SteamPress
 import Foundation
 import VaporSecurityHeaders
+import LeafProvider
 
 let config = try Config()
 let disqusName = config["disqus", "disqusName"]?.string ?? "*"
@@ -27,6 +28,7 @@ config.addConfigurable(middleware: securityHeaders.builder(), name: "security-he
 
 
 try config.addProvider(SteamPress.Provider.self)
+try config.addProvider(LeafProvider.Provider.self)
 
 let drop = try Droplet(config)
 let database = try Database(MemoryDriver())
