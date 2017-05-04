@@ -59,7 +59,6 @@
                 </div>
                 }
 
-                #paginator(posts)
 
             }
             ##else() {
