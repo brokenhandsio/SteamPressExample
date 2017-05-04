@@ -6,16 +6,14 @@
     "hash": "crypto",
     "cipher": "crypto",
     "view": "leaf",
-    "middleware": {
-        "server": [
-            "file",
-            "validation",
-            "type-safe",
-            "date",
-            "sessions"
-        ],
-        "client": [
-
-        ]
-    }
+    "middleware": [
+        "error",
+        "date",
+        "file",
+        "sessions",
+        "persist"
+    ],
+    "commands": [
+        "prepare"
+    ]
 }
