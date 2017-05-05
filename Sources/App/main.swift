@@ -23,9 +23,7 @@ let referrerPolicy = ReferrerPolicyConfiguration(.strictOriginWhenCrossOrigin)
 
 let securityHeaders = SecurityHeadersFactory().with(server: ServerConfiguration(value: "brokenhands.io")).with(contentSecurityPolicy: ContentSecurityPolicyConfiguration(value: cspConfig)).with(referrerPolicy: referrerPolicy)
 config.addConfigurable(middleware: securityHeaders.builder(), name: "security-headers")
-
-//let abort = BlogAbortMiddleware(viewRenderer: drop.view, environment: drop.environment, log: drop.log)
-//drop.middleware.insert(abort, at: 0)
+config.addConfigurable(middleware: BlogErrorMiddleware.init, name: "blog-error")
 
 
 try config.addProvider(SteamPress.Provider.self)
@@ -34,13 +32,6 @@ try config.addProvider(FluentProvider.Provider.self)
 
 let drop = try Droplet(config)
 let database = try Database(MemoryDriver())
-
-
-
-//let memory = MemorySessions()
-//let sessions = SessionsMiddleware(sessions: memory)
-//drop.middleware.append(sessions)
-
 
 drop.get { req in
     var posts = try BlogPost.makeQuery().filter("published", true).sort("created", .descending).limit(3).all()

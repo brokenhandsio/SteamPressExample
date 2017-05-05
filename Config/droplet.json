@@ -8,7 +8,7 @@
     "view": "leaf",
     "middleware": [
         "security-headers",
-        "error",
+        "blog-error",
         "date",
         "file",
         "sessions",
