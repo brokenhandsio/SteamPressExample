@@ -5,13 +5,13 @@
       "package": "Auth",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/auth.git",
-      "version": "1.0.0-beta.1"
+      "version": "1.0.0-beta.2"
     },
     {
       "package": "AuthProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/auth-provider.git",
-      "version": "1.0.0-beta.3"
+      "version": "1.0.0-beta.4"
     },
     {
       "package": "BCrypt",
@@ -143,7 +143,7 @@
       "package": "SteamPress",
       "reason": null,
       "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
-      "version": "0.11.0-alpha.3"
+      "version": "0.11.0-alpha.4"
     },
     {
       "package": "SwiftMarkdown",
