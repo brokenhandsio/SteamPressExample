@@ -29,11 +29,11 @@ public final class BlogErrorMiddleware: Middleware {
                 }
                 catch { /* swallow so we return the default view */ }
             }
-//            let bytes = errorView.render(
-//                code: status.statusCode,
-//                message: status.reasonPhrase
-//            )
-            return View(bytes: Bytes()).makeResponse()
+            
+            let body = "<h1>" + status.statusCode.description + "</h1><p>" + status.reasonPhrase + "</p>"
+            let response = Response(status: status, body: .data(body.makeBytes()))
+            response.headers["Content-Type"] = "text/html; charset=utf-8"
+            return response
         }
         
         let status = Status(error)
