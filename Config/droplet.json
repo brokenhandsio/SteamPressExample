@@ -12,7 +12,7 @@
         "date",
         "file",
         "sessions",
-        "persist"
+        "blog-persist"
     ],
     "commands": [
         "prepare"
