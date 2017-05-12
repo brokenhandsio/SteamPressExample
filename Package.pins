@@ -11,7 +11,7 @@
       "package": "AuthProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/auth-provider.git",
-      "version": "1.0.0-beta.4"
+      "version": "1.0.0-beta.5"
     },
     {
       "package": "BCrypt",
@@ -59,25 +59,25 @@
       "package": "Engine",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/engine.git",
-      "version": "2.0.0-beta.5"
+      "version": "2.0.0-beta.6"
     },
     {
       "package": "Fluent",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent.git",
-      "version": "2.0.0-beta.25"
+      "version": "2.0.0-beta.27"
     },
     {
       "package": "FluentProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent-provider.git",
-      "version": "1.0.0-beta.13"
+      "version": "1.0.0-beta.15"
     },
     {
       "package": "JSON",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/json.git",
-      "version": "2.0.0-beta.3"
+      "version": "2.0.0-beta.5"
     },
     {
       "package": "Leaf",
@@ -107,7 +107,7 @@
       "package": "Node",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/node.git",
-      "version": "2.0.0-beta.1"
+      "version": "2.0.0-beta.6"
     },
     {
       "package": "PathIndexable",
@@ -125,7 +125,7 @@
       "package": "Routing",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/routing.git",
-      "version": "2.0.0-beta.3"
+      "version": "2.0.0-beta.5"
     },
     {
       "package": "SQLite",
@@ -137,7 +137,7 @@
       "package": "Sockets",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/socks.git",
-      "version": "2.0.0-beta.5"
+      "version": "2.0.0-beta.6"
     },
     {
       "package": "SteamPress",
@@ -173,7 +173,7 @@
       "package": "Vapor",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
-      "version": "2.0.0-beta.23"
+      "version": "2.0.0-beta.25"
     },
     {
       "package": "VaporSecurityHeaders",
