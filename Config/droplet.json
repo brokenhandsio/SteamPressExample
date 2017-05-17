@@ -11,7 +11,7 @@
         "blog-error",
         "date",
         "file",
-        "sessions",
+        "steampress-sessions",
         "blog-persist"
     ],
     "commands": [
