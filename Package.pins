@@ -23,7 +23,7 @@
       "package": "Bits",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/bits.git",
-      "version": "1.0.0-beta.6"
+      "version": "1.0.0"
     },
     {
       "package": "CTLS",
@@ -41,7 +41,7 @@
       "package": "Core",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/core.git",
-      "version": "2.0.0-beta.9"
+      "version": "2.0.0"
     },
     {
       "package": "Crypto",
@@ -53,19 +53,19 @@
       "package": "Debugging",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/debugging.git",
-      "version": "1.0.0-beta.1"
+      "version": "1.0.0"
     },
     {
       "package": "Engine",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/engine.git",
-      "version": "2.0.0-beta.6"
+      "version": "2.0.0-beta.7"
     },
     {
       "package": "Fluent",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent.git",
-      "version": "2.0.0-beta.27"
+      "version": "2.0.0-beta.28"
     },
     {
       "package": "FluentProvider",
@@ -83,7 +83,7 @@
       "package": "Leaf",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/leaf.git",
-      "version": "2.0.0-beta.7"
+      "version": "2.0.0-beta.8"
     },
     {
       "package": "LeafMarkdown",
@@ -173,7 +173,7 @@
       "package": "Vapor",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
-      "version": "2.0.0-beta.25"
+      "version": "2.0.0-beta.26"
     },
     {
       "package": "VaporSecurityHeaders",
