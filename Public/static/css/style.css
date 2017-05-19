@@ -45,6 +45,11 @@ h1.lead-title-blog {
     max-width: 100%;
 }
 
+.post-contents {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 .post-contents blockquote {
     background: #f7f7f7;
     padding: .5rem 1rem;
