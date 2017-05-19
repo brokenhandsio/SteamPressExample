@@ -5,19 +5,19 @@
       "package": "Auth",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/auth.git",
-      "version": "1.0.0-beta.2"
+      "version": "1.0.0"
     },
     {
       "package": "AuthProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/auth-provider.git",
-      "version": "1.0.0-beta.5"
+      "version": "1.0.0"
     },
     {
       "package": "BCrypt",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/bcrypt.git",
-      "version": "1.0.0-beta.1"
+      "version": "1.0.0"
     },
     {
       "package": "Bits",
@@ -29,25 +29,25 @@
       "package": "CTLS",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/ctls.git",
-      "version": "1.0.0-beta.4"
+      "version": "1.0.0"
     },
     {
       "package": "Console",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/console.git",
-      "version": "2.0.0-beta.6"
+      "version": "2.0.0"
     },
     {
       "package": "Core",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/core.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "Crypto",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/crypto.git",
-      "version": "2.0.0-beta.1"
+      "version": "2.0.0"
     },
     {
       "package": "Debugging",
@@ -59,97 +59,91 @@
       "package": "Engine",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/engine.git",
-      "version": "2.0.0-beta.7"
+      "version": "2.0.0"
     },
     {
       "package": "Fluent",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent.git",
-      "version": "2.0.0-beta.28"
+      "version": "2.0.0"
     },
     {
       "package": "FluentProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent-provider.git",
-      "version": "1.0.0-beta.15"
+      "version": "1.0.0"
     },
     {
       "package": "JSON",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/json.git",
-      "version": "2.0.0-beta.5"
+      "version": "2.0.0"
     },
     {
       "package": "Leaf",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/leaf.git",
-      "version": "2.0.0-beta.8"
-    },
-    {
-      "package": "LeafMarkdown",
-      "reason": null,
-      "repositoryURL": "https://github.com/brokenhandsio/LeafMarkdown.git",
-      "version": "0.3.0-beta.5"
+      "version": "2.0.0"
     },
     {
       "package": "LeafProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/leaf-provider.git",
-      "version": "1.0.0-beta.4"
+      "version": "1.0.0"
+    },
+    {
+      "package": "MarkdownProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor-community/markdown-provider.git",
+      "version": "1.0.0"
     },
     {
       "package": "Multipart",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/multipart.git",
-      "version": "2.0.0-beta.2"
+      "version": "2.0.0"
     },
     {
       "package": "Node",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/node.git",
-      "version": "2.0.0-beta.7"
-    },
-    {
-      "package": "PathIndexable",
-      "reason": null,
-      "repositoryURL": "https://github.com/vapor/path-indexable.git",
-      "version": "2.0.0-beta.1"
+      "version": "2.0.0"
     },
     {
       "package": "Random",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/random.git",
-      "version": "1.0.0-beta.3"
+      "version": "1.0.0"
     },
     {
       "package": "Routing",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/routing.git",
-      "version": "2.0.0-beta.5"
+      "version": "2.0.0"
     },
     {
       "package": "SQLite",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/sqlite.git",
-      "version": "2.0.0-beta.1"
+      "version": "2.0.0"
     },
     {
       "package": "Sockets",
       "reason": null,
-      "repositoryURL": "https://github.com/vapor/socks.git",
-      "version": "2.0.0-beta.6"
+      "repositoryURL": "https://github.com/vapor/sockets.git",
+      "version": "2.0.0"
     },
     {
       "package": "SteamPress",
       "reason": null,
       "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
-      "version": "0.11.0-alpha.9"
+      "version": "0.11.0-beta.2"
     },
     {
       "package": "SwiftMarkdown",
       "reason": null,
-      "repositoryURL": "https://github.com/brokenhandsio/SwiftMarkdown.git",
-      "version": "0.2.0"
+      "repositoryURL": "https://github.com/vapor-community/markdown.git",
+      "version": "0.3.0"
     },
     {
       "package": "SwiftSoup",
@@ -161,7 +155,7 @@
       "package": "TLS",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/tls.git",
-      "version": "2.0.0-beta.4"
+      "version": "2.0.0"
     },
     {
       "package": "Validation",
@@ -173,13 +167,13 @@
       "package": "Vapor",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
-      "version": "2.0.0-beta.26"
+      "version": "2.0.1"
     },
     {
       "package": "VaporSecurityHeaders",
       "reason": null,
       "repositoryURL": "https://github.com/brokenhandsio/VaporSecurityHeaders.git",
-      "version": "0.4.0-beta.3"
+      "version": "1.0.0"
     },
     {
       "package": "cmark",
