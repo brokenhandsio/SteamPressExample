@@ -11,7 +11,7 @@
       "package": "AuthProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/auth-provider.git",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "package": "BCrypt",
@@ -65,7 +65,7 @@
       "package": "Fluent",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "FluentProvider",
@@ -77,7 +77,7 @@
       "package": "JSON",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/json.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "Leaf",
@@ -107,7 +107,7 @@
       "package": "Node",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/node.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "Random",
@@ -131,7 +131,7 @@
       "package": "Sockets",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/sockets.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "SteamPress",
@@ -167,7 +167,7 @@
       "package": "Vapor",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
-      "version": "2.0.1"
+      "version": "2.0.2"
     },
     {
       "package": "VaporSecurityHeaders",
