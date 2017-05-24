@@ -137,7 +137,7 @@
       "package": "SteamPress",
       "reason": null,
       "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
-      "version": "0.11.0-beta.2"
+      "version": "0.11.0"
     },
     {
       "package": "SwiftMarkdown",
