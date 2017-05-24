@@ -5,16 +5,16 @@
     "log": "console",
     "hash": "crypto",
     "cipher": "crypto",
-    "middleware": {
-        "server": [
-            "file",
-            "validation",
-            "type-safe",
-            "date",
-            "sessions"
-        ],
-        "client": [
-        
-        ]
-    }
+    "view": "leaf",
+    "middleware": [
+        "security-headers",
+        "blog-error",
+        "date",
+        "file",
+        "steampress-sessions",
+        "blog-persist"
+    ],
+    "commands": [
+        "prepare"
+    ]
 }
