@@ -35,13 +35,13 @@
       "package": "Console",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/console.git",
-      "version": "2.0.0"
+      "version": "2.1.0"
     },
     {
       "package": "Core",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/core.git",
-      "version": "2.0.1"
+      "version": "2.0.2"
     },
     {
       "package": "Crypto",
@@ -59,31 +59,31 @@
       "package": "Engine",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/engine.git",
-      "version": "2.0.0"
+      "version": "2.1.0"
     },
     {
       "package": "Fluent",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent.git",
-      "version": "2.0.1"
+      "version": "2.1.1"
     },
     {
       "package": "FluentProvider",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent-provider.git",
-      "version": "1.0.0"
+      "version": "1.1.1"
     },
     {
       "package": "JSON",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/json.git",
-      "version": "2.0.1"
+      "version": "2.0.2"
     },
     {
       "package": "Leaf",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/leaf.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "LeafProvider",
@@ -107,7 +107,7 @@
       "package": "Node",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/node.git",
-      "version": "2.0.1"
+      "version": "2.0.3"
     },
     {
       "package": "Random",
@@ -137,7 +137,7 @@
       "package": "SteamPress",
       "reason": null,
       "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
-      "version": "0.11.0"
+      "version": "0.11.1"
     },
     {
       "package": "SwiftMarkdown",
@@ -149,13 +149,13 @@
       "package": "SwiftSoup",
       "reason": null,
       "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
-      "version": "1.3.2"
+      "version": "1.3.3"
     },
     {
       "package": "TLS",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/tls.git",
-      "version": "2.0.0"
+      "version": "2.0.4"
     },
     {
       "package": "Validation",
@@ -167,7 +167,7 @@
       "package": "Vapor",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
-      "version": "2.0.2"
+      "version": "2.1.0"
     },
     {
       "package": "VaporSecurityHeaders",
