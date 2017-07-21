@@ -67,9 +67,9 @@
 
                 <div class="card text-center mb-3">
                     <div class="card-block">
-                        <h3 class="card-title">LeafMarkdown</h3>
-                        <p class="card-text">A tag for Leaf to enable Markdown to be displayed on webpages.</p>
-                        <a href="https://github.com/brokenhandsio/LeafMarkdown/" class="btn btn-primary" target="_blank">View on Github</a>
+                        <h3 class="card-title">Vapor OAuth</h3>
+                        <p class="card-text">A fully spec-compliant OAuth2 Provider library built for Vapor.</p>
+                        <a href="https://github.com/brokenhandsio/vapor-oauth/" class="btn btn-primary" target="_blank">View on Github</a>
                     </div>
                 </div>
 
