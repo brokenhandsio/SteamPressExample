@@ -34,7 +34,7 @@ let drop = try Droplet(config)
 let database = try Database(MemoryDriver())
 
 drop.get { req in
-    var posts = try BlogPost.makeQuery().filter("published", true).sort("created", .descending).limit(3).all()
+    var posts = try BlogPost.makeQuery().filter(BlogPost.Properties.published, true).sort(BlogPost.Properties.created, .descending).limit(3).all()
 
     var parameters: [String: NodeRepresentable] = [
         "uri": req.uri.description
