@@ -37,7 +37,7 @@
                 #if(posts) {
                 #loop(posts, "post") {
                 <div class="card mb-3">
-                    <div class="card-block">
+                    <div class="card-body">
                         <a href="/blog/posts/#(post.slug_url)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
                         #markdown(post.short_snippet)
                         <a href="/blog/posts/#(post.slug_url)/" class="card-link">Read More</a>
@@ -58,7 +58,7 @@
                 <h2>More Open Source Projects</h2>
 
                 <div class="card text-center mb-3">
-                    <div class="card-block">
+                    <div class="card-body">
                         <h3 class="card-title">Vapor Security Headers</h3>
                         <p class="card-text">Easily add common security headers to your Vapor application to help secure you and your users.</p>
                         <a href="https://github.com/brokenhandsio/VaporSecurityHeaders/" class="btn btn-primary" target="_blank">View on Github</a>
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="card text-center mb-3">
-                    <div class="card-block">
+                    <div class="card-body">
                         <h3 class="card-title">Vapor OAuth</h3>
                         <p class="card-text">A fully spec-compliant OAuth2 Provider library built for Vapor.</p>
                         <a href="https://github.com/brokenhandsio/vapor-oauth/" class="btn btn-primary" target="_blank">View on Github</a>
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="card text-center mb-3">
-                    <div class="card-block">
+                    <div class="card-body">
                         <h3 class="card-title">SteamPress Example</h3>
                         <p class="card-text">An easy-to-deploy Blogging Platform for SteamPress. Contains all the code you need to get up and running with SteamPress. In fact, it is the code for this site!</p>
                         <a href="https://github.com/brokenhandsio/SteamPressExample/" class="btn btn-primary" target="_blank">View on Github</a>
