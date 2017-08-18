@@ -27,32 +27,44 @@
         }
 
         <form action="#if(editing) {/blog/admin/users/#(user_id)/edit/} ##else() {/blog/admin/createUser/}" id="create-user-form" method="post">
-            <div class="form-group #if(name_error) { has-danger }" id="create-user-name-group">
+            <div class="form-group" id="create-user-name-group">
                 <label class="form-control-label" for="inputName">Name *</label>
-                <input type="text" class="form-control #if(name_error) { form-control-danger }" id="inputName" name="inputName" placeholder="Name" value="#(name_supplied)" autofocus required>
+                <input type="text" class="form-control #if(name_error) { is-invalid }" id="inputName" name="inputName" placeholder="Name" value="#(name_supplied)" autofocus required>
+                <div class="invalid-feedback">
+                    Please enter a name
+                </div>
             </div>
 
-            <div class="form-group #if(username_error) { has-danger }" id="create-user-username-group">
+            <div class="form-group" id="create-user-username-group">
                 <label class="form-control-label" for="inputUsername">Username *</label>
-                <input type="text" class="form-control #if(username_error) { form-control-danger }" id="inputUsername" name="inputUsername" placeholder="Username" value="#(username_supplied)" required>
+                <input type="text" class="form-control #if(username_error) { is-invalid }" id="inputUsername" name="inputUsername" placeholder="Username" value="#(username_supplied)" required>
+                <div class="invalid-feedback">
+                    Please enter a username
+                </div>
             </div>
 
-            <div class="form-group #if(password_error) { has-danger }" id="create-user-password-group">
+            <div class="form-group" id="create-user-password-group">
                 <label class="form-control-label" for="inputPassword">Password #if(editing) {} ##else() { *}</label>
                 <div class="input-group">
-                    <input type="password" class="form-control #if(password_error) { form-control-danger }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() {required}>
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#()passwordModal" tabindex="-1">?</button>
-                        </span>
+                    <input type="password" class="form-control #if(password_error) { is-invalid }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() {required}>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#()passwordModal" tabindex="-1">?</button>
+                    </span>
+                </div>
+                <div class="invalid-feedback" id="password-feedback">
+                    Please enter a valid password
                 </div>
                 #if(editing) {<small id="passwordHelpBlock" class="form-text text-muted">
                 Leave the password blank if you don't want to change the password
                 </small>}
             </div>
 
-            <div class="form-group #if(confirm_password_error) { has-danger }" id="create-user-confirm-password-group">
+            <div class="form-group" id="create-user-confirm-password-group">
                 <label class="form-control-label" for="inputConfirmPassword">Confirm Password #if(editing) {} ##else() { *}</label>
-                <input type="password" class="form-control #if(confirm_password_error) { form-control-danger }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else() {required}>
+                <input type="password" class="form-control #if(confirm_password_error) { is-invalid }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else() {required}>
+                <div class="invalid-feedback">
+                    Please confirm your password
+                </div>
             </div>
 
             <div class="form-check">

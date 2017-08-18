@@ -163,3 +163,7 @@ h1.lead-title-blog {
 #profile-picture {
     max-width: 100%
 }
+
+.table-responsive {
+  border: none;
+}

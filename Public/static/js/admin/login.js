@@ -17,23 +17,19 @@ $("#login-form").on('submit', function() {
 $("#inputUsername").blur(function() {
     var username = $("#inputUsername").val();
     if (username) {
-        $("#login-username-group").removeClass("has-danger");
-        $("#inputUsername").removeClass("form-control-danger");
+        $("#inputUsername").removeClass("is-invalid");
     }
     else {
-        $("#login-username-group").addClass("has-danger");
-        $("#inputUsername").addClass("form-control-danger");
+        $("#inputUsername").addClass("is-invalid");
     }
 });
 
 $("#inputPassword").blur(function() {
     var password = $("#inputPassword").val();
     if (password) {
-        $("#login-password-group").removeClass("has-danger");
-        $("#inputPassword").removeClass("form-control-danger");
+        $("#inputPassword").removeClass("is-invalid");
     }
     else {
-        $("#login-password-group").addClass("has-danger");
-        $("#inputPassword").addClass("form-control-danger");
+        $("#inputPassword").addClass("is-invalid");
     }
 });

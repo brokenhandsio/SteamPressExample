@@ -10,6 +10,7 @@
 #export("scripts") {
   <script src="https://cdn.jsdelivr.net/simplemde/1.11.2/simplemde.min.js" integrity="sha256-6sZs7OGP0Uzcl7UDsLaNsy1K0KTZx1+6yEVrRJMn2IM= sha384-83rBTICYr+FwAC+A5t0ZYsWjTcPXibCe/NBSFLAgMPkwHBvIi02EcE9OShMsGCi3 sha512-ksSfTk6JIdsze75yZ8c+yDVLu09SNefa9IicxEE+HZvWo9kLPY1vrRlmucEMHQReWmEdKqusQWaDMpkTb3M2ug==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js" integrity="sha256-+mWd/G69S4qtgPowSELIeVAv7+FuL871WXaolgXnrwQ= sha384-222hzbb8Z8ZKe6pzP18nTSltQM3PdcAwxWKzGOKOIF+Y3bROr5n9zdQ8yTRHgQkQ sha512-bj8HE1pKwchoYNizhD57Vl6B9ExS25Hw21WxoQEzGapNNjLZ0+kgRMEn9KSCD+igbE9+/dJO7x6ZhLrdaQ5P3g==" crossorigin="anonymous"></script>
+  <script src="/static/js/admin/punycode.js"></script>
   <script src="/static/js/admin/createPost.js"></script>
 }
 
@@ -36,7 +37,7 @@
         <div id="edit-post-data" data-editing-page="true" data-published-post="#(post.published)" data-original-slug-url="#(slug_url_supplied)" data-original-title="#(title_supplied)"></div>
         }
 
-        <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" id="create-post-form" method="post" class="mt-3">
+        <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" id="create-post-form" method="post" class="mt-3" novalidate>
             #if(editing) {
             <div class="alert alert-warning alert-dismissible fade show" role="alert" id="blog-post-edit-title-warning">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -52,9 +53,9 @@
                 <div class="h4">#if(post.published) {<span class="badge badge-success">Published</span>} ##else() {<span class="badge badge-info">Draft</span>}</div>
             </div>
             }
-            <div class="form-group #if(title_error) { has-danger }" id="create-post-title-group">
+            <div class="form-group" id="create-post-title-group">
                 <label class="form-control-label" for="inputTitle">Title</label>
-                <input type="text" class="form-control #if(title_error) { form-control-danger }" id="inputTitle" name="inputTitle" placeholder="Blog Post Title" value="#(title_supplied)" autofocus required>
+                <input type="text" class="form-control #if(title_error) { is-invalid }" id="inputTitle" name="inputTitle" placeholder="Blog Post Title" value="#(title_supplied)" autofocus required>
             </div>
 
             <div class="form-group" id="create-post-slugurl-group">
@@ -65,9 +66,9 @@
                 </div>
             </div>
 
-            <div class="form-group #if(contents_error) { has-danger }" id="create-post-contents-group">
+            <div class="form-group" id="create-post-contents-group">
                 <label class="form-control-label" for="inputPostContents">Blog Post</label>
-                <textarea class="form-control #if(contents_error) { form-control-danger }" id="inputPostContents" name="inputPostContents" rows="10" required>#(contents_supplied)</textarea>
+                <textarea class="form-control #if(contents_error) { is-invalid }" id="inputPostContents" name="inputPostContents" rows="10" required>#(contents_supplied)</textarea>
             </div>
 
             <div class="form-group" id="create-post-tags-group">

@@ -10,14 +10,14 @@
 <body>
     <div id="content">
 
-        <nav class="navbar navbar-light bg-faded navbar-toggleable-md">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#()navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#()navbar-collapsable" aria-controls="navbar-collapsable" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="/">
                 SteamPress
             </a>
-            <div class="collapse navbar-collapse" id="navbar">
+            <div class="collapse navbar-collapse" id="navbar-collapsable">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item #if(blog_index_page) {active}"><a href="/blog/" class="nav-link">Blog</a></li>
                     <li class="nav-item #if(about_page) {active}"><a href="/about/" class="nav-link">About</a></li>

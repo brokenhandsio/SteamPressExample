@@ -41,32 +41,24 @@ $("#create-user-form").on('submit', function() {
 $("#inputName").blur(function() {
     var name = $("#inputName").val();
     if (isValidName(name)) {
-        $("#create-user-name-group").removeClass("has-danger");
-        $("#create-user-name-group").addClass("has-success");
-        $("#inputName").removeClass("form-control-danger");
-        $("#inputName").addClass("form-control-success");
+        $("#inputName").removeClass("is-invalid");
     }
     else {
-        $("#create-user-name-group").removeClass("has-success");
-        $("#create-user-name-group").addClass("has-danger");
-        $("#inputName").removeClass("form-control-success");
-        $("#inputName").addClass("form-control-danger");
+        $("#inputName").addClass("is-invalid");
     }
 });
+
+$("#username").on('change keyup paste',function(){
+    $(this).val($(this).val().toLowerCase());
+})
 
 $("#inputUsername").blur(function() {
     var username = $("#inputUsername").val();
     if (isValidUsername(username)) {
-        $("#create-user-username-group").removeClass("has-danger");
-        $("#create-user-username-group").addClass("has-success");
-        $("#inputUsername").removeClass("form-control-danger");
-        $("#inputUsername").addClass("form-control-success");
+        $("#inputUsername").removeClass("is-invalid");
     }
     else {
-        $("#create-user-username-group").removeClass("has-success");
-        $("#create-user-username-group").addClass("has-danger");
-        $("#inputUsername").removeClass("form-control-success");
-        $("#inputUsername").addClass("form-control-danger");
+        $("#inputUsername").addClass("is-invalid");
     }
 });
 
@@ -76,16 +68,12 @@ $("#inputPassword").blur(function() {
         return;
     }
     if (isValidPassword(password)) {
-        $("#create-user-password-group").removeClass("has-danger");
-        $("#create-user-password-group").addClass("has-success");
-        $("#inputPassword").removeClass("form-control-danger");
-        $("#inputPassword").addClass("form-control-success");
+        $("#inputPassword").removeClass("is-invalid");
+        $("#password-feedback").hide();
     }
     else {
-        $("#create-user-password-group").removeClass("has-success");
-        $("#create-user-password-group").addClass("has-danger");
-        $("#inputPassword").removeClass("form-control-success");
-        $("#inputPassword").addClass("form-control-danger");
+        $("#inputPassword").addClass("is-invalid");
+        $("#password-feedback").show();
     }
 });
 
@@ -96,16 +84,10 @@ $("#inputConfirmPassword").blur(function() {
         return;
     }
     if (password == confirm) {
-        $("#create-user-confirm-password-group").removeClass("has-danger");
-        $("#create-user-confirm-password-group").addClass("has-success");
-        $("#inputConfirmPassword").removeClass("form-control-danger");
-        $("#inputConfirmPassword").addClass("form-control-success");
+        $("#inputConfirmPassword").removeClass("is-invalid");
     }
     else {
-        $("#create-user-confirm-password-group").removeClass("has-success");
-        $("#create-user-confirm-password-group").addClass("has-danger");
-        $("#inputConfirmPassword").removeClass("form-control-success");
-        $("#inputConfirmPassword").addClass("form-control-danger");
+        $("#inputConfirmPassword").addClass("is-invalid");
     }
 });
 
@@ -127,7 +109,7 @@ function isValidUsername(username) {
         if (username.length > 64) {
             return false;
         }
-        if (/^[a-z0-9\-.]+$/.test(username)) {
+        if (/^[a-z0-9\-.]+$/.test(username.toLowerCase())) {
             return true;
         }
         return false;

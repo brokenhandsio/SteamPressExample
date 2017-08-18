@@ -82,7 +82,7 @@
                     #if(posts) {
                         #loop(posts.data, "post") {
                         <div class="blog-post card mb-3">
-                            <div class="card-block">
+                            <div class="card-body">
                                 <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
                                 <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created_date) by <a href="/blog/authors/#(post.author_username)/">#(post.author_name)</a></h6>
                                 <div class="post-contents card-text mt-3">
@@ -96,7 +96,7 @@
                                 <div class="post-tags">
                                     <h5>
                                     #loop(post.tags, "tag") {
-                                    <span class="badge badge-default"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
+                                    <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
                                     }
                                     </h5>
                                 </div>

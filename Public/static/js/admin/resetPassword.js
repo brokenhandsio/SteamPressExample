@@ -1,32 +1,36 @@
+(function() {
+  "use strict";
+  window.addEventListener("load", function() {
+    var form = document.getElementById("reset-password-form");
+    form.addEventListener("submit", function(event) {
+      if (form.checkValidity() == false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add("was-validated");
+    }, false);
+  }, false);
+}());
+
 $("#reset-password-form").on('submit', function() {
     var password = $("#inputPassword").val();
-    var confirm = $("#inputConfirmPassword").val();
+    var confirmPassword = $("#inputConfirmPassword").val();
 
-    if (!isValidPassword(password)) {
-        alert("Please enter a valid password");
+    if (!isValidPassword(password) || password != confirmPassword) {
         return false;
     }
 
-    if (password != confirm) {
-        alert("Please ensure your passwords match")
-        return false;
-    }
     return true;
 });
 
 $("#inputPassword").blur(function() {
     var password = $("#inputPassword").val();
     if (isValidPassword(password)) {
-        $("#reset-password-password-group").removeClass("has-danger");
-        $("#reset-password-password-group").addClass("has-success");
-        $("#inputPassword").removeClass("form-control-danger");
-        $("#inputPassword").addClass("form-control-success");
+        $("#inputPassword").removeClass("is-invalid");
+        $("#password-feedback").hide();
     }
     else {
-        $("#reset-password-password-group").removeClass("has-success");
-        $("#reset-password-password-group").addClass("has-danger");
-        $("#inputPassword").removeClass("form-control-success");
-        $("#inputPassword").addClass("form-control-danger");
+        $("#inputPassword").removeClass("is-valid");
     }
 });
 
@@ -34,16 +38,12 @@ $("#inputConfirmPassword").blur(function() {
     var password = $("#inputPassword").val();
     var confirm = $("#inputConfirmPassword").val();
     if (password == confirm) {
-        $("#reset-password-confirm-password-group").removeClass("has-danger");
-        $("#reset-password-confirm-password-group").addClass("has-success");
-        $("#inputConfirmPassword").removeClass("form-control-danger");
-        $("#inputConfirmPassword").addClass("form-control-success");
+        $("#inputConfirmPassword").removeClass("is-invalid");
+        $("#confirm-password-feedback").hide();
     }
     else {
-        $("#reset-password-confirm-password-group").removeClass("has-success");
-        $("#reset-password-confirm-password-group").addClass("has-danger");
-        $("#inputConfirmPassword").removeClass("form-control-success");
-        $("#inputConfirmPassword").addClass("form-control-danger");
+        $("#inputConfirmPassword").addClass("is-invalid");
+        $("#confirm-password-feedback").show();
     }
 });
 
