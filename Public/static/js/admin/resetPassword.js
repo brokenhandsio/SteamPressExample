@@ -12,15 +12,25 @@
   }, false);
 }());
 
+$("#reset-password-form").on('submit', function() {
+    var password = $("#inputPassword").val();
+    var confirmPassword = $("#inputConfirmPassword").val();
+
+    if (!isValidPassword(password) || password != confirmPassword) {
+        return false;
+    }
+
+    return true;
+});
+
 $("#inputPassword").blur(function() {
     var password = $("#inputPassword").val();
     if (isValidPassword(password)) {
         $("#inputPassword").removeClass("is-invalid");
-        $("#inputPassword").addClass("is-valid");
+        $("#password-feedback").hide();
     }
     else {
         $("#inputPassword").removeClass("is-valid");
-        $("#inputPassword").addClass("is-invalid");
     }
 });
 
@@ -29,11 +39,11 @@ $("#inputConfirmPassword").blur(function() {
     var confirm = $("#inputConfirmPassword").val();
     if (password == confirm) {
         $("#inputConfirmPassword").removeClass("is-invalid");
-        $("#inputConfirmPassword").addClass("is-valid");
+        $("#confirm-password-feedback").hide();
     }
     else {
-        $("#inputConfirmPassword").removeClass("is-valid");
         $("#inputConfirmPassword").addClass("is-invalid");
+        $("#confirm-password-feedback").show();
     }
 });
 
