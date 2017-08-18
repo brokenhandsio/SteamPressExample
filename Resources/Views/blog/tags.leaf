@@ -29,7 +29,7 @@
             #loop(tags, "tag") {
             <div class="col-md-4">
                 <div class="blog-tag card text-center mb-3">
-                    <div class="card-block">
+                    <div class="card-body">
                         <h2 class="card-title">#(tag.name)</h2>
                         <div class="card-text mt-3">
                             <a href="/blog/tags/#(tag.url_encoded_name)/" class="card-link">View #(tag.name)</a>
