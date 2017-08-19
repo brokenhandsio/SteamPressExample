@@ -26,6 +26,12 @@
       "version": "1.1.0"
     },
     {
+      "package": "CMySQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/cmysql.git",
+      "version": "2.0.2"
+    },
+    {
       "package": "CTLS",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/ctls.git",
@@ -102,6 +108,24 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/multipart.git",
       "version": "2.1.0"
+    },
+    {
+      "package": "MySQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/mysql.git",
+      "version": "2.0.2"
+    },
+    {
+      "package": "MySQLDriver",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/mysql-driver.git",
+      "version": "2.0.2"
+    },
+    {
+      "package": "MySQLProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/mysql-provider.git",
+      "version": "2.0.0"
     },
     {
       "package": "Node",
