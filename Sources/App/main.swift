@@ -22,25 +22,29 @@ if config.environment == .production || config.environment == .test {
 
 let referrerPolicy = ReferrerPolicyConfiguration(.strictOriginWhenCrossOrigin)
 
-let securityHeaders = SecurityHeadersFactory().with(server: ServerConfiguration(value: "brokenhands.io")).with(contentSecurityPolicy: ContentSecurityPolicyConfiguration(value: cspConfig)).with(referrerPolicy: referrerPolicy)
+let securityHeaders = SecurityHeadersFactory()
+    .with(server: ServerConfiguration(value: "brokenhands.io"))
+    .with(contentSecurityPolicy: ContentSecurityPolicyConfiguration(value: cspConfig))
+    .with(referrerPolicy: referrerPolicy)
 config.addConfigurable(middleware: securityHeaders.builder(), name: "security-headers")
 config.addConfigurable(middleware: BlogErrorMiddleware.init, name: "blog-error")
-
 
 try config.addProvider(SteamPress.Provider.self)
 try config.addProvider(LeafProvider.Provider.self)
 try config.addProvider(FluentProvider.Provider.self)
 
-if (config.environment == .production) {
+if config.environment == .production {
     try config.addProvider(MySQLProvider.Provider.self)
 }
-
 
 let drop = try Droplet(config)
 let database = try Database(MemoryDriver())
 
 drop.get { req in
-    var posts = try BlogPost.makeQuery().filter(BlogPost.Properties.published, true).sort(BlogPost.Properties.created, .descending).limit(3).all()
+    var posts = try BlogPost.makeQuery()
+        .filter(BlogPost.Properties.published, true)
+        .sort(BlogPost.Properties.created, .descending)
+        .limit(3).all()
 
     var parameters: [String: NodeRepresentable] = [
         "uri": req.uri.description
@@ -70,6 +74,5 @@ drop.get("about") { req in
 
     return try drop.view.make("about", parameters)
 }
-
 
 try drop.run()
