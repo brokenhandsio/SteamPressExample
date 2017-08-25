@@ -13,8 +13,8 @@ before_install:
             brew install vapor;
             brew install cmysql;
         else
+            sudo apt-get install mysql-client libmysqlclient-dev;
             eval "$(curl -sL https://apt.vapor.sh)";
-            sudo apt-get install mysql-client libmysqlclient-dev
             sudo apt-get install vapor;
             sudo apt-get install cmysql;
             sudo chmod -R a+rx /usr/;
