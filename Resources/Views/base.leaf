@@ -31,7 +31,6 @@
                 </ul>
                 #if(user) {
                     <ul class="navbar-nav">
-                        <li class="nav-item float-lg-right #if(blog_my_profile_page) {active}"><a href="/blog/admin/profile/" class="nav-link">My Profile</a></li>
                         <li class="nav-item float-lg-right"><a href="/blog/admin/logout/" class="nav-link">Logout</a></li>
                     </ul>
                 }
