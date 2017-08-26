@@ -92,7 +92,21 @@ a:hover {
     height: auto;
 }
 
+.index-post-link {
+    color: rgb(41, 43, 44);
+}
+
+.index-post-link:hover {
+    color: rgb(41, 43, 44);
+}
+
+.index-column h2 {
+    text-align: center;
+}
+
 /** Homepage (end) **/
+
+/** Blog **/
 
 
 h1.lead-title-blog {
@@ -125,6 +139,43 @@ h1.lead-title-blog {
     padding-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.post-title-link {
+    color: rgb(41, 43, 44);
+}
+
+.post-title-link:hover {
+    color: rgb(41, 43, 44);
+}
+
+.post-tags a {
+    color: white;
+}
+
+.post-tags a:hover {
+    text-decoration: none;
+}
+
+.social-media-buttons {
+    width: 100%;
+    display: flex;
+}
+
+.social-media-buttons div {
+    flex-basis: 100%
+}
+
+#tag-title-badge {
+  margin-left: .25em;
+}
+
+#profile-picture {
+    max-width: 100%
+}
+
+/** Blog (end) **/
+
+/** Login/Reset Password **/
 
 .form-signin {
     max-width: 330px;
@@ -176,6 +227,10 @@ h1.lead-title-blog {
     max-width: 500px;
 }
 
+/** Login/Reset Password (end) **/
+
+/** Admin **/
+
 #blog-admin-users td, #blog-admin-posts td {
     vertical-align:middle;
 }
@@ -184,55 +239,12 @@ h1.lead-title-blog {
     text-transform: lowercase;
 }
 
-.post-title-link {
-    color: rgb(41, 43, 44);
-}
-
-.post-title-link:hover {
-    color: rgb(41, 43, 44);
-}
-
-.post-tags a {
-    color: white;
-}
-
-.post-tags a:hover {
-    text-decoration: none;
-}
-
 #blog-post-edit-title-warning {
     display: none;
-}
-
-#tag-title-badge {
-  margin-left: .25em;
-}
-
-.social-media-buttons {
-    width: 100%;
-    display: flex;
-}
-
-.social-media-buttons div {
-    flex-basis: 100%
-}
-
-.index-post-link {
-    color: rgb(41, 43, 44);
-}
-
-.index-post-link:hover {
-    color: rgb(41, 43, 44);
-}
-
-.index-column h2 {
-    text-align: center;
-}
-
-#profile-picture {
-    max-width: 100%
 }
 
 .table-responsive {
   border: none;
 }
+
+/** Admin (end) **/

@@ -5,6 +5,8 @@
 
     <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
 
     <meta name="description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
 
@@ -19,9 +21,6 @@
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
-
 }
 
 #export("body") {
