@@ -1,5 +1,7 @@
+/** Global **/
+
 body {
-    background-color: #f7f7f7;
+    background-color: #346B8C;
 }
 
 #content {
@@ -11,24 +13,87 @@ body {
 footer {
     padding: 2rem 0;
     margin-top: 2rem;
-    background-color: #f7f7f7;
+    background-color: #346B8C;
+    color: white;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #BDBDBD !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+#navigation {
+    background-color: #346B8C;
+}
+
+.btn-primary {
+    background-color: #DF7F81;
+    border-color: #DF7F81;
+}
+
+.btn-primary:hover {
+    background-color: #C57072;
+    border-color: #C57072;
+}
+
+a {
+    color: #DF7F81;
+}
+
+a:hover {
+    color: #C57072;
+}
+
+/** Global (end) **/
+
+/** Homepage **/
+
+#homepage-jumbotron {
+    margin-bottom: 0;
+    background-color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 #homepage-title-image {
-    height: 25rem;
+    height: 20rem;
 }
 
-h1.lead-title {
-    font-size: 3.5rem;
-    font-weight: 300;
-    line-height: 1.1;
+#homepage-lead {
+    color: #DF7F81;
 }
 
-@media (min-width: 768px) {
-    h1.lead-title {
-        font-size: 4.5rem;
-    }
+#homepage-footer-padder {
+    margin-top: -2em;
 }
+
+#homepage-card-deck {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#open-source-copy {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.open-source-image {
+    display: block;
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+
+/** Homepage (end) **/
+
 
 h1.lead-title-blog {
     font-size: 3.5rem;

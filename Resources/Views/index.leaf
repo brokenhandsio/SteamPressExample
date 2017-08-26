@@ -22,10 +22,10 @@
 }
 
 #export("body") {
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" id="homepage-jumbotron">
         <div class="container text-center">
             <img src="/static/images/steampress_1.png" id="homepage-title-image" alt="SteamPress">
-            <p class="lead">An Open Source Blogging Engine in Swift for Vapor</p>
+            <p class="lead" id="homepage-lead">An Open Source Blogging Engine in Swift for Vapor</p>
         </div>
     </div>
 
@@ -58,6 +58,7 @@
                 <h2>More Open Source Projects</h2>
 
                 <div class="card text-center mb-3">
+                    <!-- <img class="card-img-top open-source-image" src="/static/images/vsh-logo_1.png" alt="Vapor Security Headers Logo"> -->
                     <div class="card-body">
                         <h3 class="card-title">Vapor Security Headers</h3>
                         <p class="card-text">Easily add common security headers to your Vapor application to help secure you and your users.</p>
