@@ -21,12 +21,19 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item #if(blog_index_page) {active}"><a href="/blog/" class="nav-link">Blog</a></li>
                     <li class="nav-item #if(about_page) {active}"><a href="/about/" class="nav-link">About</a></li>
+                    #if(user) {
+                        <li class="nav-item #if(blog_admin_page) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
+                        <li class="nav-item #if(create_blog_post_page) {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
+                        #if(blog_post_page) {
+                        <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.id)/edit/" class="nav-link">Edit Post</a></div>
+                        }
+                    }
                 </ul>
                 #if(user) {
-                #if(blog_post_page) {
-                <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.id)/edit/" class="nav-link">Edit Post</a></div>
-                }
-                <div class="navbar-nav nav-item #if(blog_admin_page) {active}"><a href="/blog/admin/" class="nav-link">Blog Admin</a></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item float-lg-right #if(blog_my_profile_page) {active}"><a href="/blog/admin/profile/" class="nav-link">My Profile</a></li>
+                        <li class="nav-item float-lg-right"><a href="/blog/admin/logout/" class="nav-link">Logout</a></li>
+                    </ul>
                 }
                 <div class="navbar-nav nav-item"><a href="https://github.com/brokenhandsio/SteamPress" target="_blank" class="nav-link">SteamPress @ Github</a></div>
             </div>
