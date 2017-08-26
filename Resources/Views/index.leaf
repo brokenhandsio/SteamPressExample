@@ -24,7 +24,7 @@
 #export("body") {
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-            <h1 class="lead-title">SteamPress</h1>
+            <img src="/static/images/steampress_1.png" id="homepage-title-image" alt="SteamPress">
             <p class="lead">An Open Source Blogging Engine in Swift for Vapor</p>
         </div>
     </div>

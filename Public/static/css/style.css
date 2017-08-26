@@ -14,6 +14,10 @@ footer {
     background-color: #f7f7f7;
 }
 
+#homepage-title-image {
+    height: 25rem;
+}
+
 h1.lead-title {
     font-size: 3.5rem;
     font-weight: 300;
