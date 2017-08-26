@@ -15,7 +15,9 @@
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+    <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     <meta property="og:site_name" content="SteamPress">
 
     #if(site_twitter_handle) {

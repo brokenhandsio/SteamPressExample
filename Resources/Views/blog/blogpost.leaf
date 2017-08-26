@@ -20,13 +20,13 @@
     #loop(post.tags, "tag") {
     <meta property="article:tag" content="#(tag.name)">
     }
-
-    #if(post_image) {
     <meta name="twitter:card" content="summary_large_image">
+    #if(post_image) {
     <meta property="og:image" content="#(post_image)">
     }
     ##else() {
-    <meta name="twitter:card" content="summary">
+        <meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+        <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     }
     #if(post_image_alt) {
         <meta name="twitter:image:alt" content="#(post_image_alt)">
