@@ -173,6 +173,15 @@ h1.lead-title-blog {
     max-width: 100%
 }
 
+.pagination .page-item.active .page-link {
+    background-color: #DF7F81;
+    border-color: #DF7F81;
+}
+
+.pagination .page-link {
+    color: #DF7F81;
+}
+
 /** Blog (end) **/
 
 /** Login/Reset Password **/
