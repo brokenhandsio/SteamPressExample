@@ -20,6 +20,8 @@
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
+
 }
 
 #export("body") {
@@ -69,7 +71,7 @@
         <div class="col-md-2 blog-sidebar">
             <div class="blog-side-module">
                 <div class="tags-module">
-                    <h3>Tags</h3>
+                    <h3><i class="fa fa-tags" aria-hidden="true"></i> Tags</h3>
                     <ul class="list-unstyled">
                         #loop(tags, "tag") {
                         <li><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></li>
@@ -80,7 +82,7 @@
             </div>
             <div class="blog-side-module mt-3">
                 <div class="authors-module">
-                    <h3>Authors</h3>
+                    <h3><i class="fa fa-pencil" aria-hidden="true"></i> Authors</h3>
                     <ul class="list-unstyled">
                         #loop(authors, "author") {
                         <li><a href="/blog/authors/#(author.username)/">#(author.name)</a></li>

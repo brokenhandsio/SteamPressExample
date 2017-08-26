@@ -19,6 +19,8 @@
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
 }
 
 #export("body") {
@@ -32,7 +34,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-3 index-column">
-                <h2>Latest Blog Posts</h2>
+                <h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Latest Blog Posts</h2>
 
                 #if(posts) {
                 #loop(posts, "post") {
@@ -55,7 +57,7 @@
             </div>
 
             <div class="col-md-6 index-column">
-                <h2>More Open Source Projects</h2>
+                <h2><i class="fa fa-github-alt" aria-hidden="true"></i> More Open Source Projects</h2>
 
                 <div class="card text-center mb-3">
                     <!-- <img class="card-img-top open-source-image" src="/static/images/vsh-logo_1.png" alt="Vapor Security Headers Logo"> -->
