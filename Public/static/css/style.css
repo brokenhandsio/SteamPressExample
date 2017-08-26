@@ -85,11 +85,9 @@ a:hover {
 }
 
 .open-source-image {
-    display: block;
-    max-width:200px;
-    max-height:150px;
-    width: auto;
-    height: auto;
+    object-fit: scale-down;
+    height: 10em;
+    margin-top: 1em;
 }
 
 .index-post-link {

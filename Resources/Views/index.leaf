@@ -60,7 +60,7 @@
                 <h2><i class="fa fa-github-alt" aria-hidden="true"></i> More Open Source Projects</h2>
 
                 <div class="card text-center mb-3">
-                    <!-- <img class="card-img-top open-source-image" src="/static/images/vsh-logo_1.png" alt="Vapor Security Headers Logo"> -->
+                    <img class="card-img-top open-source-image" src="/static/images/vsh-logo_1.png" alt="Vapor Security Headers Logo">
                     <div class="card-body">
                         <h3 class="card-title">Vapor Security Headers</h3>
                         <p class="card-text">Easily add common security headers to your Vapor application to help secure you and your users.</p>
@@ -69,6 +69,7 @@
                 </div>
 
                 <div class="card text-center mb-3">
+                    <img class="card-img-top open-source-image" src="/static/images/vapor-oauth-logo_1.png" alt="Vapor OAuth Logo">
                     <div class="card-body">
                         <h3 class="card-title">Vapor OAuth</h3>
                         <p class="card-text">A fully spec-compliant OAuth2 Provider library built for Vapor.</p>
@@ -77,6 +78,7 @@
                 </div>
 
                 <div class="card text-center mb-3">
+                    <img class="card-img-top open-source-image" src="/static/images/steampress-logo_1.png" alt="SteamPress Logo">
                     <div class="card-body">
                         <h3 class="card-title">SteamPress Example</h3>
                         <p class="card-text">An easy-to-deploy Blogging Platform for SteamPress. Contains all the code you need to get up and running with SteamPress. In fact, it is the code for this site!</p>
