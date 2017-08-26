@@ -1,4 +1,21 @@
-# SteamPress Example
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/9938337/29742058-ed41dcc0-8a6f-11e7-9cfc-680501cdfb97.png" alt="SteamPress">
+</p>
+<h1 align="center">SteamPress Example Site</h1>
+<p align="center">
+  <a href="https://swift.org">
+    <img src="http://img.shields.io/badge/Swift-3.1-brightgreen.svg" alt="Language">
+  </a>
+  <a href="https://travis-ci.org/brokenhandsio/SteamPressExample">
+    <img src="https://travis-ci.org/brokenhandsio/SteamPressExample.svg?branch=master" alt="Build Status">
+  </a>
+  <a href="https://codecov.io/gh/brokenhandsio/SteamPressExample">
+    <img src="https://codecov.io/gh/brokenhandsio/SteamPressExample/branch/master/graph/badge.svg" alt="Code Coverage">
+  </a>
+  <a href="https://raw.githubusercontent.com/brokenhandsio/SteamPressExample/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License">
+  </a>
+</p>
 
 This is an example site for using [SteamPress](https://github.com/brokenhandsio/SteamPress) with your Vapor website. You can also just use it as your blog! This example site uses Bootstrap 4 for styling so should be fairly easy to make it look how you want. It also uses Markdown to render the blog posts, and has Syntax highlighting for code (obviously!). This site can be viewed at https://www.steampress.io/.
 
@@ -24,16 +41,10 @@ To try out:
 ```bash
 git clone https://github.com/brokenhandsio/SteamPressExample.git
 vapor build
-vapor run serve
+vapor run
 ```
 
 This will create a site at http://localhost:8080. The blog can be found at http://localhost:8080/blog/ and you can login at http://localhost:8080/blog/admin/. The first time you visit the login a user will be created and the details printed to the console.
-
-## WARNING
-
-The `master` branch for this site uses the in-memory database so you can get up and running quickly without having to configure a DB on your machine - obviously if you plan to use this site for your blog you should change to something more permanent so you don't lose all your posts when you restart the app!
-
-The `herokuVersion` branch contains a PostgreSQL provider but if you are using this, be warned that I rebase this branch on top of master and force push whenever I do a deployment so Git may get confused if you have this branch checkout out.
 
 # Roadmap
 
