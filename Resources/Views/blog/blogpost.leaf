@@ -20,13 +20,13 @@
     #loop(post.tags, "tag") {
     <meta property="article:tag" content="#(tag.name)">
     }
-
-    #if(post_image) {
     <meta name="twitter:card" content="summary_large_image">
+    #if(post_image) {
     <meta property="og:image" content="#(post_image)">
     }
     ##else() {
-    <meta name="twitter:card" content="summary">
+        <meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+        <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     }
     #if(post_image_alt) {
         <meta name="twitter:image:alt" content="#(post_image_alt)">
@@ -73,12 +73,11 @@
 
     #if(post.published) {
     #if(disqus_name) {
-        <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqus_name)"></div>
+        <div id="blog-post-data" data-post-identifier="#(post.id)" data-disqus-name="#(disqus_name)"></div>
         <div id="disqus_thread" class="text-center col-md-10 ml-auto mr-auto"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     }
     }
-
 </div>
 }
 
@@ -90,5 +89,9 @@
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
     #if(disqus_name) {
         <script src="/static/js/disqus.js"></script>
+    }
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
     }
 }

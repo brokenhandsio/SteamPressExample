@@ -71,7 +71,7 @@
       "package": "Fluent",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/fluent.git",
-      "version": "2.2.0"
+      "version": "2.3.0"
     },
     {
       "package": "FluentProvider",
@@ -161,7 +161,7 @@
       "package": "SteamPress",
       "reason": null,
       "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
-      "version": "0.12.1"
+      "version": "0.13.0"
     },
     {
       "package": "SwiftMarkdown",
@@ -191,7 +191,7 @@
       "package": "Vapor",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
-      "version": "2.2.1"
+      "version": "2.2.2"
     },
     {
       "package": "VaporSecurityHeaders",

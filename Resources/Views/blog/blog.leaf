@@ -5,6 +5,8 @@
 
     <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
 
     <meta name="description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
 
@@ -13,13 +15,14 @@
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+    <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     <meta property="og:site_name" content="SteamPress">
 
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
-
 }
 
 #export("body") {
@@ -69,7 +72,7 @@
         <div class="col-md-2 blog-sidebar">
             <div class="blog-side-module">
                 <div class="tags-module">
-                    <h3>Tags</h3>
+                    <h3><i class="fa fa-tags" aria-hidden="true"></i> Tags</h3>
                     <ul class="list-unstyled">
                         #loop(tags, "tag") {
                         <li><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></li>
@@ -80,7 +83,7 @@
             </div>
             <div class="blog-side-module mt-3">
                 <div class="authors-module">
-                    <h3>Authors</h3>
+                    <h3><i class="fa fa-pencil" aria-hidden="true"></i> Authors</h3>
                     <ul class="list-unstyled">
                         #loop(authors, "author") {
                         <li><a href="/blog/authors/#(author.username)/">#(author.name)</a></li>
@@ -102,5 +105,9 @@
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
     #if(disqus_name) {
         <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
+    }
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
     }
 }

@@ -13,31 +13,36 @@
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
 
-    <meta name="twitter:card" content="summary">
     <meta property="og:site_name" content="SteamPress">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+    <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
 
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
 }
 
 #export("body") {
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" id="homepage-jumbotron">
         <div class="container text-center">
-            <h1 class="lead-title">SteamPress</h1>
-            <p class="lead">An Open Source Blogging Engine in Swift for Vapor</p>
+            <img src="/static/images/steampress_1.png" id="homepage-title-image" alt="SteamPress">
+            <p class="lead" id="homepage-lead">An Open Source Blogging Engine in Swift for Vapor</p>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-3 index-column">
-                <h2>Latest Blog Posts</h2>
+                <h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Latest Blog Posts</h2>
 
                 #if(posts) {
                 #loop(posts, "post") {
                 <div class="card mb-3">
-                    <div class="card-body">
+                    <div class="card-body post-contents">
                         <a href="/blog/posts/#(post.slug_url)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
                         #markdown(post.short_snippet)
                         <a href="/blog/posts/#(post.slug_url)/" class="card-link">Read More</a>
@@ -55,9 +60,10 @@
             </div>
 
             <div class="col-md-6 index-column">
-                <h2>More Open Source Projects</h2>
+                <h2><i class="fa fa-github-alt" aria-hidden="true"></i> More Open Source Projects</h2>
 
                 <div class="card text-center mb-3">
+                    <img class="card-img-top open-source-image" src="/static/images/vsh-logo_1.png" alt="Vapor Security Headers Logo">
                     <div class="card-body">
                         <h3 class="card-title">Vapor Security Headers</h3>
                         <p class="card-text">Easily add common security headers to your Vapor application to help secure you and your users.</p>
@@ -66,6 +72,7 @@
                 </div>
 
                 <div class="card text-center mb-3">
+                    <img class="card-img-top open-source-image" src="/static/images/vapor-oauth-logo_1.png" alt="Vapor OAuth Logo">
                     <div class="card-body">
                         <h3 class="card-title">Vapor OAuth</h3>
                         <p class="card-text">A fully spec-compliant OAuth2 Provider library built for Vapor.</p>
@@ -74,6 +81,7 @@
                 </div>
 
                 <div class="card text-center mb-3">
+                    <img class="card-img-top open-source-image" src="/static/images/steampress-logo_1.png" alt="SteamPress Logo">
                     <div class="card-body">
                         <h3 class="card-title">SteamPress Example</h3>
                         <p class="card-text">An easy-to-deploy Blogging Platform for SteamPress. Contains all the code you need to get up and running with SteamPress. In fact, it is the code for this site!</p>
@@ -93,4 +101,8 @@
 
 #export("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
+    }
 }

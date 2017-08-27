@@ -1,4 +1,4 @@
-#extend("blog/admin/base")
+#extend("base")
 
 #export("head") {
 <title>Login | Blog Admin | SteamPress</title>

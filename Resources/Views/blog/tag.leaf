@@ -10,7 +10,9 @@
 <meta property="og:url" content="#(uri)">
 <meta property="og:description" content="All of the SteamPress Blog Posts tagged with #(tag.name). These are the blog posts written under the tags and topics of #(tag.name)">
 <meta property="og:site_name" content="SteamPress">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+<meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
 
 #if(site_twitter_handle) {
 <meta name="twitter:site" content="@#(site_twitter_handle)">
@@ -24,6 +26,10 @@
     <script src="/static/js/prismHighlighting.js"></script>
     #if(disqus_name) {
         <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
+    }
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
     }
 }
 
@@ -73,4 +79,5 @@
     </div>
 
 </div>
+
 }

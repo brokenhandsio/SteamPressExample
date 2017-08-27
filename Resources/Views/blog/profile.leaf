@@ -1,7 +1,7 @@
 #extend("base")
 
 #export("head") {
-    <title>#if(my_profile) {My Profile} ##else() {#(author.name)'s Profile} | Blog | SteamPress</title>
+    <title>#(author.name)'s Profile | Blog | SteamPress</title>
 
     <meta name="description" content="#(author.name)'s Author Page on the Steam Press Blog. All of the posts by #(author.name)">
 
@@ -10,14 +10,15 @@
     <meta property="og:url" content="#(uri)">
     <meta property="og:description" content="#(author.name)'s Author Page on the Steam Press Blog. All of the posts by #(author.name)">
     <meta property="og:site_name" content="SteamPress">
+    <meta name="twitter:card" content="summary_large_image">
 
     #if(author.profile_picture) {
-    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="#(author.profile_picture)">
     <meta property="twitter:image:alt" content="Profile Picture of #(author.name)">
     }
     ##else() {
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+    <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     }
 
     #if(site_twitter_handle) {
@@ -37,13 +38,17 @@
     #if(disqus_name) {
         <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
     }
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
+    }
 }
 
 #export("body") {
 
     <div class="container mt-3">
 
-        <h1 class="text-center">#if(my_profile) {My Profile} ##else() {#(author.name)'s Profile}</h1>
+        <h1 class="text-center">#(author.name)'s Profile</h1>
 
         <div class="row mt-3">
             <div class="col-md-3">
@@ -75,7 +80,7 @@
 
             <div id="user-posts" class="col-md-9">
 
-                <h2 class="text-center">#if(my_profile) {My} ##else() {#(author.name)'s} Posts</h2>
+                <h2 class="text-center">#(author.name)'s Posts</h2>
                 <h3 class="h5 text-center"><small class="text-muted">#equal(author.post_count, "1") {#(author.post_count) post} ##else() {#(author.post_count) posts}</small></h3>
 
                 <div id="blog-posts" class="mb-4">
@@ -116,4 +121,5 @@
         </div> <!-- row -->
 
     </div> <!-- container -->
+
 }

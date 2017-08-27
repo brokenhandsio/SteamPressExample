@@ -1,4 +1,4 @@
-#extend("blog/admin/base")
+#extend("base")
 
 #export("head") {
 <title>#if(editing) { Edit } ##else() { Create } Blog Post | Blog Admin | SteamPress</title>
