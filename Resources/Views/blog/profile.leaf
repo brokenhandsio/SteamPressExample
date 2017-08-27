@@ -38,6 +38,10 @@
     #if(disqus_name) {
         <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
     }
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
+    }
 }
 
 #export("body") {
@@ -117,4 +121,5 @@
         </div> <!-- row -->
 
     </div> <!-- container -->
+
 }

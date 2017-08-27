@@ -51,4 +51,12 @@
     </div>
 
 </div>
+
+}
+
+#export("scripts") {
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
+    }
 }
