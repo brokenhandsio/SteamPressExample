@@ -56,27 +56,5 @@ function isValidPassword(password) {
         return false;
     }
 
-    var anUpperCase = /[A-Z]/;
-    var aLowerCase = /[a-z]/;
-    var aNumber = /[0-9]/;
-    var aSpecial = /[!|@|#|$|%|^|&|*|(|)|-|_|']/;
-
-    var complexity = 0;
-    for(var i=0; i<password.length; i++){
-        if(anUpperCase.test(password[i]))
-            complexity++;
-        else if(aLowerCase.test(password[i]))
-            complexity++;
-        else if(aNumber.test(password[i]))
-            complexity++;
-        else if(aSpecial.test(password[i]))
-            complexity++;
-    }
-
-    if (complexity < 3) {
-        return false;
-    }
-    else {
-        return true;
-    }
+    return true;
 }

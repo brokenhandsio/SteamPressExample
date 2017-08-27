@@ -121,13 +121,7 @@
                     <h4 class="modal-title" id="passwordModalLabel">Password Requirements</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Your password must be at least 8 characters long and contain three out of the four types:</p>
-                    <ul>
-                        <li>Uppercase character</li>
-                        <li>Lowercase character</li>
-                        <li>Number</li>
-                        <li>Special Character</li>
-                    </ul>
+                    <p>Your password must be at least 8 characters long and should <em>not</em> be something simple like 'Password1234' You should be using a Password Manager!</p>
                 </div>
             </div>
         </div>
