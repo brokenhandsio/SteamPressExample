@@ -25,6 +25,14 @@ extension Droplet {
             if let twitterHandle = self.config["twitter", "siteHandle"]?.string {
                 parameters["site_twitter_handle"] = twitterHandle
             }
+            
+            if let twitterHandle = self.config["twitter", "siteHandle"]?.string {
+                parameters["site_twitter_handle"] = twitterHandle
+            }
+            
+            if let gaIdentifier = self.config["googleAnalytics", "identifier"]?.string {
+                parameters["google_analytics_identifier"] = gaIdentifier
+            }
 
             return try self.view.make("index", parameters)
         }
@@ -42,6 +50,9 @@ extension Droplet {
 
             if let twitterHandle = self.config["twitter", "siteHandle"]?.string {
                 parameters["site_twitter_handle"] = twitterHandle
+            }
+            if let gaIdentifier = self.config["googleAnalytics", "identifier"]?.string {
+                parameters["google_analytics_identifier"] = gaIdentifier
             }
 
             return try self.view.make("about", parameters)
