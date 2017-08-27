@@ -73,7 +73,7 @@
 
     #if(post.published) {
     #if(disqus_name) {
-        <div id="blog-post-data" data-post-identifier="#(post.id)" data-discuss-name="#(disqus_name)"></div>
+        <div id="blog-post-data" data-post-identifier="#(post.id)" data-disqus-name="#(disqus_name)"></div>
         <div id="disqus_thread" class="text-center col-md-10 ml-auto mr-auto"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     }
