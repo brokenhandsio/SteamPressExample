@@ -1,5 +1,6 @@
 import Vapor
 import SteamPress
+import AuthProvider
 
 extension Droplet {
     public func setup() throws {
@@ -16,6 +17,10 @@ extension Droplet {
             if posts.count > 0 {
                 parameters["posts"] = try posts.makeNode(in: BlogPostContext.shortSnippet)
             }
+            
+            if req.auth.isAuthenticated(BlogUser.self) {
+                parameters["user"] = try req.auth.assertAuthenticated(BlogUser.self)
+            }
 
             if let twitterHandle = self.config["twitter", "siteHandle"]?.string {
                 parameters["site_twitter_handle"] = twitterHandle
@@ -30,6 +35,10 @@ extension Droplet {
                 "about_page": true,
                 "uri": req.uri.description
             ]
+            
+            if req.auth.isAuthenticated(BlogUser.self) {
+                parameters["user"] = try req.auth.assertAuthenticated(BlogUser.self)
+            }
 
             if let twitterHandle = self.config["twitter", "siteHandle"]?.string {
                 parameters["site_twitter_handle"] = twitterHandle
