@@ -2,6 +2,10 @@ import PackageDescription
 
 let package = Package(
     name: "SteamPressExample",
+    targets : [
+        Target(name: "App"),
+        Target(name: "Run", dependencies: ["App"]),
+    ],
     dependencies: [
         .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 2),
         .Package(url: "https://github.com/brokenhandsio/SteamPress.git", majorVersion: 0),
@@ -15,6 +19,5 @@ let package = Package(
         "Localization",
         "Public",
         "Resources",
-        "Tests",
     ]
 )

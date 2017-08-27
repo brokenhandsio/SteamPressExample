@@ -1,12 +1,33 @@
 os:
-  - linux
-  - osx
+    - linux
+    - osx
 language: generic
 sudo: required
 dist: trusty
-osx_image: xcode8
-install:
-  - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/02090c7ede5a637b76e6df1710e83cd0bbe7dcdf/swiftenv-install.sh)"
+
+osx_image: xcode8.3
+before_install:
+    - if [ $TRAVIS_OS_NAME == "osx" ]; then
+            brew tap vapor/tap;
+            brew update;
+            brew install vapor;
+            brew install cmysql;
+        else
+            eval "$(curl -sL https://apt.vapor.sh)";
+            sudo apt-get install vapor;
+            sudo apt-get install cmysql;
+            sudo chmod -R a+rx /usr/;
+        fi
+
 script:
-  - swift build
-  - swift build -c release
+    - swift build -Xswiftc -DNOJSON
+    - swift build -c release -Xswiftc -DNOJSON
+    - swift test -Xswiftc -DNOJSON
+
+after_success:
+    - eval "$(curl -sL https://raw.githubusercontent.com/vapor-community/swift/master/codecov)"
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
