@@ -13,7 +13,6 @@ before_install:
             brew install vapor;
             brew install cmysql;
         else
-            sudo apt-get install -y libmysqlclient-dev;
             eval "$(curl -sL https://apt.vapor.sh)";
             sudo apt-get install vapor;
             sudo apt-get install cmysql;
@@ -21,9 +20,9 @@ before_install:
         fi
 
 script:
-    - swift build
-    - swift build -c release
-    - swift test
+    - swift build -Xswiftc -DNOJSON
+    - swift build -c release -Xswiftc -DNOJSON
+    - swift test -Xswiftc -DNOJSON
 
 after_success:
     - eval "$(curl -sL https://raw.githubusercontent.com/vapor-community/swift/master/codecov)"
