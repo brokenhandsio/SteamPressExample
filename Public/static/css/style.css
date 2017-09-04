@@ -63,6 +63,7 @@ a:hover {
 
 #homepage-title-image {
     height: 20rem;
+    max-width: 100%;
 }
 
 #homepage-lead {
@@ -91,6 +92,7 @@ a:hover {
 
 .index-post-link {
     color: rgb(41, 43, 44);
+    text-align: center;
 }
 
 .index-post-link:hover {
