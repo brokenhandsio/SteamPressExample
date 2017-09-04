@@ -30,7 +30,7 @@
     <div class="jumbotron jumbotron-fluid" id="homepage-jumbotron">
         <div class="container text-center">
             <img src="/static/images/steampress_1.png" id="homepage-title-image" alt="SteamPress">
-            <p class="lead" id="homepage-lead">An Open Source Blogging Engine in Swift for Vapor</p>
+            <p class="lead" id="homepage-lead">An Open Source Blogging Engine written in Swift for Vapor</p>
         </div>
     </div>
 
