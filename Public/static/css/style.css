@@ -50,6 +50,11 @@ a:hover {
     color: #C57072;
 }
 
+#broken-hands-footer-logo {
+  width: 1.5em;
+  margin-right: 0.25em;
+}
+
 /** Global (end) **/
 
 /** Homepage **/
