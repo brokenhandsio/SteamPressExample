@@ -17,6 +17,8 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:image" content="https://static.brokenhands.io/steampress/steampress_1.png">
+    <meta property="og:image:width" content="1417">
+    <meta property="og:image:height" content="1442">
     <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
 
     #if(site_twitter_handle) {
