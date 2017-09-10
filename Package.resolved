@@ -240,8 +240,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
         "state": {
           "branch": null,
-          "revision": "23f920d2e68b4f31928841436efb5f344f610378",
-          "version": "0.13.0"
+          "revision": "5bfd51bfbf7ebfe4f83fcc260136373350ba1946",
+          "version": "0.13.1"
         }
       },
       {
