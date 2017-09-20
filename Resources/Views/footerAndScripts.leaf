@@ -1,6 +1,7 @@
 <footer>
     <div class="container text-center">
         <ul class="list-inline">
+            <li class="list-inline-item"><a href="/blog/atom.xml"><i class="fa fa-rss" aria-hidden="true"></i> Subscribe</a></li>
             <li class="list-inline-item"><a href="/blog/">Blog</a></li>
             <li class="list-inline-item"><a href="/about/">About</a></li>
         </ul>

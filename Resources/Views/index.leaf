@@ -24,8 +24,6 @@
     #if(site_twitter_handle) {
     <meta name="twitter:site" content="@#(site_twitter_handle)">
     }
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
 }
 
 #export("body") {

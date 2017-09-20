@@ -5,8 +5,6 @@
 
     <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/7698a0b1a4.css">
 
     <meta name="description" content="The SteamPress Blog. SteamPress is an Open Source Blogging Engine and Platform written in Swift powered by Vapor.">
 
@@ -93,6 +91,15 @@
                     </ul>
                     <a href="/blog/authors/">All Authors</a>
                 </div>
+            </div>
+            <div class="blog-side-module mt-3">
+              <div id="rss-module">
+                <h3><i class="fa fa-rss" aria-hidden="true"></i> Subcribe</h3>
+                <ul class="list-unstyled">
+                    <li><a href="/blog/atom.xml">Atom</a></li>
+                    <li><a href="/blog/rss.xml">RSS</a></li>
+                </ul>
+              </div>
             </div>
         </div>
 

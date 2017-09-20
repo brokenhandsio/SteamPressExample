@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/vapor/auth.git",
         "state": {
           "branch": null,
-          "revision": "dead10fcf21e2c58008ff43d3e9adbf49162fddb",
-          "version": "1.1.0"
+          "revision": "b8a0d6d7ac141831c999bf2458408dc2ec2edb39",
+          "version": "1.2.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/vapor/auth-provider.git",
         "state": {
           "branch": null,
-          "revision": "b04c9ce27c870ffd81476f86d1ebb9aa0cbe7802",
-          "version": "1.1.0"
+          "revision": "c8a89d5f32873a7ec6037e2c78a192526c496618",
+          "version": "1.2.0"
         }
       },
       {
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/vapor/fluent.git",
         "state": {
           "branch": null,
-          "revision": "2aad260d66212d780f8a0857a72a8840cef6eff7",
-          "version": "2.3.0"
+          "revision": "271ab0e0b9a81d0befc2673332715c3384f186bf",
+          "version": "2.4.0"
         }
       },
       {
@@ -222,8 +222,8 @@
         "repositoryURL": "https://github.com/vapor/sqlite.git",
         "state": {
           "branch": null,
-          "revision": "f364a11e86dca9cac51b21c4a95cb5b214a669a3",
-          "version": "2.1.0"
+          "revision": "f110cbe9ff5283eca7d2edf1b8ee69dfb8b666d6",
+          "version": "2.2.0"
         }
       },
       {
@@ -240,8 +240,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
         "state": {
           "branch": null,
-          "revision": "5bfd51bfbf7ebfe4f83fcc260136373350ba1946",
-          "version": "0.13.1"
+          "revision": "9c5b18ef3daff5e14c9783d780afd566298ff496",
+          "version": "0.14.0"
         }
       },
       {
