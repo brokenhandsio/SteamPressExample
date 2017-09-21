@@ -1,7 +1,7 @@
 #extend("base")
 
 #export("head") {
-<title>Blog Search | Blog | SteamPress</title>
+<title>#if(searchTerm) {Search Blog For '#(searchTerm)'} ##else() {Blog Search} | Blog | SteamPress</title>
 
 <meta name="description" content="Search the SteamPress Blog">
 
@@ -44,14 +44,13 @@
     <div id="search-posts" class="mt-3">
 
         <div id="blog-posts" class="mb-4">
-            #if(emptySearch) {
-                <form class="form-inline justify-content-center" action="/blog/search" method="GET">
-                    <input class="form-control mr-sm-2" id="blog-search-input" type="text" name="term" placeholder="Search The Blog" aria-label="Search">
-                    <button class="btn my-2 my-sm-0 btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form>
-            }
+            <form class="form-inline justify-content-center mb-3" action="/blog/search" method="GET">
+                <input class="form-control mr-sm-2" id="blog-search-input" type="text" name="term" placeholder="Search The Blog" #if(searchTerm) {value="#(searchTerm)"} aria-label="Search">
+                <button class="btn my-2 my-sm-0 btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+            #if(emptySearch) {}
             ##else() {
-
+                <h2 class="text-center h3">#(searchCount) #equal(searchCount, "1") {result} ##else() {results} for '#(searchTerm)'</h2>
                 #if(posts) {
                     #loop(posts.data, "post") {
                     <div class="blog-post card mb-3">
@@ -80,9 +79,6 @@
                     </div>
                     }
                     #paginator(posts)
-                }
-                ##else() {
-                    <p class="mb-4">There haven't been any blog posts yet!</p>
                 }
             }
         </div>
