@@ -42,6 +42,21 @@ footer {
     border-color: #C57072;
 }
 
+.btn-outline-primary {
+    color: #DF7F81;
+    border-color: #DF7F81;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    border-color: #DF7F81;
+    background-color: #DF7F81;
+}
+
+.form-control-navbar {
+    border: 1px solid #346B8C;
+}
+
 a {
     color: #DF7F81;
 }

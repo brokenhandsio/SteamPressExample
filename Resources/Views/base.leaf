@@ -34,6 +34,10 @@
                         <li class="nav-item float-lg-right"><a href="/blog/admin/logout/" class="nav-link">Logout</a></li>
                     </ul>
                 }
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2 form-control-navbar" type="text" placeholder="Search The Blog" aria-label="Search">
+                    <button class="btn my-2 my-sm-0 btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
                 <div class="navbar-nav nav-item"><a href="https://github.com/brokenhandsio/SteamPress" target="_blank" class="nav-link">SteamPress @ Github</a></div>
             </div>
         </nav>
