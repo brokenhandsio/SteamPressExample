@@ -286,3 +286,7 @@ h1.lead-title-blog {
 #blog-search-input {
     width: 50%;
 }
+
+.highlight {
+    background-color: rgba(223, 127, 129, 0.5);
+}

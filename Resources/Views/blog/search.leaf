@@ -33,6 +33,7 @@
         <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
+    <script src="/static/js/search.js"></script>
 }
 
 #export("body") {
@@ -82,6 +83,10 @@
                 }
             }
         </div>
+
+        #if(searchTerm) {
+            <div id="search-data" data-search-term="#(searchTerm)"></div>
+        }
     </div>
 
 </div>
