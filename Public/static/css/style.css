@@ -280,3 +280,9 @@ h1.lead-title-blog {
 }
 
 /** Admin (end) **/
+
+/** Search **/
+
+#blog-search-input {
+    width: 50%;
+}
