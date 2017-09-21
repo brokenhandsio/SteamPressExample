@@ -150,8 +150,8 @@
         "repositoryURL": "https://github.com/vapor-community/markdown-provider.git",
         "state": {
           "branch": null,
-          "revision": "5c0480ed171a9d86455bf8d8ca46c0d0f0ab3676",
-          "version": "1.0.0"
+          "revision": "bd3820af8bd6b0ffd2b279f105e5df0850f58edd",
+          "version": "1.1.0"
         }
       },
       {
@@ -240,8 +240,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
         "state": {
           "branch": null,
-          "revision": "9c5b18ef3daff5e14c9783d780afd566298ff496",
-          "version": "0.14.0"
+          "revision": "0a346a23846d51c8674452dee38b879885318742",
+          "version": "0.15.0"
         }
       },
       {
