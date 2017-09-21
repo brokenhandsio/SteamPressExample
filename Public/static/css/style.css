@@ -57,6 +57,10 @@ footer {
     border: 1px solid #346B8C;
 }
 
+#github-navbar {
+    font-size: 2em;
+}
+
 a {
     color: #DF7F81;
 }
