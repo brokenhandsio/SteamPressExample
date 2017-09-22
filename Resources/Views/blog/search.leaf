@@ -1,0 +1,94 @@
+#extend("base")
+
+#export("head") {
+<title>#if(searchTerm) {Search Blog For '#(searchTerm)'} ##else() {Blog Search} | Blog | SteamPress</title>
+
+<meta name="description" content="Search the SteamPress Blog">
+
+<meta property="og:title" content="SteamPress Blog Search">
+<meta property="og:type" content="website">
+<meta property="og:url" content="#(uri)">
+<meta property="og:description" content="earch the SteamPress Blog">
+<meta property="og:site_name" content="SteamPress">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://www.steampress.io/static/images/steampress-og-image_1.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1257">
+<meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
+
+#if(site_twitter_handle) {
+<meta name="twitter:site" content="@#(site_twitter_handle)">
+}
+
+<!-- Syntax Highlighting -->
+<link rel="stylesheet" href="/static/css/prismHighlighting.css">
+}
+
+#export("scripts") {
+    <script src="/static/js/prismHighlighting.js"></script>
+    #if(disqus_name) {
+        <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
+    }
+    #if(google_analytics_identifier) {
+        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+        <script src="/static/js/analytics.js"></script>
+    }
+    <script src="/static/js/search.js"></script>
+}
+
+#export("body") {
+
+<div class="container mt-3">
+
+    <h1 class="text-center">SteamPress Search</h1>
+
+    <div id="search-posts" class="mt-3">
+
+        <div id="blog-posts" class="mb-4">
+            <form class="form-inline justify-content-center mb-3" action="/blog/search" method="GET">
+                <input class="form-control mr-sm-2" id="blog-search-input" type="text" name="term" placeholder="Search The Blog" #if(searchTerm) {value="#(searchTerm)"} aria-label="Search">
+                <button class="btn my-2 my-sm-0 btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+            #if(emptySearch) {}
+            ##else() {
+                <h2 class="text-center h3">#(searchCount) #equal(searchCount, "1") {result} ##else() {results} for '#(searchTerm)'</h2>
+                #if(posts) {
+                    #loop(posts.data, "post") {
+                    <div class="blog-post card mb-3">
+                        <div class="card-body">
+                            <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
+                            <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created_date) by <a href="/blog/authors/#(post.author_username)/">#(post.author_name)</a></h6>
+                            <div class="post-contents card-text mt-3">
+                                #markdown(post.long_snippet)
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="/blog/posts/#(post.slug_url)/" class="card-link">Continue Reading</a>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted text-center">
+                            <div class="post-tags">
+                                <h5>
+                                #loop(post.tags, "tag") {
+                                <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
+                                }
+                                </h5>
+                            </div>
+                            #if(disqus_name) {
+                                <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                            }
+                        </div>
+                    </div>
+                    }
+                    #paginator(posts)
+                }
+            }
+        </div>
+
+        #if(searchTerm) {
+            <div id="search-data" data-search-term="#(searchTerm)"></div>
+        }
+    </div>
+
+</div>
+
+}

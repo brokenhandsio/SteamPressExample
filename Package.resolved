@@ -150,8 +150,8 @@
         "repositoryURL": "https://github.com/vapor-community/markdown-provider.git",
         "state": {
           "branch": null,
-          "revision": "5c0480ed171a9d86455bf8d8ca46c0d0f0ab3676",
-          "version": "1.0.0"
+          "revision": "bd3820af8bd6b0ffd2b279f105e5df0850f58edd",
+          "version": "1.1.0"
         }
       },
       {
@@ -240,8 +240,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
         "state": {
           "branch": null,
-          "revision": "9c5b18ef3daff5e14c9783d780afd566298ff496",
-          "version": "0.14.0"
+          "revision": "0a346a23846d51c8674452dee38b879885318742",
+          "version": "0.15.0"
         }
       },
       {
@@ -249,8 +249,8 @@
         "repositoryURL": "https://github.com/vapor-community/markdown.git",
         "state": {
           "branch": null,
-          "revision": "ac02865278df113329a5242f37e3cc485cfa21f1",
-          "version": "0.3.0"
+          "revision": "aea4876786fa284f6d86af1ce3436a17e22035b5",
+          "version": "0.4.0"
         }
       },
       {
@@ -294,8 +294,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/VaporSecurityHeaders.git",
         "state": {
           "branch": null,
-          "revision": "c79a967c4d95fa57fb16acc13c7670cf89cccaa4",
-          "version": "1.0.0"
+          "revision": "b720ac976010198c0c5219f9d7f067a0be058e11",
+          "version": "1.1.0"
         }
       },
       {

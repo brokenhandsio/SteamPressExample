@@ -42,6 +42,25 @@ footer {
     border-color: #C57072;
 }
 
+.btn-outline-primary {
+    color: #DF7F81;
+    border-color: #DF7F81;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    border-color: #DF7F81;
+    background-color: #DF7F81;
+}
+
+.form-control-navbar {
+    border: 1px solid #346B8C;
+}
+
+#github-navbar {
+    font-size: 2em;
+}
+
 a {
     color: #DF7F81;
 }
@@ -261,3 +280,13 @@ h1.lead-title-blog {
 }
 
 /** Admin (end) **/
+
+/** Search **/
+
+#blog-search-input {
+    width: 50%;
+}
+
+.highlight {
+    background-color: rgba(223, 127, 129, 0.5);
+}
