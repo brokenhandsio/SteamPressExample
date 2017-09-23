@@ -3,7 +3,8 @@ import PackageDescription
 let package = Package(
     name: "SteamPressExample",
     targets : [
-        Target(name: "App"),
+        Target(name: "LeafErrorMiddleware"),
+        Target(name: "App", dependencies: ["LeafErrorMiddleware"]),
         Target(name: "Run", dependencies: ["App"]),
     ],
     dependencies: [
