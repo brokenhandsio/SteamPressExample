@@ -57,6 +57,11 @@ extension Droplet {
 
             return try self.view.make("about", parameters)
         }
+        
+        self.get("abort") { req in
+            throw Abort.serverError
+            
+        }
     }
 
 }
