@@ -7,9 +7,9 @@
 #export("body") {
     <div class="container">
 
-        <h1 class="lead-title mt-3 text-center">#(message)</h1>
+        <h1 class="lead-title mt-3 text-center">#(statusMessage)</h1>
 
-        <p>The server returned error code #(code) with the message #(message).</p>
+        <p>The server returned error code #(status) with the message #(statusMessage).</p>
 
         <p>Please try again later or use the menu above to navigate or you may find some of the links below useful:</p>
 

@@ -9,9 +9,13 @@
 
         <h1 class="lead-title mt-3 text-center">Oops....Wrong Turn!</h1>
 
-        <p>Looks like you've taken a wrong turn...we couldn't find the page you were looking for!</p>
+        <form class="form-inline justify-content-center mb-3" action="/blog/search" method="GET">
+            <input class="form-control mr-sm-2" id="blog-search-input" type="text" name="term" placeholder="Search The Blog" aria-label="Search">
+            <button class="btn my-2 my-sm-0 btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
 
-        <p>Use the menu above to navigate or you may find some of the links below useful:</p>
+        <p>Looks like you've taken a wrong turn...we couldn't find the page you were looking for! Search the blog
+            above, use the menu to navigate or you may find some of the links below useful:</p>
 
         <ul>
             <li><a href="/">Go home</a></li>

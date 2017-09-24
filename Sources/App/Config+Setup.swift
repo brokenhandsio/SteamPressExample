@@ -7,6 +7,7 @@ import VaporSecurityHeaders
 import LeafProvider
 import FluentProvider
 import MySQLProvider
+import LeafErrorMiddleware
 
 extension Config {
     public func setup() throws {
@@ -37,7 +38,7 @@ extension Config {
             .with(contentSecurityPolicy: ContentSecurityPolicyConfiguration(value: cspConfig))
             .with(referrerPolicy: referrerPolicy)
         self.addConfigurable(middleware: securityHeaders.builder(), name: "security-headers")
-        self.addConfigurable(middleware: BlogErrorMiddleware.init, name: "blog-error")
+        self.addConfigurable(middleware: LeafErrorMiddleware.init, name: "blog-error")
     }
 
     private func setupProviders() throws {
