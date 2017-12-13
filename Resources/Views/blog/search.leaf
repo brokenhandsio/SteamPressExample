@@ -33,6 +33,7 @@
         <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
+    <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.0/dist/jquery.mark.es6.min.js" integrity="sha256-JD1hL6vpVBtkR8DhzXoWBh40DpSCwrvHsZLgbeRTgsk= sha384-yJZr0Gj9WqrJtN9WboBW5j1foKZAwiRvZ8BMUUvdYaoJyzxj7XSxOmCL1/THs6Gq sha512-9nYqM9eBjvsME/qdnlpi+jJo5WiwqS0NN3JVYaJlKjyYhMHNkzLWAABMFmH5kIxROXisCVx9QUBPzzBWTXg2zw==" crossorigin="anonymous"></script>
     <script src="/static/js/search.js"></script>
 }
 
