@@ -1,6 +1,4 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>Blog | SteamPress</title>
 
     <!-- Syntax Highlighting -->
@@ -25,7 +23,7 @@
     }
 }
 
-#export("body") {
+#set("body") {
 
 <div class="container mt-4 mb-4">
 
@@ -34,8 +32,8 @@
     <div class="row">
 
         <div id="blog-posts" class="mb-4 col-md-10">
-            #if(posts) {
-                #loop(posts.data, "post") {
+            #if(count(posts) > 0) {
+                #for(post in posts.data) {
                 <div class="blog-post card mb-3">
                     <div class="card-body">
                         <a href="/blog/posts/#(post.slug_url)/" class="post-title-link"><h1 class="post-title card-title text-center display-4">#(post.title)</h1></a>
@@ -50,21 +48,21 @@
                     <div class="card-footer text-muted text-center">
                         <div class="post-tags">
                             <h5>
-                            #loop(post.tags, "tag") {
+                            #for(tag in post.tags) {
                             <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
                             }
                             </h5>
                         </div>
                         #if(disqus_name) {
-                            <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                            <a href="/blog/posts/#(post.slug_url)#disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
                         }
                     </div>
                 </div>
                 }
-                #paginator(posts)
+                #//#paginator(posts)
 
             }
-            ##else() {
+            else {
                 <p class="mb-4">There haven't been any blog posts yet!</p>
             }
         </div>
@@ -74,7 +72,7 @@
                 <div class="tags-module">
                     <h3><i class="fa fa-tags" aria-hidden="true"></i> Tags</h3>
                     <ul class="list-unstyled">
-                        #loop(tags, "tag") {
+                        #for(tag in tags) {
                         <li><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></li>
                         }
                     </ul>
@@ -85,7 +83,7 @@
                 <div class="authors-module">
                     <h3><i class="fa fa-pencil" aria-hidden="true"></i> Authors</h3>
                     <ul class="list-unstyled">
-                        #loop(authors, "author") {
+                        #for(author in authors) {
                         <li><a href="/blog/authors/#(author.username)/">#(author.name)</a></li>
                         }
                     </ul>
@@ -108,7 +106,7 @@
 </div>
 }
 
-#export("scripts") {
+#set("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
     <script src="/static/js/loadTweets.js"></script>
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
@@ -120,3 +118,5 @@
         <script src="/static/js/analytics.js"></script>
     }
 }
+
+#embed("base")
