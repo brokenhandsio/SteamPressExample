@@ -12,7 +12,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     try services.register(FluentPostgreSQLProvider())
     try services.register(LeafProvider())
     try services.register(AuthenticationProvider())
-    try services.register(SteamPressFluentPostgresProvider())
+    try services.register(SteamPressFluentPostgresProvider(blogPath: "blog"))
     
     services.register { worker in
         return LeafErrorMiddleware(environment: worker.environment)
@@ -62,10 +62,11 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     
     /// Register middleware
     var middlewares = MiddlewareConfig() // Create _empty_ middleware config
-    middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
-    middlewares.use(LeafErrorMiddleware.self) // Catches errors and converts to HTTP response
-    middlewares.use(SessionsMiddleware.self)
     middlewares.use(SecurityHeaders.self)
+    middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
+//    middlewares.use(LeafErrorMiddleware.self) // Catches errors and converts to HTTP response
+    middlewares.use(ErrorMiddleware.self)
+    middlewares.use(SessionsMiddleware.self)
     services.register(middlewares)
     
     // Configure a database

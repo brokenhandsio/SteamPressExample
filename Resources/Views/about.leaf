@@ -1,6 +1,4 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>About | SteamPress Example</title>
 
     <meta name="description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
@@ -22,7 +20,7 @@
     }
 }
 
-#export("body") {
+#set("body") {
 
 <div class="container mt-4">
 
@@ -59,9 +57,11 @@
 
 }
 
-#export("scripts") {
+#set("scripts") {
     #if(google_analytics_identifier) {
         <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
 }
+
+#embed("base")

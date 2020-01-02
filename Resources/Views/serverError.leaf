@@ -1,10 +1,8 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>Error | SteamPress</title>
 }
 
-#export("body") {
+#set("body") {
     <div class="container">
 
         <h1 class="lead-title mt-3 text-center">#(statusMessage)</h1>
@@ -22,3 +20,5 @@
 
     </div> <!-- container -->
 }
+
+#embed("base")

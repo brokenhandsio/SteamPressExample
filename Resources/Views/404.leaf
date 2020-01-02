@@ -1,10 +1,8 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>Oops....Wrong Turn! | SteamPress</title>
 }
 
-#export("body") {
+#set("body") {
     <div class="container">
 
         <h1 class="lead-title mt-3 text-center">Oops....Wrong Turn!</h1>
@@ -26,3 +24,5 @@
 
     </div> <!-- container -->
 }
+
+#embed("base")

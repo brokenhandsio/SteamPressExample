@@ -4,14 +4,14 @@
     <!-- This must be first in the <head> -->
     #embed("headContent")
 
-    #import("head")
+    #get(head)
 </head>
 
 <body>
     <div id="content">
 
         <nav class="navbar navbar-expand-md navbar-light" id="navigation">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#()navbar-collapsable" aria-controls="navbar-collapsable" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsable" aria-controls="navbar-collapsable" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="/">
@@ -42,11 +42,11 @@
             </div>
         </nav>
 
-        #import("body")
+        #get(body)
 
     </div> <!-- content -->
 
     #embed("footerAndScripts")
-    #import("scripts")
+    #get(scripts)
 </body>
 </html>
