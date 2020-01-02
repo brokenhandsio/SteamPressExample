@@ -4,3 +4,4 @@ xcuserdata
 *.xcodeproj
 Config/secrets
 DerivedData/
+.swiftpm
