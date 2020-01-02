@@ -61,8 +61,7 @@
                 }
                 #//#paginator(posts)
 
-            }
-            else {
+            } else {
                 <p class="mb-4">There haven't been any blog posts yet!</p>
             }
         </div>

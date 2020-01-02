@@ -47,8 +47,7 @@
                         </div>
                     </div>
                     }
-                }
-                else {
+                } else {
                     <div class="text-center h5 mt-4 mb-4">There haven't been any posts yet!</div>
                 }
 
