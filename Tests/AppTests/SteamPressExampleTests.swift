@@ -4,14 +4,6 @@ import Vapor
 
 class SteamPressExampleTests: XCTestCase {
 
-    // MARK: - All Tests
-    static var allTests = [
-        ("testLinuxTestSuiteIncludesAllTests", testLinuxTestSuiteIncludesAllTests),
-        ("testSecurityHeadersSetupCorrectly", testSecurityHeadersSetupCorrectly),
-        ("testThatAboutPageRouteAdded", testThatAboutPageRouteAdded),
-        ("testThatSteamPressSetUp", testThatSteamPressSetUp)
-    ]
-
     // MARK: - Properties
     var drop: Droplet!
 
@@ -25,17 +17,6 @@ class SteamPressExampleTests: XCTestCase {
     }
 
     // MARK: - Tests
-    func testLinuxTestSuiteIncludesAllTests() {
-        #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
-            let thisClass = type(of: self)
-            let linuxCount = thisClass.allTests.count
-            let darwinCount = Int(thisClass
-                .defaultTestSuite.testCaseCount)
-            XCTAssertEqual(linuxCount, darwinCount,
-                           "\(darwinCount - linuxCount) tests are missing from allTests")
-        #endif
-    }
-
     func testSecurityHeadersSetupCorrectly() throws {
         let request = Request(method: .get, uri: "/")
         let response = try drop.respond(to: request)
