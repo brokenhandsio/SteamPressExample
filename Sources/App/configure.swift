@@ -3,6 +3,7 @@ import Vapor
 import Leaf
 import Authentication
 import LeafErrorMiddleware
+import SteampressFluentPostgres
 
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
@@ -10,6 +11,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     try services.register(FluentPostgreSQLProvider())
     try services.register(LeafProvider())
     try services.register(AuthenticationProvider())
+    try services.register(SteamPressFluentPostgresProvider())
     
     services.register { worker in
         return LeafErrorMiddleware(environment: worker.environment)
@@ -65,7 +67,10 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     
     /// Configure migrations
     var migrations = MigrationConfig()
-    
+    migrations.add(model: BlogTag.self, database: .psql)
+    migrations.add(model: BlogUser.self, database: .psql)
+    migrations.add(model: BlogPost.self, database: .psql)
+    migrations.add(model: BlogPostTagPivot.self, database: .psql)
     services.register(migrations)
     
     config.prefer(LeafRenderer.self, for: ViewRenderer.self)
