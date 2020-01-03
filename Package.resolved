@@ -177,8 +177,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
         "state": {
           "branch": null,
-          "revision": "57733b58cf9d7b367e2bc224c0150eeed3f4e12a",
-          "version": "1.0.0-alpha.3"
+          "revision": "8d83cf732762e1a08efc98c17c4496d7c3a978d5",
+          "version": "1.0.0-alpha.4"
         }
       },
       {
@@ -186,8 +186,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/steampress-fluent-postgres.git",
         "state": {
           "branch": null,
-          "revision": "34ab64b90f307019b91e11fc15716c7d1006b993",
-          "version": "1.0.0-alpha.1"
+          "revision": "ddb47385710e5aa5d34762826b362c8755b41b6f",
+          "version": "1.0.0-alpha.2"
         }
       },
       {
