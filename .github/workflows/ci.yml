@@ -19,8 +19,8 @@ jobs:
     - uses: actions/checkout@v1
     - run: swift test --enable-test-discovery --enable-code-coverage
       env:
-        DB_HOSTNAME: psql
-        DB_PORT: 5432
+        DATABASE_HOSTNAME: psql
+        DATABASE_PORT: 5432
   bionic:
     container: 
       image: vapor/swift:5.1-bionic
@@ -39,8 +39,8 @@ jobs:
     - name: Run Bionic Tests
       run: swift test --enable-test-discovery --enable-code-coverage
       env:
-        DB_HOSTNAME: psql
-        DB_PORT: 5432
+        DATABASE_HOSTNAME: psql
+        DATABASE_PORT: 5432
     - name: Setup container for codecov upload
       run: apt-get update && apt-get install curl
     - name: Process coverage file
