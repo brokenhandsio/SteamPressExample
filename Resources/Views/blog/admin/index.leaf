@@ -1,14 +1,12 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>Admin | Blog Admin | SteamPress</title>
 }
 
-#export("scripts") {
+#set("scripts") {
   <script src="/static/js/admin/admin.js"></script>
 }
 
-#export("body") {
+#set("body") {
 
     <div class="container mt-3">
 
@@ -124,3 +122,5 @@
 
     </div>
 }
+
+#embed("base)
