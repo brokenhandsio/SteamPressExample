@@ -1,6 +1,4 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>#(post.title) | Blog | SteamPress</title>
 
     <!-- Syntax Highlighting -->
@@ -17,14 +15,13 @@
     <meta property="og:site_name" content="SteamPress">
     #if(post.last_edited_date_iso8601) { <meta property="article:modified_time" content="#(post.last_edited_date_iso8601)"> }
     <meta property="article:author" content="#(site_uri)blog/authors/#(author.username)/">
-    #loop(post.tags, "tag") {
+    #for(tag in post.tags) {
     <meta property="article:tag" content="#(tag.name)">
     }
     <meta name="twitter:card" content="summary_large_image">
     #if(post_image) {
     <meta property="og:image" content="#(post_image)">
-    }
-    ##else() {
+    } else {
         <meta property="og:image" content="https://www.steampress.io/static/images/steampress-og-image_1.jpg">
         <meta property="og:image:width" content="2400">
         <meta property="og:image:height" content="1257">
@@ -41,25 +38,24 @@
     }
 }
 
-#export("body") {
+#set("body") {
 
 <div class="container mt-4">
 
-    #if(post.published) {}
-    ##else() {
+    #if(!post.published) {
         <div class="h3 text-center"><span class="badge badge-info">DRAFT POST</span></div>
     }
 
     <h1 class="display-4 text-center">#(post.title)</h1>
 
-    <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.username)/">#(author.name)</a> on #(post.created_date)#if(post.last_edited_date) {. Last edited on #(post.last_edited_date).}</h4>
+    <h4 class="text-center text-muted">Written by <a href="/blog/authors/#(author.username)/">#(author.name)</a> on #(post.createdDateLong)#if(post.last_edited_date) {. Last edited on #(post.last_edited_date).}</h4>
 
     <div class="post-contents mt-3">
         #markdown(post.contents)
     </div>
 
     <div class="post-tags text-center h4">
-        #loop(post.tags, "tag") {
+        #for(tag in post.tags) {
         <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
         }
     </div>
@@ -83,7 +79,7 @@
 </div>
 }
 
-#export("scripts") {
+#set("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
     <div id="fb-root"></div>
     <script src="/static/js/facebook.js"></script>
@@ -97,3 +93,5 @@
         <script src="/static/js/analytics.js"></script>
     }
 }
+
+#embed("base")

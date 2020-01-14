@@ -1,6 +1,6 @@
 $("#create-post-form").on('submit', function() {
-    var title = $("#inputTitle").val();
-    var contents = $("#inputPostContents").val();
+    var title = $("#title").val();
+    var contents = $("#contents").val();
 
     if (!title) {
         alert("Please enter a title");
@@ -23,7 +23,7 @@ var originalTitle = "";
 
 $(function() {
     var simplemde = new SimpleMDE({
-        element: $("#inputPostContents")[0],
+        element: $("#contents")[0],
         spellChecker: false,
         forceSync: true,
         placeholder: "Write your blog post here",
@@ -36,12 +36,12 @@ $(function() {
     });
     // SimpleMDE has been initialised so we need to turn off validation for the
     // underlying text area
-    $('#inputPostContents').removeAttr('required');
+    $('#contents').removeAttr('required');
 });
 
-$('#inputTitle').on('input',function(e){
+$('#title').on('input',function(e){
   if (allowEditingOfSlugUrl) {
-    var title = $('#inputTitle').val();
+    var title = $('#title').val();
     var slugUrl = slugify(title);
     $('#inputSlugUrl').val(slugUrl);
     if (editingPost && published) {

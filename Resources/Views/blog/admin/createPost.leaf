@@ -1,32 +1,29 @@
-#extend("base")
-
-#export("head") {
-<title>#if(editing) { Edit } ##else() { Create } Blog Post | Blog Admin | SteamPress</title>
+#set("head") {
+<title>#if(editing) { Edit } else { Create } Blog Post | Blog Admin | SteamPress</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" integrity="sha256-xJOZHfpxLR/uhh1BwYFS5fhmOAdIRQaiOul5F/b7v3s= sha384-HIipfSYbpCkh5/1V87AWAeR5SUrNiewznrUrtNz1ux4uneLhsAKzv/0FnMbj3m6g sha512-2L0dEjIN/DAmTV5puHriEIuQU/IL3CoPm/4eyZp3bM8dnaXri6lK8u6DC5L96b+YSs9f3Le81dDRZUSYeX4QcQ==" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/1.11.2/simplemde.min.css" integrity="sha256-Is0XNfNX8KF/70J2nv8Qe6BWyiXrtFxKfJBHoDgNAEM= sha384-rQdIropf4eQBEB9SkNB4xxukYHlkyXJfKYkpVNUQOLizz+d2q0wo7zjVA2XcYSij sha512-lB03MbtC3LxImQ+BKnZIyvVHTQ8SSmQ15AhVh5U/+CCp4wKtZMvgLGXbZIjIBBbnKsmk3/6n2vcF8a9CtVVSfA==" crossorigin="anonymous">
 }
 
-#export("scripts") {
+#set("scripts") {
   <script src="https://cdn.jsdelivr.net/simplemde/1.11.2/simplemde.min.js" integrity="sha256-6sZs7OGP0Uzcl7UDsLaNsy1K0KTZx1+6yEVrRJMn2IM= sha384-83rBTICYr+FwAC+A5t0ZYsWjTcPXibCe/NBSFLAgMPkwHBvIi02EcE9OShMsGCi3 sha512-ksSfTk6JIdsze75yZ8c+yDVLu09SNefa9IicxEE+HZvWo9kLPY1vrRlmucEMHQReWmEdKqusQWaDMpkTb3M2ug==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js" integrity="sha256-+mWd/G69S4qtgPowSELIeVAv7+FuL871WXaolgXnrwQ= sha384-222hzbb8Z8ZKe6pzP18nTSltQM3PdcAwxWKzGOKOIF+Y3bROr5n9zdQ8yTRHgQkQ sha512-bj8HE1pKwchoYNizhD57Vl6B9ExS25Hw21WxoQEzGapNNjLZ0+kgRMEn9KSCD+igbE9+/dJO7x6ZhLrdaQ5P3g==" crossorigin="anonymous"></script>
   <script src="/static/js/admin/punycode.js"></script>
   <script src="/static/js/admin/createPost.js"></script>
 }
 
-#export("body") {
+#set("body") {
 
     <div class="container mt-3">
 
         #if(editing) {
         <h1>Edit Your Blog Post</h1>
-        }
-        ##else() {
+        } else {
         <h1>Create A Blog Post</h1>
         }
 
         #if(errors) {
-            #loop(errors, "error") {
+            #for(error in errors) {
             <div class="alert alert-danger" role="alert">
                 <strong>Warning: </strong>#(error)
             </div>
@@ -37,25 +34,25 @@
         <div id="edit-post-data" data-editing-page="true" data-published-post="#(post.published)" data-original-slug-url="#(slug_url_supplied)" data-original-title="#(title_supplied)"></div>
         }
 
-        <form action="/blog/admin/#if(editing) {posts/#(post.id)/edit/} ##else() {createPost/}" id="create-post-form" method="post" class="mt-3" novalidate>
+        <form action="/blog/admin/#if(editing) {posts/#(post.blogID)/edit/} else {createPost/}" id="create-post-form" method="post" class="mt-3" novalidate>
             #if(editing) {
             <div class="alert alert-warning alert-dismissible fade show" role="alert" id="blog-post-edit-title-warning">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <strong>Warning</strong> - editing the title will change the URL of the post - this can cause issues with comment engines and SEO and may break links to your site.
-                <a href="#()" class="alert-link" id="keep-original-slug-url-link">Keep original link?</a>
+                <a href="#" class="alert-link" id="keep-original-slug-url-link">Keep original link?</a>
             </div>
             }
             #if(editing) {
             <div class="form group" id="create-post-status-group">
                 <label class="form-control-label">Status</label>
-                <div class="h4">#if(post.published) {<span class="badge badge-success">Published</span>} ##else() {<span class="badge badge-info">Draft</span>}</div>
+                <div class="h4">#if(post.published) {<span class="badge badge-success">Published</span>} else {<span class="badge badge-info">Draft</span>}</div>
             </div>
             }
             <div class="form-group" id="create-post-title-group">
-                <label class="form-control-label" for="inputTitle">Title</label>
-                <input type="text" class="form-control #if(title_error) { is-invalid }" id="inputTitle" name="inputTitle" placeholder="Blog Post Title" value="#(title_supplied)" autofocus required>
+                <label class="form-control-label" for="title">Title</label>
+                <input type="text" class="form-control #if(title_error) { is-invalid }" id="title" name="title" placeholder="Blog Post Title" value="#(title_supplied)" autofocus required>
             </div>
 
             <div class="form-group" id="create-post-slugurl-group">
@@ -67,14 +64,14 @@
             </div>
 
             <div class="form-group" id="create-post-contents-group">
-                <label class="form-control-label" for="inputPostContents">Blog Post</label>
-                <textarea class="form-control #if(contents_error) { is-invalid }" id="inputPostContents" name="inputPostContents" rows="10" required>#(contents_supplied)</textarea>
+                <label class="form-control-label" for="contents">Blog Post</label>
+                <textarea class="form-control #if(contents_error) { is-invalid }" id="contents" name="contents" rows="10" required>#(contents_supplied)</textarea>
             </div>
 
             <div class="form-group" id="create-post-tags-group">
                 <label class="form-control-label" for="inputTags">Tags</label>
                 <select class="form-control" id="inputTags" name="inputTags" placeholder="Tags" multiple="multiple">
-                  #loop(tags_supplied, "tag") {
+                  #for(tag in tagsSupplied) {
                     <option value="#(tag)" selected="selected">#(tag)</option>
                   }
                 </select>
@@ -85,9 +82,9 @@
 
         <div class="form-group">
             #if(draft) {
-            <button type="Submit" class="btn btn-info" name="save-draft" value="save-draft">Save Draft</button>
+            <button type="Submit" class="btn btn-info" name="save-draft" value="true">Save Draft</button>
             }
-            <button type="Submit" class="btn btn-primary" name="publish" value="publish">#if(editing) {#if(draft) {Publish} ##else() {Update}} ##else() {Publish}</button>
+            <button type="Submit" class="btn btn-primary" name="publish" value="true">#if(editing) {#if(draft) {Publish} else {Update}} else {Publish}</button>
             #if(editing) {
             <a href="/blog/admin/" class="btn btn-secondary" id="cancel-edit-button">Cancel</a>
             }
@@ -101,3 +98,5 @@
 
     </div>
 }
+
+#embed("base")

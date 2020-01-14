@@ -5,6 +5,7 @@ import Authentication
 import LeafErrorMiddleware
 import SteampressFluentPostgres
 import VaporSecurityHeaders
+import LeafMarkdown
 
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
@@ -117,4 +118,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     config.prefer(LeafRenderer.self, for: ViewRenderer.self)
     config.prefer(MemoryKeyedCache.self, for: KeyedCache.self)
     config.prefer(BCryptDigest.self, for: PasswordVerifier.self)
+    
+    var tags = LeafTagConfig.default()
+    tags.use(Markdown(), as: "markdown")
+    services.register(tags)
 }
