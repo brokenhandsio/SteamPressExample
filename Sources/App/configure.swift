@@ -115,4 +115,5 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     
     config.prefer(LeafRenderer.self, for: ViewRenderer.self)
     config.prefer(MemoryKeyedCache.self, for: KeyedCache.self)
+    config.prefer(BCryptDigest.self, for: PasswordVerifier.self)
 }

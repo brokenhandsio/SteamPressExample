@@ -36,7 +36,7 @@
                 <input type="password" class="form-control #if(passwordError) {is-invalid}" id="password" name="password" placeholder="Password" required>
             </div>
             <div class="form-group checkbox text-center">
-                <label><input type="checkbox" value="rememberMe" name="rememberMe"> Remember Me</label>
+                <label><input type="checkbox" value="true" name="rememberMe" #if(rememberMe){checked}> Remember Me</label>
             </div>
 
             <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
