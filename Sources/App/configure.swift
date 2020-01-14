@@ -111,6 +111,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     migrations.add(model: BlogUser.self, database: .psql)
     migrations.add(model: BlogPost.self, database: .psql)
     migrations.add(model: BlogPostTagPivot.self, database: .psql)
+    migrations.add(migration: BlogAdminUser.self, database: .psql)
     services.register(migrations)
     
     config.prefer(LeafRenderer.self, for: ViewRenderer.self)
