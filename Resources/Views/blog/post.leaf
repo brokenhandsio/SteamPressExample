@@ -30,11 +30,11 @@
     #if(post_image_alt) {
         <meta name="twitter:image:alt" content="#(post_image_alt)">
     }
-    #if(site_twitter_handle) {
-    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    #if(pageInformation.siteTwitterHandle) {
+    <meta name="twitter:site" content="@#(pageInformation.siteTwitterHandle)">
     }
-    #if(author.twitter_handle) {
-    <meta name="twitter:creator" content="@#(author.twitter_handle)">
+    #if(author.twitterHandle) {
+    <meta name="twitter:creator" content="@#(author.twitterHandle)">
     }
 }
 
@@ -70,8 +70,8 @@
     </div>
 
     #if(post.published) {
-    #if(disqus_name) {
-        <div id="blog-post-data" data-post-identifier="#(post.id)" data-disqus-name="#(disqus_name)"></div>
+    #if(pageInformation.disqusName) {
+        <div id="blog-post-data" data-post-identifier="#(post.id)" data-disqus-name="#(pageInformation.disqusName)"></div>
         <div id="disqus_thread" class="text-center col-md-10 ml-auto mr-auto"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     }
@@ -85,11 +85,11 @@
     <script src="/static/js/facebook.js"></script>
     <script src="/static/js/loadTweets.js"></script>
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
-    #if(disqus_name) {
+    #if(pageInformation.disqusName) {
         <script src="/static/js/disqus.js"></script>
     }
-    #if(google_analytics_identifier) {
-        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+    #if(pageInformation.googleAnalyticsIdentifier) {
+        <div id="google-analytics-data" data-identifier="#(pageInformation.googleAnalyticsIdentifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
 }

@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">#equal(author.post_count, "1") {#(author.post_count) post} ##else() {#(author.post_count) posts}</small>
+                        <small class="text-muted">#if(author.postCount == 1) {#(author.postCount) post} else {#(author.postCount) posts}</small>
                     </div>
                 </div>
             </div>
