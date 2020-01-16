@@ -19,8 +19,8 @@
     <meta property="og:image:height" content="1257">
     <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
 
-    #if(site_twitter_handle) {
-    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    #if(twitterHandler) {
+    <meta name="twitter:site" content="@#(twitterHandler)">
     }
 }
 
@@ -41,9 +41,9 @@
                     #for(post in posts) {
                     <div class="card mb-3">
                         <div class="card-body post-contents">
-                            <a href="/blog/posts/#(post.slug_url)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
-                            #markdown(post.short_snippet)
-                            <a href="/blog/posts/#(post.slug_url)/" class="card-link">Read More</a>
+                            <a href="/blog/posts/#(post.slugUrl)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
+                            #markdown(post.shortSnippet)
+                            <a href="/blog/posts/#(post.slugUrl)/" class="card-link">Read More</a>
                         </div>
                     </div>
                     }
@@ -98,8 +98,8 @@
 
 #set("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
-    #if(google_analytics_identifier) {
-        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+    #if(googleAnalytics) {
+        <div id="google-analytics-data" data-identifier="#(googleAnalytics)"></div>
         <script src="/static/js/analytics.js"></script>
     }
 }
