@@ -56,7 +56,7 @@
 
     <div class="post-tags text-center h4">
         #for(tag in post.tags) {
-        <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
+        <span class="badge badge-secondary"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
         }
     </div>
 
@@ -71,7 +71,7 @@
 
     #if(post.published) {
     #if(pageInformation.disqusName) {
-        <div id="blog-post-data" data-post-identifier="#(post.id)" data-disqus-name="#(pageInformation.disqusName)"></div>
+        <div id="blog-post-data" data-post-identifier="#(post.blogID)" data-disqus-name="#(pageInformation.disqusName)"></div>
         <div id="disqus_thread" class="text-center col-md-10 ml-auto mr-auto"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     }
