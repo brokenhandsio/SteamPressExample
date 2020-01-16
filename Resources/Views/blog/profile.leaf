@@ -34,8 +34,8 @@
 
 #set("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
-    #if(disqus_name) {
-        <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
+    #if(pageInformation.disqusName) {
+        <script id="dsq-count-scr" src="https://#(pageInformation.disqusName).disqus.com/count.js" async></script>
     }
     #if(pageInformation.googleAnalyticsIdentifier) {
         <div id="google-analytics-data" data-identifier="#(pageInformation.googleAnalyticsIdentifier)"></div>
@@ -88,7 +88,7 @@
                         <div class="blog-post card mb-3">
                             <div class="card-body">
                                 <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
-                                <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created) by <a href="/blog/authors/#(post.author_username)/">#(post.author_name)</a></h6>
+                                <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createdDateLong) by <a href="/blog/authors/#(post.authorUsername)/">#(post.authorName)</a></h6>
                                 <div class="post-contents card-text mt-3">
                                     #markdown(post.longSnippet)
                                 </div>
@@ -99,8 +99,8 @@
                             <div class="card-footer text-muted text-center">
                                 <div class="post-tags">
                                     <h5>
-                                    #loop(post.tags, "tag") {
-                                    <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
+                                    #for(tag in post.tags) {
+                                    <span class="badge badge-secondary"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
                                     }
                                     </h5>
                                 </div>
