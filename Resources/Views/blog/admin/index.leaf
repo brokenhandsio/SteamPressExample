@@ -71,10 +71,10 @@
                 <tbody>
                     #for(post in draftPosts) {
                     <tr>
-                        <td>#(post.created_date)</td>
-                        <td><a href="/blog/posts/#(post.slug_url)/">#(post.title)</a></td>
+                        <td>#(post.createdDateNumeric)</td>
+                        <td><a href="/blog/posts/#(post.slugUrl)/">#(post.title)</a></td>
                         <td>#(post.author_name)</td>
-                        <td><a class="btn btn-info" href="/blog/admin/posts/#(post.id)/edit/">Edit</a></td>
+                        <td><a class="btn btn-info" href="/blog/admin/posts/#(post.blogID)/edit/">Edit</a></td>
                         <td><form method="post" action="/blog/admin/posts/#(post.blogID)/delete/"><input type="submit" class="btn btn-danger delete-post-button" value="Delete"></form></td>
                     </tr>
                     }
