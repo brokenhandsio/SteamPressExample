@@ -72,7 +72,7 @@
                 }
 
                 #if(pageInformation.loggedInUser) {
-                    <a class="btn btn-primary mt-3" href="/blog/admin/users/#(author.id)/edit/">Edit Profile</a>
+                    <a class="btn btn-primary mt-3" href="/blog/admin/users/#(author.userID)/edit/">Edit Profile</a>
                 }
 
             </div>
@@ -105,7 +105,7 @@
                                     </h5>
                                 </div>
                                 #if(pageInformation.disqusName) {
-                                    <a href="/blog/posts/#(post.slugUrl)#disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                                    <a href="/blog/posts/#(post.slugUrl)#disqus_thread" data-disqus-identifier="#(post.blogID)">0 Comments</a>
                                 }
                             </div>
                         </div>

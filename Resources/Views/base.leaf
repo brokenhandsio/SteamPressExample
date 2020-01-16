@@ -25,7 +25,7 @@
                         <li class="nav-item #if(blog_admin_page) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
                         <li class="nav-item #if(create_blog_post_page) {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
                         #if(blog_post_page) {
-                        <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.id)/edit/" class="nav-link">Edit Post</a></div>
+                        <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.blogID)/edit/" class="nav-link">Edit Post</a></div>
                         }
                     }
                 </ul>

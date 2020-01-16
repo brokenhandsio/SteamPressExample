@@ -54,7 +54,7 @@
                             </h5>
                         </div>
                         #if(disqus_name) {
-                            <a href="/blog/posts/#(post.slug_url)#disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                            <a href="/blog/posts/#(post.slug_url)#disqus_thread" data-disqus-identifier="#(post.blogID)">0 Comments</a>
                         }
                     </div>
                 </div>

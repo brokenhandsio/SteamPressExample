@@ -62,12 +62,12 @@
                         <div class="post-tags">
                             <h5>
                             #loop(post.tags, "tag") {
-                            <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
+                            <span class="badge badge-secondary"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
                             }
                             </h5>
                         </div>
                         #if(disqus_name) {
-                            <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.id)">0 Comments</a>
+                            <a href="/blog/posts/#(post.slug_url)#()disqus_thread" data-disqus-identifier="#(post.blogID)">0 Comments</a>
                         }
                     </div>
                 </div>
