@@ -42,7 +42,7 @@
                             <td>#(post.createdDateNumeric)</td>
                             <td><a href="/blog/posts/#(post.slugUrl)/">#(post.title)</a></td>
                             <td>#(post.authorName)</td>
-                            <td>#if(post.lastEdited) {#(post.lastEdited)} else { N/A }</td>
+                            <td>#if(post.lastEdited) {#(post.lastEditedDateNumeric)} else { N/A }</td>
                             <td><a class="btn btn-info" href="/blog/admin/posts/#(post.blogID)/edit/">Edit</a></td>
                             <td><form method="post" action="/blog/admin/posts/#(post.blogID)/delete/"><input type="submit" class="btn btn-danger delete-post-button" value="Delete"></form></td>
                         </tr>
