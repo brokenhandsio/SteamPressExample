@@ -34,11 +34,11 @@
                     <div class="card-body">
                         <h2 class="card-title">#(tag.name)</h2>
                         <div class="card-text mt-3">
-                            <a href="/blog/tags/#(tag.url_encoded_name)/" class="card-link">View #(tag.name)</a>
+                            <a href="/blog/tags/#(tag.name)/" class="card-link">View #(tag.name)</a>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">#if(tag.post_count == 1) {#(tag.post_count) post} else {#(tag.post_count) posts}</small>
+                        <small class="text-muted">#if(tag.postCount == 1) {#(tag.postCount) post} else {#(tag.postCount) posts}</small>
                     </div>
                 </div>
             </div>

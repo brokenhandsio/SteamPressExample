@@ -80,7 +80,7 @@
             <div id="user-posts" class="col-md-9">
 
                 <h2 class="text-center">#(author.name)'s Posts</h2>
-                <h3 class="h5 text-center"><small class="text-muted">#if(count(posts) == 1) {#(count(posts)) post} else {#(count(posts)) posts}</small></h3>
+                <h3 class="h5 text-center"><small class="text-muted">#if(postCount == 1) {#(postCount) post} else {#(postCount) posts}</small></h3>
 
                 <div id="blog-posts" class="mb-4">
                     #if(count(posts) > 0) {
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         }
-                        #// paginator(posts)
+                        #paginator()
                     } else {
                         <p class="mb-4">There haven't been any blog posts yet!</p>
                     }

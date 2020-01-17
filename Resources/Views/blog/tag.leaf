@@ -40,7 +40,7 @@
 <div class="container mt-3">
 
     <h1 class="text-center d-flex align-items-center justify-content-center">Posts Tagged With <span id="tag-title-badge" class="badge badge-secondary">#(tag.name)</span></h1>
-    <h2 class="h5 text-center"><small class="text-muted">#equal(tag.post_count, "1") {#(tag.post_count) post} ##else() {#(tag.post_count) posts}</small></h2>
+    <h2 class="h5 text-center"><small class="text-muted">#if(postCount == 1) {#(postCount) post} else {#(postCount) posts}</small></h2>
 
     <div id="tag-posts" class="mt-3">
 

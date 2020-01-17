@@ -65,8 +65,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     var middlewares = MiddlewareConfig() // Create _empty_ middleware config
     middlewares.use(SecurityHeaders.self)
     middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
-    middlewares.use(LeafErrorMiddleware.self)
-//    middlewares.use(ErrorMiddleware.self)
+//    middlewares.use(LeafErrorMiddleware.self)
+    middlewares.use(ErrorMiddleware.self)
     middlewares.use(SessionsMiddleware.self)
     services.register(middlewares)
     
@@ -121,5 +121,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     
     var tags = LeafTagConfig.default()
     tags.use(Markdown(), as: "markdown")
+    let paginatorTag = PaginatorTag(paginationLabel: "Blog Posts")
+    tags.use(paginatorTag, as: PaginatorTag.name)
     services.register(tags)
 }

@@ -49,7 +49,7 @@
                 <button class="btn my-2 my-sm-0 btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
             #if(searchTerm) {
-                <h2 class="text-center h3">#count(posts) #if(count(posts) == 1) { result } else { results } for '#(searchTerm)'</h2>
+                <h2 class="text-center h3">#(totalResults) #if(totalResults == 1) { result } else { results } for '#(searchTerm)'</h2>
                 #for(post in posts) {
                 <div class="blog-post card mb-3">
                     <div class="card-body">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 }
-                #// paginator(posts)
+                #paginator()
             }
         </div>
 

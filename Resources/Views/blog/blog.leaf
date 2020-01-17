@@ -18,8 +18,8 @@
     <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     <meta property="og:site_name" content="SteamPress">
 
-    #if(site_twitter_handle) {
-    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    #if(pageInformation.siteTwitterHandle) {
+    <meta name="twitter:site" content="@#(pageInformation.siteTwitterHandle)">
     }
 }
 
@@ -33,28 +33,28 @@
 
         <div id="blog-posts" class="mb-4 col-md-10">
             #if(count(posts) > 0) {
-                #for(post in posts.data) {
+                #for(post in posts) {
                 <div class="blog-post card mb-3">
                     <div class="card-body">
-                        <a href="/blog/posts/#(post.slug_url)/" class="post-title-link"><h1 class="post-title card-title text-center display-4">#(post.title)</h1></a>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.created_date) by <a href="/blog/authors/#(post.author_username)/">#(post.author_name)</a></h6>
+                        <a href="/blog/posts/#(post.slugUrl)/" class="post-title-link"><h1 class="post-title card-title text-center display-4">#(post.title)</h1></a>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createdDateLong) by <a href="/blog/authors/#(post.authorUsername)/">#(post.authorName)</a></h6>
                         <div class="post-contents card-text mt-3">
-                            #markdown(post.long_snippet)
+                            #markdown(post.longSnippet)
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="/blog/posts/#(post.slug_url)/" class="card-link">Continue Reading</a>
+                            <a href="/blog/posts/#(post.slugUrl)/" class="card-link">Continue Reading</a>
                         </div>
                     </div>
                     <div class="card-footer text-muted text-center">
                         <div class="post-tags">
                             <h5>
                             #for(tag in post.tags) {
-                            <span class="badge badge-secondary"><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></span>
+                            <span class="badge badge-secondary"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
                             }
                             </h5>
                         </div>
-                        #if(disqus_name) {
-                            <a href="/blog/posts/#(post.slug_url)#disqus_thread" data-disqus-identifier="#(post.blogID)">0 Comments</a>
+                        #if(pageInformation.disqusName) {
+                            <a href="/blog/posts/#(post.slugUrl)#disqus_thread" data-disqus-identifier="#(post.blogID)">0 Comments</a>
                         }
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <h3><i class="fa fa-tags" aria-hidden="true"></i> Tags</h3>
                     <ul class="list-unstyled">
                         #for(tag in tags) {
-                        <li><a href="/blog/tags/#(tag.url_encoded_name)/">#(tag.name)</a></li>
+                        <li><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></li>
                         }
                     </ul>
                     <a href="/blog/tags/">All Tags</a>
@@ -109,11 +109,11 @@
     <script src="/static/js/prismHighlighting.js"></script>
     <script src="/static/js/loadTweets.js"></script>
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
-    #if(disqus_name) {
+    #if(pageInformation.disqusName) {
         <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
     }
-    #if(google_analytics_identifier) {
-        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+    #if(pageInformation.googleAnalyticsIdentifier) {
+        <div id="google-analytics-data" data-identifier="#(pageInformation.googleAnalyticsIdentifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
 }
