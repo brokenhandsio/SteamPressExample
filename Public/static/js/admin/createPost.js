@@ -43,7 +43,7 @@ $('#title').on('input',function(e){
   if (allowEditingOfSlugUrl) {
     var title = $('#title').val();
     var slugUrl = slugify(title);
-    $('#inputSlugUrl').val(slugUrl);
+    $('#slugUrl').val(slugUrl);
     if (editingPost && published) {
       if (title != originalTitle) {
         $('#blog-post-edit-title-warning').fadeIn();
@@ -66,7 +66,7 @@ $.ajax({
         var newTag = {id: tagToTransform["name"], text: tagToTransform["name"]};
         dataToReturn.push(newTag);
     }
-    $("#inputTags").select2({
+    $("#tags").select2({
     placeholder: "Select Tags for the Blog Post",
     tags: true,
     tokenSeparators: [','],
@@ -103,6 +103,6 @@ function slugify(text)
 
 function keepPostOriginalSlugUrl() {
   allowEditingOfSlugUrl = false;
-  $('#inputSlugUrl').val(originalSlugUrl);
+  $('#slugUrl').val(originalSlugUrl);
   $('#blog-post-edit-title-warning').alert('close')
 }
