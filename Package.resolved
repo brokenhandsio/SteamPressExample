@@ -110,6 +110,15 @@
         }
       },
       {
+        "package": "LeafMarkdown",
+        "repositoryURL": "https://github.com/vapor-community/leaf-markdown.git",
+        "state": {
+          "branch": null,
+          "revision": "d451d3aeb7f44c4e5d46268b9ed99c51aefffef2",
+          "version": "2.2.0"
+        }
+      },
+      {
         "package": "SwiftMarkdown",
         "repositoryURL": "https://github.com/vapor-community/markdown.git",
         "state": {
@@ -177,8 +186,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/SteamPress.git",
         "state": {
           "branch": null,
-          "revision": "8d83cf732762e1a08efc98c17c4496d7c3a978d5",
-          "version": "1.0.0-alpha.4"
+          "revision": "5292b624c2b63cf03a983dd8506061233e38bdf7",
+          "version": "1.0.0-alpha.5"
         }
       },
       {
@@ -186,8 +195,8 @@
         "repositoryURL": "https://github.com/brokenhandsio/steampress-fluent-postgres.git",
         "state": {
           "branch": null,
-          "revision": "ddb47385710e5aa5d34762826b362c8755b41b6f",
-          "version": "1.0.0-alpha.2"
+          "revision": "8ed2a98c9e2d7681b343d352380b32c53a15c330",
+          "version": "1.0.0-beta.1"
         }
       },
       {
