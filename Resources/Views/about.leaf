@@ -15,8 +15,8 @@
     <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     <meta property="og:site_name" content="SteamPress">
 
-    #if(twitterHandler) {
-    <meta name="twitter:site" content="@#(twitterHandler)">
+    #if(pageInformation.siteTwitterHandle) {
+    <meta name="twitter:site" content="@#(pageInformation.siteTwitterHandle)">
     }
 }
 
@@ -58,8 +58,8 @@
 }
 
 #set("scripts") {
-    #if(googleAnalytics) {
-        <div id="google-analytics-data" data-identifier="#(googleAnalytics)"></div>
+    #if(pageInformation.googleAnalyticsIdentifier) {
+        <div id="google-analytics-data" data-identifier="#(pageInformation.googleAnalyticsIdentifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
 }
