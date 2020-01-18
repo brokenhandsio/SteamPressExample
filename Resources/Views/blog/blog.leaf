@@ -31,39 +31,8 @@
 
     <div class="row">
 
-        <div id="blog-posts" class="mb-4 col-md-10">
-            #if(count(posts) > 0) {
-                #for(post in posts) {
-                <div class="blog-post card mb-3">
-                    <div class="card-body">
-                        <a href="/blog/posts/#(post.slugUrl)/" class="post-title-link"><h1 class="post-title card-title text-center display-4">#(post.title)</h1></a>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createdDateLong) by <a href="/blog/authors/#(post.authorUsername)/">#(post.authorName)</a></h6>
-                        <div class="post-contents card-text mt-3">
-                            #markdown(post.longSnippet)
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <a href="/blog/posts/#(post.slugUrl)/" class="card-link">Continue Reading</a>
-                        </div>
-                    </div>
-                    <div class="card-footer text-muted text-center">
-                        <div class="post-tags">
-                            <h5>
-                            #for(tag in post.tags) {
-                            <span class="badge badge-secondary"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
-                            }
-                            </h5>
-                        </div>
-                        #if(pageInformation.disqusName) {
-                            <a href="/blog/posts/#(post.slugUrl)#disqus_thread" data-disqus-identifier="#(post.blogID)">0 Comments</a>
-                        }
-                    </div>
-                </div>
-                }
-                #//#paginator(posts)
-
-            } else {
-                <p class="mb-4">There haven't been any blog posts yet!</p>
-            }
+        <div class="col-md-10">
+            #embed("blog/postsView")
         </div>
 
         <div class="col-md-2 blog-sidebar">
@@ -72,7 +41,7 @@
                     <h3><i class="fa fa-tags" aria-hidden="true"></i> Tags</h3>
                     <ul class="list-unstyled">
                         #for(tag in tags) {
-                        <li><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></li>
+                        <li><a href="/blog/tags/#(tag.urlEncodedName)/">#(tag.name)</a></li>
                         }
                     </ul>
                     <a href="/blog/tags/">All Tags</a>
@@ -110,7 +79,7 @@
     <script src="/static/js/loadTweets.js"></script>
     <script id="twitter-wjs" type="text/javascript" async defer src="https://platform.twitter.com/widgets.js"></script>
     #if(pageInformation.disqusName) {
-        <script id="dsq-count-scr" src="https://#(disqus_name).disqus.com/count.js" async></script>
+        <script id="dsq-count-scr" src="https://#(pageInformation.disqusName).disqus.com/count.js" async></script>
     }
     #if(pageInformation.googleAnalyticsIdentifier) {
         <div id="google-analytics-data" data-identifier="#(pageInformation.googleAnalyticsIdentifier)"></div>

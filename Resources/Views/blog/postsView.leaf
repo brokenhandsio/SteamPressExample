@@ -1,0 +1,33 @@
+<div id="blog-posts" class="mb-4">
+    #if(count(posts) > 0) {
+        #for(post in posts) {
+        <div class="blog-post card mb-3">
+            <div class="card-body">
+                <h1 class="post-title card-title text-center display-4">#(post.title)</h1>
+                <h6 class="card-subtitle mb-2 text-muted text-center">#(post.createdDateLong) by <a href="/blog/authors/#(post.authorUsername)/">#(post.authorName)</a></h6>
+                <div class="post-contents card-text mt-3">
+                    #markdown(post.longSnippet)
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="/blog/posts/#(post.slugUrl)/" class="card-link">Continue Reading</a>
+                </div>
+            </div>
+            <div class="card-footer text-muted text-center">
+                <div class="post-tags">
+                    <h5>
+                    #for(tag in post.tags) {
+                    <span class="badge badge-secondary"><a href="/blog/tags/#(tag.urlEncodedName)/">#(tag.name)</a></span>
+                    }
+                    </h5>
+                </div>
+                #if(pageInformation.disqusName) {
+                    <a href="/blog/posts/#(post.slugUrl)#disqus_thread" data-disqus-identifier="#(post.blogID)">0 Comments</a>
+                }
+            </div>
+        </div>
+        }
+        #paginator()
+    } else {
+        <p class="mb-4">There haven't been any blog posts yet!</p>
+    }
+</div>

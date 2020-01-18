@@ -4,31 +4,31 @@
     <!-- Syntax Highlighting -->
     <link rel="stylesheet" href="/static/css/prismHighlighting.css">
 
-    <meta name="description" content="#(post_description)">
+    <meta name="description" content="#(post.description)">
 
     <meta name="twitter:widgets:csp" content="on">
     <meta property="og:url" content="#(pageInformation.currentPageURL)">
     <meta property="og:title" content="#(post.title)">
-    <meta property="og:description" content="#(post_description)">
+    <meta property="og:description" content="#(post.description)">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="#(post.createdDateNumeric)">
     <meta property="og:site_name" content="SteamPress">
     #if(post.lastEditedDateNumeric) { <meta property="article:modified_time" content="#(post.lastEditedDateNumeric)"> }
     <meta property="article:author" content="#(pageInformation.websiteURL)blog/authors/#(author.username)/">
     #for(tag in post.tags) {
-    <meta property="article:tag" content="#(tag.name)">
+    <meta property="article:tag" content="#(tag.urlEncodedName)">
     }
     <meta name="twitter:card" content="summary_large_image">
-    #if(post_image) {
-    <meta property="og:image" content="#(post_image)">
+    #if(post.postImage) {
+    <meta property="og:image" content="#(post.postImage)">
     } else {
         <meta property="og:image" content="https://www.steampress.io/static/images/steampress-og-image_1.jpg">
         <meta property="og:image:width" content="2400">
         <meta property="og:image:height" content="1257">
         <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     }
-    #if(post_image_alt) {
-        <meta name="twitter:image:alt" content="#(post_image_alt)">
+    #if(post.postImageAlt) {
+        <meta name="twitter:image:alt" content="#(post.postImageAlt)">
     }
     #if(pageInformation.siteTwitterHandle) {
     <meta name="twitter:site" content="@#(pageInformation.siteTwitterHandle)">
@@ -56,7 +56,7 @@
 
     <div class="post-tags text-center h4">
         #for(tag in post.tags) {
-        <span class="badge badge-secondary"><a href="/blog/tags/#(tag.name)/">#(tag.name)</a></span>
+        <span class="badge badge-secondary"><a href="/blog/tags/#(tag.urlEncodedName)/">#(tag.name)</a></span>
         }
     </div>
 
@@ -65,7 +65,7 @@
             <a href="https://twitter.com/share" class="twitter-share-button pl-2 pr-2" data-size="large" data-show-count="false" data-text="#(post.title) - SteamPress Blog">Tweet</a>
         </div>
         <div id="facebook-share-wrapper">
-            <div class="fb-share-button pl-2 pr-2" data-href="#(pageInformation.currentPageURL)" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=#(post_uri_encoded)&amp;src=sdkpreparse">Share</a></div>
+            <div class="fb-share-button pl-2 pr-2" data-href="#(pageInformation.currentPageURL)" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=#(pageInformation.currentPageEncodedURL)&amp;src=sdkpreparse">Share</a></div>
         </div>
     </div>
 
