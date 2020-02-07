@@ -1,14 +1,12 @@
-#extend("base")
-
-#export("head") {
-    <title>#if(editing) {Edit} ##else() {Create New} User | Blog Admin | SteamPress</title>
+#set("head") {
+    <title>#if(editing) {Edit } else {Create New } User | Blog Admin | SteamPress</title>
 }
 
-#export("scripts") {
+#set("scripts") {
   <script src="/static/js/admin/createUser.js"></script>
 }
 
-#export("body") {
+#set("body") {
 
     #if(editing) {
         <div id="edit-user-data" data-editing-page="true"</div>
@@ -16,39 +14,39 @@
 
     <div class="container mt-3">
 
-        <h1>#if(editing) {Edit} ##else() {Create A New} User</h1>
+        <h1>#if(editing) {Edit } else {Create A New } User</h1>
 
         #if(errors) {
-            #loop(errors, "error") {
+            #for(error in errors) {
             <div class="alert alert-danger" role="alert">
                 <strong>Warning: </strong>#(error)
             </div>
             }
         }
 
-        <form action="#if(editing) {/blog/admin/users/#(user_id)/edit/} ##else() {/blog/admin/createUser/}" id="create-user-form" method="post">
+        <form action="#if(editing) {/blog/admin/users/#(userID)/edit/} else {/blog/admin/createUser/}" id="create-user-form" method="post">
             <div class="form-group" id="create-user-name-group">
-                <label class="form-control-label" for="inputName">Name *</label>
-                <input type="text" class="form-control #if(name_error) { is-invalid }" id="inputName" name="inputName" placeholder="Name" value="#(name_supplied)" autofocus required>
+                <label class="form-control-label" for="name">Name *</label>
+                <input type="text" class="form-control #if(nameError) { is-invalid }" id="name" name="name" placeholder="Name" value="#(nameSupplied)" autofocus required>
                 <div class="invalid-feedback">
                     Please enter a name
                 </div>
             </div>
 
             <div class="form-group" id="create-user-username-group">
-                <label class="form-control-label" for="inputUsername">Username *</label>
-                <input type="text" class="form-control #if(username_error) { is-invalid }" id="inputUsername" name="inputUsername" placeholder="Username" value="#(username_supplied)" required>
+                <label class="form-control-label" for="username">Username *</label>
+                <input type="text" class="form-control #if(usernameError) { is-invalid }" id="username" name="username" placeholder="Username" value="#(usernameSupplied)" required>
                 <div class="invalid-feedback">
                     Please enter a username
                 </div>
             </div>
 
             <div class="form-group" id="create-user-password-group">
-                <label class="form-control-label" for="inputPassword">Password #if(editing) {} ##else() { *}</label>
+                <label class="form-control-label" for="password">Password #if(!editing) { *}</label>
                 <div class="input-group">
-                    <input type="password" class="form-control #if(password_error) { is-invalid }" id="inputPassword" name="inputPassword" placeholder="Password" #if(editing) {} ##else() {required}>
+                    <input type="password" class="form-control #if(passwordError) { is-invalid }" id="password" name="password" placeholder="Password" #if(!editing) { required}>
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#()passwordModal" tabindex="-1">?</button>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#passwordModal" tabindex="-1">?</button>
                     </span>
                 </div>
                 <div class="invalid-feedback" id="password-feedback">
@@ -60,8 +58,8 @@
             </div>
 
             <div class="form-group" id="create-user-confirm-password-group">
-                <label class="form-control-label" for="inputConfirmPassword">Confirm Password #if(editing) {} ##else() { *}</label>
-                <input type="password" class="form-control #if(confirm_password_error) { is-invalid }" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" #if(editing) {} ##else() {required}>
+                <label class="form-control-label" for="confirmPassword">Confirm Password #if(!editing) { *}</label>
+                <input type="password" class="form-control #if(confirmPasswordError) { is-invalid }" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" #if(!editing) { required}>
                 <div class="invalid-feedback">
                     Please confirm your password
                 </div>
@@ -69,36 +67,36 @@
 
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" id="inputResetPasswordOnLogin" value="inputResetPasswordOnLogin" name="inputResetPasswordOnLogin" #if(reset_password_on_login_supplied) {checked}>
-                    User must reset password on #if(editing) {next} ##else() {first} login?
+                    <input type="checkbox" class="form-check-input" id="resetPasswordOnLogin" value="resetPasswordOnLogin" name="resetPasswordOnLogin" #if(resetPasswordOnLoginSupplied) { checked}>
+                    User must reset password on #if(editing) {next } else {first } login?
                 </label>
             </div>
 
             <div class="form-group">
-                <label class="form-control-label" for="inputProfilePicture">Profile Picture</label>
-                <input type="text" class="form-control" id="inputProfilePicture" name="inputProfilePicture" placeholder="Link to profile picture" value="#(profile_picture_supplied)">
+                <label class="form-control-label" for="profilePicture">Profile Picture</label>
+                <input type="text" class="form-control" id="profilePicture" name="profilePicture" placeholder="Link to profile picture" value="#(profilePictureSupplied)">
             </div>
 
             <div class="form-group">
-                <label class="form-control-label" for="inputTwitterHandle">Twitter Handle</label>
+                <label class="form-control-label" for="twitterHandle">Twitter Handle</label>
                 <div class="input-group">
                     <span class="input-group-addon" id="twitterHandleAt">@</span>
-                    <input type="text" class="form-control" id="inputTwitterHandle" name="inputTwitterHandle" placeholder="Twitter Handle" value="#(twitter_handle_supplied)">
+                    <input type="text" class="form-control" id="twitterHandle" name="twitterHandle" placeholder="Twitter Handle" value="#(twitterHandleSupplied)">
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="form-control-label" for="inputTagline">Tagline</label>
-                <input type="text" class="form-control" id="inputTagline" name="inputTagline" placeholder="Short tagline for User" value="#(tagline_supplied)">
+                <label class="form-control-label" for="tagline">Tagline</label>
+                <input type="text" class="form-control" id="tagline" name="tagline" placeholder="Short tagline for User" value="#(taglineSupplied)">
             </div>
 
             <div class="form-group">
-                <label class="form-control-label" for="inputBiography">Biography</label>
-                <textarea class="form-control" id="inputBiography" name="inputBiography" rows="3">#(biography_supplied)</textarea>
+                <label class="form-control-label" for="biography">Biography</label>
+                <textarea class="form-control" id="biography" name="biography" rows="3">#(biographySupplied)</textarea>
             </div>
 
             <div class="form-group mt-3">
-                <button type="Submit" class="btn btn-primary">#if(editing) {Save} ##else() {Create User}</button>
+                <button type="Submit" class="btn btn-primary">#if(editing) {Save} else {Create User}</button>
                 #if(editing) {
                 <a href="/blog/admin/" class="btn btn-secondary" id="cancel-edit-button">Cancel</a>
                 }
@@ -127,3 +125,5 @@
         </div>
     </div>
 }
+
+#embed("base")
