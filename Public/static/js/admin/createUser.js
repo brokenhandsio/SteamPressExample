@@ -24,7 +24,7 @@ $("#create-user-form").on('submit', function() {
         return false;
     }
 
-    if (!editing) {
+    if (!editing || password !== "") {
         if (!isValidPassword(password)) {
             alert("Please enter a valid password");
             return false;
