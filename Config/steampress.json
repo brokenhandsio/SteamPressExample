@@ -1,8 +1,0 @@
-{
-    "postsPerPage": 5,
-    "blogPath": "blog",
-    "title": "The SteamPress Blog",
-    "description": "SteamPress is an open-source blogging engine written for Vapor in Swift",
-    "copyright": "Released under the MIT licence",
-    "imageURL": "https://user-images.githubusercontent.com/9938337/29742058-ed41dcc0-8a6f-11e7-9cfc-680501cdfb97.png",
-}

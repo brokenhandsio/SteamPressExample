@@ -13,7 +13,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     try services.register(FluentPostgreSQLProvider())
     try services.register(LeafProvider())
     try services.register(AuthenticationProvider())
-    try services.register(SteamPressFluentPostgresProvider(blogPath: "blog"))
+    let feedInformation = FeedInformation(title: "The SteamPress Blog", description: "SteamPress is an open-source blogging engine written for Vapor in Swift", copyright: "Released under the MIT licence", imageURL: "https://user-images.githubusercontent.com/9938337/29742058-ed41dcc0-8a6f-11e7-9cfc-680501cdfb97.png")
+    try services.register(SteamPressFluentPostgresProvider(blogPath: "blog", feedInformation: feedInformation, postsPerPage: 5))
     
     services.register { worker in
         return LeafErrorMiddleware(environment: worker.environment)
