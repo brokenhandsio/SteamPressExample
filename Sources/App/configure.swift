@@ -60,6 +60,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     middlewares.use(SecurityHeaders.self)
     middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
     middlewares.use(LeafErrorMiddleware.self)
+    middlewares.use(BlogRememberMeMiddleware.self)
     middlewares.use(SessionsMiddleware.self)
     services.register(middlewares)
     
