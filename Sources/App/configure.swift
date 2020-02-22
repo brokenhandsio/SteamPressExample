@@ -66,8 +66,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     var middlewares = MiddlewareConfig() // Create _empty_ middleware config
     middlewares.use(SecurityHeaders.self)
     middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
-//    middlewares.use(LeafErrorMiddleware.self)
-    middlewares.use(ErrorMiddleware.self)
+    middlewares.use(LeafErrorMiddleware.self)
     middlewares.use(SessionsMiddleware.self)
     services.register(middlewares)
     
