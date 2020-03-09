@@ -58,7 +58,9 @@
             <div class="form-group" id="create-post-slugurl-group">
                 <label class="form-control-label" for="slugUrl">Path</label>
                 <div class="input-group">
-                    <span class="input-group-addon" id="slug-url-path">#(postPathPrefix)</span>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="slug-url-path">#(postPathPrefix)</span>
+                    </div>
                     <input type="text" class="form-control" id="slugUrl" name="slugUrl" aria-describedby="slug-url-path" value="#(slugURLSupplied)" readonly tabindex="-1">
                 </div>
             </div>
