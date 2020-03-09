@@ -45,7 +45,7 @@
                 <label class="form-control-label" for="password">Password #if(!editing) { *}</label>
                 <div class="input-group">
                     <input type="password" class="form-control #if(passwordError) { is-invalid }" id="password" name="password" placeholder="Password" #if(!editing) { required}>
-                    <span class="input-group-btn">
+                    <span class="input-group-append">
                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#passwordModal" tabindex="-1">?</button>
                     </span>
                 </div>
@@ -80,8 +80,10 @@
             <div class="form-group">
                 <label class="form-control-label" for="twitterHandle">Twitter Handle</label>
                 <div class="input-group">
-                    <span class="input-group-addon" id="twitterHandleAt">@</span>
-                    <input type="text" class="form-control" id="twitterHandle" name="twitterHandle" placeholder="Twitter Handle" value="#(twitterHandleSupplied)">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="twitterHandleAt">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="twitterHandle" name="twitterHandle" placeholder="Twitter Handle" value="#(twitterHandleSupplied)" aria-describedby="twitterHandleAt">
                 </div>
             </div>
 
@@ -113,10 +115,10 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h4 class="modal-title" id="passwordModalLabel">Password Requirements</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="passwordModalLabel">Password Requirements</h4>
                 </div>
                 <div class="modal-body">
                     <p>Your password must be at least 8 characters long and should <em>not</em> be something simple like 'Password1234' You should be using a Password Manager!</p>
