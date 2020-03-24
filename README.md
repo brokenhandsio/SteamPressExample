@@ -4,10 +4,10 @@
 <h1 align="center">SteamPress Example Site</h1>
 <p align="center">
   <a href="https://swift.org">
-    <img src="http://img.shields.io/badge/Swift-4-brightgreen.svg" alt="Language">
+      <img src="http://img.shields.io/badge/Swift-5.1-brightgreen.svg" alt="Language">
   </a>
-  <a href="https://travis-ci.org/brokenhandsio/SteamPressExample">
-    <img src="https://travis-ci.org/brokenhandsio/SteamPressExample.svg?branch=master" alt="Build Status">
+  <a href="https://github.com/brokenhandsio/SteamPressExample/actions">
+      <img src="https://github.com/brokenhandsio/SteamPressExample/workflows/CI/badge.svg?branch=master" alt="Build Status">
   </a>
   <a href="https://codecov.io/gh/brokenhandsio/SteamPressExample">
     <img src="https://codecov.io/gh/brokenhandsio/SteamPressExample/branch/master/graph/badge.svg" alt="Code Coverage">

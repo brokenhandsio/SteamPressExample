@@ -9,10 +9,10 @@ $('#cancel-edit-button').click(function(){
 });
 
 $("#create-user-form").on('submit', function() {
-    var name = $("#inputName").val();
-    var username = $("#inputUsername").val();
-    var password = $("#inputPassword").val();
-    var confirm = $("#inputConfirmPassword").val();
+    var name = $("#name").val();
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var confirm = $("#confirmPassword").val();
 
     if (!isValidName(name)) {
         alert("Please enter a valid name");
@@ -24,7 +24,7 @@ $("#create-user-form").on('submit', function() {
         return false;
     }
 
-    if (!editing) {
+    if (!editing || password !== "") {
         if (!isValidPassword(password)) {
             alert("Please enter a valid password");
             return false;
@@ -38,13 +38,13 @@ $("#create-user-form").on('submit', function() {
     return true;
 });
 
-$("#inputName").blur(function() {
-    var name = $("#inputName").val();
+$("#name").blur(function() {
+    var name = $("#name").val();
     if (isValidName(name)) {
-        $("#inputName").removeClass("is-invalid");
+        $("#name").removeClass("is-invalid");
     }
     else {
-        $("#inputName").addClass("is-invalid");
+        $("#name").addClass("is-invalid");
     }
 });
 
@@ -52,42 +52,42 @@ $("#username").on('change keyup paste',function(){
     $(this).val($(this).val().toLowerCase());
 })
 
-$("#inputUsername").blur(function() {
-    var username = $("#inputUsername").val();
+$("#username").blur(function() {
+    var username = $("#username").val();
     if (isValidUsername(username)) {
-        $("#inputUsername").removeClass("is-invalid");
+        $("#username").removeClass("is-invalid");
     }
     else {
-        $("#inputUsername").addClass("is-invalid");
+        $("#username").addClass("is-invalid");
     }
 });
 
-$("#inputPassword").blur(function() {
-    var password = $("#inputPassword").val();
+$("#password").blur(function() {
+    var password = $("#password").val();
     if (editing && !password) {
         return;
     }
     if (isValidPassword(password)) {
-        $("#inputPassword").removeClass("is-invalid");
+        $("#password").removeClass("is-invalid");
         $("#password-feedback").hide();
     }
     else {
-        $("#inputPassword").addClass("is-invalid");
+        $("#password").addClass("is-invalid");
         $("#password-feedback").show();
     }
 });
 
-$("#inputConfirmPassword").blur(function() {
-    var password = $("#inputPassword").val();
-    var confirm = $("#inputConfirmPassword").val();
+$("#confirmPassword").blur(function() {
+    var password = $("#password").val();
+    var confirm = $("#confirmPassword").val();
     if (editing && !password && !confirm) {
         return;
     }
     if (password == confirm) {
-        $("#inputConfirmPassword").removeClass("is-invalid");
+        $("#confirmPassword").removeClass("is-invalid");
     }
     else {
-        $("#inputConfirmPassword").addClass("is-invalid");
+        $("#confirmPassword").addClass("is-invalid");
     }
 });
 

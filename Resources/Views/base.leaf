@@ -4,14 +4,14 @@
     <!-- This must be first in the <head> -->
     #embed("headContent")
 
-    #import("head")
+    #get(head)
 </head>
 
 <body>
     <div id="content">
 
         <nav class="navbar navbar-expand-md navbar-light" id="navigation">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#()navbar-collapsable" aria-controls="navbar-collapsable" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsable" aria-controls="navbar-collapsable" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="/">
@@ -19,34 +19,38 @@
             </a>
             <div class="collapse navbar-collapse" id="navbar-collapsable">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item #if(blog_index_page) {active}"><a href="/blog/" class="nav-link">Blog</a></li>
-                    <li class="nav-item #if(about_page) {active}"><a href="/about/" class="nav-link">About</a></li>
-                    #if(user) {
-                        <li class="nav-item #if(blog_admin_page) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
-                        <li class="nav-item #if(create_blog_post_page) {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
-                        #if(blog_post_page) {
-                        <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.id)/edit/" class="nav-link">Edit Post</a></div>
+                    <li class="nav-item #if(blogIndexPage) {active}"><a href="/blog/" class="nav-link">Blog</a></li>
+                    <li class="nav-item #if(aboutPage) {active}"><a href="/about/" class="nav-link">About</a></li>
+                    #if(pageInformation.loggedInUser) {
+                        <li class="nav-item #if(blogAdminPage) {active}"><a href="/blog/admin/" class="nav-link">Admin</a></li>
+                        <li class="nav-item #if(title ==  "Create Blog Post") {active}"><a href="/blog/admin/createPost/" class="nav-link">New Post</a></li>
+                        #if(blogPostPage) {
+                        <div class="navbar-nav nav-item"><a href="/blog/admin/posts/#(post.blogID)/edit/" class="nav-link">Edit Post</a></div>
                         }
                     }
                 </ul>
-                #if(user) {
+                #if(pageInformation.loggedInUser) {
                     <ul class="navbar-nav">
-                        <li class="nav-item float-lg-right"><a href="/blog/admin/logout/" class="nav-link">Logout</a></li>
+                        <li class="nav-item float-lg-right">
+                            <form method="post" action="/blog/admin/logout/" class="form-inline">
+                                <button class="btn btn-link nav-link mr-2" type="submit">Logout</button>
+                            </form>
+                        </li>
                     </ul>
                 }
                 <form class="form-inline" action="/blog/search" method="GET">
-                    <input class="form-control mr-sm-2 form-control-navbar" type="text" name="term" placeholder="Search The Blog" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" name="term" placeholder="Search The Blog" aria-label="Search">
                     <button class="btn my-2 my-sm-0 btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
                 <div class="navbar-nav nav-item"><a href="https://github.com/brokenhandsio/SteamPress" target="_blank" class="nav-link"><i class="fa fa-github" id="github-navbar" aria-hidden="true"></i></a></div>
             </div>
         </nav>
 
-        #import("body")
+        #get(body)
 
     </div> <!-- content -->
 
     #embed("footerAndScripts")
-    #import("scripts")
+    #get(scripts)
 </body>
 </html>

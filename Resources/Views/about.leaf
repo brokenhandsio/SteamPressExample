@@ -1,6 +1,4 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>About | SteamPress Example</title>
 
     <meta name="description" content="SteamPress is an open source blogging engine and platform written in Swift and powered by Vapor. It was created by Broken Hands.">
@@ -17,12 +15,12 @@
     <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
     <meta property="og:site_name" content="SteamPress">
 
-    #if(site_twitter_handle) {
-    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    #if(pageInformation.siteTwitterHandle) {
+    <meta name="twitter:site" content="@#(pageInformation.siteTwitterHandle)">
     }
 }
 
-#export("body") {
+#set("body") {
 
 <div class="container mt-4">
 
@@ -51,7 +49,7 @@
     <p>
         The example site also includes shows how to integrate
         <a href="https://github.com/brokenhandsio/VaporSecurityHeaders" target="_blank">Vapor Security
-        Headers</a> and how to have custom error pages in Vapor.
+        Headers</a> and how to have custom error pages in Vapor, using <a href="https://github.com/brokenhandsio/leaf-error-middleware" target="_blank">Leaf Error Middleare</a>.
     </p>
 
 
@@ -59,9 +57,11 @@
 
 }
 
-#export("scripts") {
-    #if(google_analytics_identifier) {
-        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+#set("scripts") {
+    #if(pageInformation.googleAnalyticsIdentifier) {
+        <div id="google-analytics-data" data-identifier="#(pageInformation.googleAnalyticsIdentifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
 }
+
+#embed("base")

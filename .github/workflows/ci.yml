@@ -1,0 +1,52 @@
+name: CI
+on:
+- push
+jobs:
+  xenial:
+    container: 
+      image: vapor/swift:5.1-xenial
+    services:
+      psql:
+        image: postgres
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: steampress
+          POSTGRES_DB: steampress-test
+          POSTGRES_PASSWORD: password
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: swift test --enable-test-discovery --enable-code-coverage
+      env:
+        DATABASE_HOSTNAME: psql
+        DATABASE_PORT: 5432
+  bionic:
+    container: 
+      image: vapor/swift:5.1-bionic
+    services:
+      psql:
+        image: postgres
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: steampress
+          POSTGRES_DB: steampress-test
+          POSTGRES_PASSWORD: password
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run Bionic Tests
+      run: swift test --enable-test-discovery --enable-code-coverage
+      env:
+        DATABASE_HOSTNAME: psql
+        DATABASE_PORT: 5432
+    - name: Setup container for codecov upload
+      run: apt-get update && apt-get install curl
+    - name: Process coverage file
+      run: llvm-cov show .build/x86_64-unknown-linux/debug/SteamPressExamplePackageTests.xctest -instr-profile=.build/x86_64-unknown-linux/debug/codecov/default.profdata > coverage.txt
+    - name: Upload code coverage
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_UPLOAD_KEY }}
+        file: coverage.txt

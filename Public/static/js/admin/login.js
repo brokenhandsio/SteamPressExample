@@ -1,6 +1,6 @@
 $("#login-form").on('submit', function() {
-    var username = $("#inputUsername").val();
-    var password = $("#inputPassword").val();
+    var username = $("#username").val();
+    var password = $("#password").val();
 
     if (!username) {
         alert("Please enter a username");
@@ -14,22 +14,22 @@ $("#login-form").on('submit', function() {
     return true;
 });
 
-$("#inputUsername").blur(function() {
-    var username = $("#inputUsername").val();
+$("#username").blur(function() {
+    var username = $("#username").val();
     if (username) {
-        $("#inputUsername").removeClass("is-invalid");
+        $("#username").removeClass("is-invalid");
     }
     else {
-        $("#inputUsername").addClass("is-invalid");
+        $("#username").addClass("is-invalid");
     }
 });
 
-$("#inputPassword").blur(function() {
-    var password = $("#inputPassword").val();
+$("#password").blur(function() {
+    var password = $("#password").val();
     if (password) {
-        $("#inputPassword").removeClass("is-invalid");
+        $("#password").removeClass("is-invalid");
     }
     else {
-        $("#inputPassword").addClass("is-invalid");
+        $("#password").addClass("is-invalid");
     }
 });

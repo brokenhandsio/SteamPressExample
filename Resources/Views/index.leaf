@@ -1,6 +1,4 @@
-#extend("base")
-
-#export("head") {
+#set("head") {
     <title>Home | SteamPress</title>
 
     <!-- Syntax Highlighting -->
@@ -21,12 +19,12 @@
     <meta property="og:image:height" content="1257">
     <meta name="twitter:image:alt" content="SteamPress - The open source blogging engine for Vapor">
 
-    #if(site_twitter_handle) {
-    <meta name="twitter:site" content="@#(site_twitter_handle)">
+    #if(pageInformation.siteTwitterHandle) {
+    <meta name="twitter:site" content="@#(pageInformation.siteTwitterHandle)">
     }
 }
 
-#export("body") {
+#set("body") {
     <div class="jumbotron jumbotron-fluid" id="homepage-jumbotron">
         <div class="container text-center">
             <img src="/static/images/steampress_1.png" id="homepage-title-image" alt="SteamPress">
@@ -39,18 +37,17 @@
             <div class="col-md-6 mb-3 index-column">
                 <h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Latest Blog Posts</h2>
 
-                #if(posts) {
-                #loop(posts, "post") {
-                <div class="card mb-3">
-                    <div class="card-body post-contents">
-                        <a href="/blog/posts/#(post.slug_url)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
-                        #markdown(post.short_snippet)
-                        <a href="/blog/posts/#(post.slug_url)/" class="card-link">Read More</a>
+                #if(count(posts) > 0) {
+                    #for(post in posts) {
+                    <div class="card mb-3">
+                        <div class="card-body post-contents">
+                            <a href="/blog/posts/#(post.slugUrl)/" class="index-post-link"><h3 class="card-title">#(post.title)</h3></a>
+                            #markdown(post.shortSnippet)
+                            <a href="/blog/posts/#(post.slugUrl)/" class="card-link">Read More</a>
+                        </div>
                     </div>
-                </div>
-                }
-                }
-                ##else() {
+                    }
+                } else {
                     <div class="text-center h5 mt-4 mb-4">There haven't been any posts yet!</div>
                 }
 
@@ -99,10 +96,12 @@
     </div> <!-- container -->
 }
 
-#export("scripts") {
+#set("scripts") {
     <script src="/static/js/prismHighlighting.js"></script>
-    #if(google_analytics_identifier) {
-        <div id="google-analytics-data" data-identifier="#(google_analytics_identifier)"></div>
+    #if(pageInformation.googleAnalyticsIdentifier) {
+        <div id="google-analytics-data" data-identifier="#(pageInformation.googleAnalyticsIdentifier)"></div>
         <script src="/static/js/analytics.js"></script>
     }
 }
+
+#embed("base")
