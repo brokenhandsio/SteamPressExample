@@ -64,6 +64,9 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     middlewares.use(SessionsMiddleware.self)
     services.register(middlewares)
     
+    // Limit the DB connections for Heroku
+    services.register(DatabaseConnectionPoolConfig(maxConnections: 2))
+    
     // Configure a database
     var databases = DatabasesConfig()
     let databaseConfig: PostgreSQLDatabaseConfig
