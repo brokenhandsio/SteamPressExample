@@ -1,5 +1,0 @@
-force_tls: true
-type: 'vapor'
-swift_version: '4.0.0'
-executable: 'Run'
-docker_template: "vapor-4.0.0-low-mem"
