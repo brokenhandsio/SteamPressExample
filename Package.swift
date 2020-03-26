@@ -12,7 +12,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "3.0.0")),
         .package(url: "https://github.com/brokenhandsio/leaf-error-middleware.git", .upToNextMajor(from: "1.2.0")),
         .package(url: "https://github.com/brokenhandsio/VaporSecurityHeaders.git", .upToNextMajor(from: "2.0.0")),
-        .package(url: "https://github.com/brokenhandsio/steampress-fluent-postgres.git", .upToNextMajor(from: "1.0.0-alpha")),
+        .package(url: "https://github.com/brokenhandsio/steampress-fluent-postgres.git", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/vapor-community/leaf-markdown.git", .upToNextMajor(from: "2.0.0"))
     ],
     targets: [
