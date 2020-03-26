@@ -4,7 +4,7 @@ on:
 jobs:
   xenial:
     container: 
-      image: vapor/swift:5.1-xenial
+      image: vapor/swift:5.2-xenial
     services:
       psql:
         image: postgres
@@ -23,7 +23,7 @@ jobs:
         DATABASE_PORT: 5432
   bionic:
     container: 
-      image: vapor/swift:5.1-bionic
+      image: vapor/swift:5.2-bionic
     services:
       psql:
         image: postgres
