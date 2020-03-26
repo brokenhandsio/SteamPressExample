@@ -36,18 +36,13 @@ This site also provides a good example for all the Leaf files you will need, and
 
 # Usage
 
-To try out:
+To try out (you will need Docker installed):
 
 ```bash
 git clone https://github.com/brokenhandsio/SteamPressExample.git
-vapor build
-vapor run
+cd SteamPressExample
+./setupDB.sh
+swift run
 ```
 
 This will create a site at http://localhost:8080. The blog can be found at http://localhost:8080/blog/ and you can login at http://localhost:8080/blog/admin/. The first time you visit the login a user will be created and the details printed to the console.
-
-# Roadmap
-
-For the time being, I will keep the releases under a 0 version - so expect breaking changes for a while as the codebase evolves. If there is demand to stabilise the site (i.e. lots of people are using it for an actual blog rather than just reference for their own blogs) then I'll bump up the priority of this accordingly. For the moment though, I am expecting some significant breaking changes in the [main engine](https://github.com/brokenhandsio/SteamPress) so expect those to happen before any stabilisation occurs. Other features that are on the roadmap specific to this site are:
-
-* AMP support for posts (in conjunction with new endpoints for all pages for AMP)
