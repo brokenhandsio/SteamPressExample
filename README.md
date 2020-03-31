@@ -4,7 +4,7 @@
 <h1 align="center">SteamPress Example Site</h1>
 <p align="center">
   <a href="https://swift.org">
-      <img src="http://img.shields.io/badge/Swift-5.1-brightgreen.svg" alt="Language">
+      <img src="http://img.shields.io/badge/Swift-5.2-brightgreen.svg" alt="Language">
   </a>
   <a href="https://github.com/brokenhandsio/SteamPressExample/actions">
       <img src="https://github.com/brokenhandsio/SteamPressExample/workflows/CI/badge.svg?branch=master" alt="Build Status">
