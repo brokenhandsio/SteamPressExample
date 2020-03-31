@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.2
 
 import PackageDescription
 
@@ -9,11 +9,11 @@ let package = Package(
         .executable(name: "Run", targets: ["Run"])
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/leaf.git", .upToNextMajor(from: "3.0.0")),
-        .package(url: "https://github.com/brokenhandsio/leaf-error-middleware.git", .upToNextMajor(from: "1.2.0")),
-        .package(url: "https://github.com/brokenhandsio/VaporSecurityHeaders.git", .upToNextMajor(from: "2.0.0")),
-        .package(url: "https://github.com/brokenhandsio/steampress-fluent-postgres.git", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/vapor-community/leaf-markdown.git", .upToNextMajor(from: "2.0.0"))
+        .package(name: "Leaf", url: "https://github.com/vapor/leaf.git", from: "3.0.0"),
+        .package(name: "LeafErrorMiddleware", url: "https://github.com/brokenhandsio/leaf-error-middleware.git", from: "1.2.0"),
+        .package(url: "https://github.com/brokenhandsio/VaporSecurityHeaders.git", from: "2.0.0"),
+        .package(name: "SteampressFluentPostgres", url: "https://github.com/brokenhandsio/steampress-fluent-postgres.git", from: "1.0.0"),
+        .package(name: "LeafMarkdown", url: "https://github.com/vapor-community/leaf-markdown.git", from: "2.0.0")
     ],
     targets: [
         .target(name: "App",
