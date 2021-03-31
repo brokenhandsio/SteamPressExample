@@ -14,7 +14,7 @@ struct PostWithShortSnippet: Codable {
 }
 
 extension BlogPost {
-    func  toPostWithShortSnippet() -> PostWithShortSnippet {
+    func toPostWithShortSnippet() -> PostWithShortSnippet {
         return PostWithShortSnippet(blogID: self.blogID, title: self.title, contents: self.contents, author: self.author, created: self.created, lastEdited: self.lastEdited, slugUrl: self.slugUrl, published: self.published, shortSnippet: self.shortSnippet())
     }
 }

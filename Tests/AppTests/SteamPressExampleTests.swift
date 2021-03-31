@@ -1,6 +1,7 @@
 import XCTest
-import App
+@testable import App
 import Vapor
+import SteamPress
 
 class SteamPressExampleTests: XCTestCase {
 
@@ -30,6 +31,13 @@ class SteamPressExampleTests: XCTestCase {
         let response = try getResponse(to: "/blog", on: app)
 
         XCTAssertEqual(response.http.status, .ok)
+    }
+
+    func testGetSnippetPost() throws {
+        let post = try BlogPost(title: "some title", contents: "some contents", author: BlogUser(userID: 1, name: "Name", username: "username", password: "password", profilePicture: nil, twitterHandle: nil, biography: nil, tagline: nil), creationDate: Date(), slugUrl: "some-slug", published: true)
+        let snippet = post.toPostWithShortSnippet()
+
+        XCTAssertEqual(snippet.title, post.title)
     }
     
     // MARK: - Helpers
