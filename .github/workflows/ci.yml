@@ -42,7 +42,7 @@ jobs:
         DATABASE_HOSTNAME: psql
         DATABASE_PORT: 5432
     - name: Setup container for codecov upload
-      run: apt-get update && apt-get install curl
+      run: apt-get update && apt-get install curl -y
     - name: Process coverage file
       run: llvm-cov show .build/x86_64-unknown-linux-gnu/debug/SteamPressExamplePackageTests.xctest -instr-profile=.build/debug/codecov/default.profdata > coverage.txt
     - name: Upload code coverage
