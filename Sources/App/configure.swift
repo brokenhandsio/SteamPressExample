@@ -71,7 +71,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     var databases = DatabasesConfig()
     let databaseConfig: PostgreSQLDatabaseConfig
     if let url = Environment.get("DATABASE_URL") {
-        databaseConfig = PostgreSQLDatabaseConfig(url: url)!
+        databaseConfig = PostgreSQLDatabaseConfig(url: url, transport: .unverifiedTLS)!
     } else if let url = Environment.get("DB_POSTGRESQL") {
         databaseConfig = PostgreSQLDatabaseConfig(url: url)!
     } else {
