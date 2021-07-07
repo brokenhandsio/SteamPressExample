@@ -41,8 +41,17 @@ To try out (you will need Docker installed):
 ```bash
 git clone https://github.com/brokenhandsio/SteamPressExample.git
 cd SteamPressExample
-./setupDB.sh
+./bin/setupDB.sh
 swift run
 ```
 
 This will create a site at http://localhost:8080. The blog can be found at http://localhost:8080/blog/ and you can login at http://localhost:8080/blog/admin/. The first time you visit the login a user will be created and the details printed to the console.
+
+**Note**: If you receive an error such as "Thread 1: Fatal error: Error raised at top level...", then it is likely you are already running an instance of PostgreSQL on your machine. To try and resolve:
+
+```
+./bin/stopDB.sh               # will stop your existing docker instance if running
+lsof -i :5432                 # will show you existing processes running postgres
+brew services stop postgresql # will stop postgresql if homebrew is running it
+./bin/setupDB.sh              # restarts db for this example
+```
